@@ -1,0 +1,8 @@
+== B with eval on p=0.5 data: p=0 → 0.5 at 3000
+step   8960 train 2.220 | loss on copies 0.126 on filler 2.980 | max prev-token 0.97 max induction 0.89
+FINAL layer 0: prev-token per head [0.01, 0.02, 0.97, 0.16] | induction per head [0.01, 0.01, 0.0, 0.01] | same-token (offset −s) per head [0.6, 0.01, 0.0, 0.01]
+FINAL layer 1: prev-token per head [0.04, 0.05, 0.44, 0.1] | induction per head [0.81, 0.88, 0.41, 0.84] | same-token (offset −s) per head [0.02, 0.01, 0.02, 0.02]
+== locked-in reference, eval on p=0.5: p=0.5 throughout, 9000 steps
+step   8960 train 2.830 | loss on copies 2.204 on filler 2.929 | max prev-token 0.98 max induction 0.09
+FINAL layer 0: prev-token per head [0.03, 0.04, 0.03, 0.12] | induction per head [0.09, 0.09, 0.09, 0.02] | same-token (offset −s) per head [0.07, 0.08, 0.07, 0.01]
+FINAL layer 1: prev-token per head [0.98, 0.98, 0.96, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]

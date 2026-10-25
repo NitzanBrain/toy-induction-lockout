@@ -1,0 +1,8 @@
+OFFSETS L0H0: s-1±2 0.22, s-1 (induction) 0.11, rel -4 0.09, rel -5 0.09
+OFFSETS L0H1: s-1±2 0.22, s-1 (induction) 0.11, rel -4 0.10, rel -5 0.09
+OFFSETS L0H2: s-1±2 0.23, s-1 (induction) 0.11, s (same token) 0.10, rel -4 0.09
+OFFSETS L0H3: abs pos 0 0.33, s-1±2 0.09, abs pos 1 0.07, s-1 (induction) 0.03
+OFFSETS L1H0: rel -10 0.13, rel -8 0.08, 1 (prev) 0.07, 0 (self) 0.06
+OFFSETS L1H1: rel -10 0.11, rel -9 0.07, rel -8 0.07, 1 (prev) 0.06
+OFFSETS L1H2: rel -10 0.11, rel -8 0.06, rel -9 0.06, 1 (prev) 0.05
+OFFSETS L1H3: rel -10 0.10, s-1±2 0.06, rel -8 0.06, 1 (prev) 0.05

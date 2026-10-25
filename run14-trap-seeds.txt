@@ -1,0 +1,16 @@
+== B seed 1 (eval p=0.5): p=0 → 0.5 at 3000
+step   8960 train 2.165 | loss on copies 0.120 on filler 2.940 | max prev-token 0.98 max induction 0.88
+FINAL layer 0: prev-token per head [0.98, 0.94, 0.06, 0.01] | induction per head [0.0, 0.0, 0.0, 0.01] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.66]
+FINAL layer 1: prev-token per head [0.03, 0.06, 0.07, 0.02] | induction per head [0.82, 0.87, 0.88, 0.81] | same-token (offset −s) per head [0.01, 0.02, 0.01, 0.02]
+== locked seed 1 (eval p=0.5)
+step   8960 train 2.792 | loss on copies 2.248 on filler 2.940 | max prev-token 0.98 max induction 0.09
+FINAL layer 0: prev-token per head [0.05, 0.1, 0.03, 0.03] | induction per head [0.09, 0.02, 0.09, 0.09] | same-token (offset −s) per head [0.08, 0.01, 0.06, 0.06]
+FINAL layer 1: prev-token per head [0.98, 0.98, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+== B seed 2 (eval p=0.5): p=0 → 0.5 at 3000
+step   8960 train 2.330 | loss on copies 0.222 on filler 2.963 | max prev-token 0.94 max induction 0.90
+FINAL layer 0: prev-token per head [0.93, 0.01, 0.01, 0.94] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.06, 0.59, 0.0]
+FINAL layer 1: prev-token per head [0.02, 0.05, 0.05, 0.04] | induction per head [0.89, 0.78, 0.84, 0.76] | same-token (offset −s) per head [0.02, 0.05, 0.02, 0.06]
+== locked seed 2 (eval p=0.5)
+step   8960 train 2.262 | loss on copies 0.218 on filler 2.939 | max prev-token 0.98 max induction 0.82
+FINAL layer 0: prev-token per head [0.86, 0.04, 0.03, 0.03] | induction per head [0.0, 0.02, 0.07, 0.01] | same-token (offset −s) per head [0.0, 0.46, 0.17, 0.01]
+FINAL layer 1: prev-token per head [0.02, 0.98, 0.98, 0.97] | induction per head [0.84, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]

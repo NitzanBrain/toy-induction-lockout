@@ -1,0 +1,4 @@
+2 layers seed 0 | time to 25/50/90% of final rise: prev-token [962, 1036, 1369] | induction [962, 999, 1147] | copy-loss drop 50%: 1036
+2 layers seed 1 | time to 25/50/90% of final rise: prev-token [962, 1036, 1332] | induction [962, 999, 1184] | copy-loss drop 50%: 1036
+2 layers seed 2 | time to 25/50/90% of final rise: prev-token [925, 999, 1332] | induction [888, 925, 1221] | copy-loss drop 50%: 999
+1 layer seed 0 : no prev-token or induction head formed (final prev 0.03, ind 0.10, copy loss 3.52)

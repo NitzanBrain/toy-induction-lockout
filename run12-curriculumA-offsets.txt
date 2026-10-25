@@ -1,0 +1,8 @@
+OFFSETS L0H0: other 0.86, s-1 (induction) 0.11, s (same token) 0.03
+OFFSETS L0H1: other 0.86, s-1 (induction) 0.11, s (same token) 0.03
+OFFSETS L0H2: other 0.79, s-1 (induction) 0.11, s (same token) 0.10
+OFFSETS L0H3: other 0.94, s-1 (induction) 0.03, 1 (prev) 0.01, s (same token) 0.01
+OFFSETS L1H0: other 0.83, 1 (prev) 0.07, 0 (self) 0.06, s (same token) 0.02
+OFFSETS L1H1: other 0.84, 1 (prev) 0.06, 0 (self) 0.05, s (same token) 0.03
+OFFSETS L1H2: other 0.85, 1 (prev) 0.05, 0 (self) 0.05, s (same token) 0.03
+OFFSETS L1H3: other 0.84, 1 (prev) 0.05, 0 (self) 0.05, s (same token) 0.03

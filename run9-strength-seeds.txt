@@ -1,0 +1,12 @@
+== BIGRAM=0.1 seed 1
+FINAL layer 0: prev-token per head [0.74, 0.6, 0.08, 0.01] | induction per head [0.01, 0.01, 0.03, 0.0]
+FINAL layer 1: prev-token per head [0.03, 0.04, 0.04, 0.02] | induction per head [0.81, 0.84, 0.82, 0.79]
+== BIGRAM=0.1 seed 2
+FINAL layer 0: prev-token per head [0.68, 0.04, 0.01, 0.16] | induction per head [0.0, 0.02, 0.0, 0.03]
+FINAL layer 1: prev-token per head [0.03, 0.05, 0.03, 0.04] | induction per head [0.81, 0.79, 0.79, 0.8]
+== BIGRAM=0.25 seed 1
+FINAL layer 0: prev-token per head [0.72, 0.66, 0.08, 0.08] | induction per head [0.01, 0.01, 0.03, 0.04]
+FINAL layer 1: prev-token per head [0.96, 0.95, 0.8, 0.02] | induction per head [0.0, 0.0, 0.01, 0.75]
+== BIGRAM=0.25 seed 2
+FINAL layer 0: prev-token per head [0.62, 0.47, 0.02, 0.1] | induction per head [0.01, 0.01, 0.01, 0.04]
+FINAL layer 1: prev-token per head [0.02, 0.97, 0.79, 0.96] | induction per head [0.77, 0.0, 0.01, 0.0]

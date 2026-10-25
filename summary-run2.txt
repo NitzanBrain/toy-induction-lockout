@@ -1,0 +1,14 @@
+2 layers seed 0 SKIP1=0.5 | prev-token 25/50/90%: [148, 222, 444] final 0.98 | induction 25/50/90%: [1036, 1221, 1813] final 0.08 | filler loss start→end 4.47→2.91 | copy loss end 2.52
+2 layers seed 1 SKIP1=0.5 | prev-token 25/50/90%: [148, 259, 444] final 0.98 | induction 25/50/90%: [1258, 1443, 2997] final 0.09 | filler loss start→end 4.47→2.93 | copy loss end 2.56
+2 layers seed 2 SKIP1=0.5 | prev-token 25/50/90%: [148, 222, 370] final 0.98 | induction 25/50/90%: [851, 1110, 1887] final 0.08 | filler loss start→end 4.50→2.99 | copy loss end 2.50
+    step      0 train 4.485 | loss on copies 4.480 on filler 4.466 | max prev-token 0.06 max induction 0.04
+    step     37 train 4.252 | loss on copies 4.247 on filler 4.279 | max prev-token 0.07 max induction 0.04
+    step     74 train 4.141 | loss on copies 4.126 on filler 4.210 | max prev-token 0.12 max induction 0.04
+    step    111 train 3.994 | loss on copies 3.984 on filler 4.163 | max prev-token 0.21 max induction 0.04
+    step    148 train 3.750 | loss on copies 3.710 on filler 3.989 | max prev-token 0.34 max induction 0.03
+    step    185 train 3.456 | loss on copies 3.404 on filler 3.669 | max prev-token 0.47 max induction 0.03
+    step    222 train 3.260 | loss on copies 3.196 on filler 3.364 | max prev-token 0.58 max induction 0.03
+    step    259 train 3.163 | loss on copies 3.093 on filler 3.218 | max prev-token 0.66 max induction 0.03
+    step    296 train 3.161 | loss on copies 3.033 on filler 3.126 | max prev-token 0.75 max induction 0.03
+    step    333 train 3.168 | loss on copies 2.997 on filler 3.056 | max prev-token 0.81 max induction 0.03
+    step    370 train 3.057 | loss on copies 2.975 on filler 3.004 | max prev-token 0.86 max induction 0.03

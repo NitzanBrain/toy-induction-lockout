@@ -1,0 +1,18 @@
+== A + RESET_QK seed 0 (eval p=0): p=0.5 → 0 at 3000
+--- reset last-layer Q,K + optimiser
+step   8960 train 3.225 | loss on copies 0.481 on filler 4.355 | max prev-token 0.05 max induction 0.12
+FINAL layer 0: prev-token per head [0.03, 0.02, 0.02, 0.05] | induction per head [0.12, 0.12, 0.12, 0.05] | same-token (offset −s) per head [0.12, 0.03, 0.03, 0.05]
+FINAL layer 1: prev-token per head [0.04, 0.04, 0.04, 0.04] | induction per head [0.03, 0.03, 0.03, 0.04] | same-token (offset −s) per head [0.04, 0.04, 0.04, 0.04]
+== A no reset seed 0 (eval p=0)
+step   8960 train 3.051 | loss on copies 0.429 on filler 4.389 | max prev-token 0.05 max induction 0.12
+FINAL layer 0: prev-token per head [0.03, 0.02, 0.02, 0.05] | induction per head [0.12, 0.12, 0.12, 0.05] | same-token (offset −s) per head [0.11, 0.02, 0.02, 0.05]
+FINAL layer 1: prev-token per head [0.05, 0.05, 0.05, 0.05] | induction per head [0.02, 0.03, 0.02, 0.02] | same-token (offset −s) per head [0.03, 0.04, 0.03, 0.03]
+== A + RESET_QK seed 1 (eval p=0): p=0.5 → 0 at 3000
+--- reset last-layer Q,K + optimiser
+step   8960 train 3.109 | loss on copies 0.441 on filler 4.360 | max prev-token 0.07 max induction 0.12
+FINAL layer 0: prev-token per head [0.07, 0.03, 0.01, 0.03] | induction per head [0.05, 0.05, 0.11, 0.12] | same-token (offset −s) per head [0.04, 0.04, 0.04, 0.11]
+FINAL layer 1: prev-token per head [0.03, 0.02, 0.02, 0.02] | induction per head [0.02, 0.02, 0.02, 0.02] | same-token (offset −s) per head [0.09, 0.08, 0.1, 0.11]
+== A no reset seed 1 (eval p=0)
+step   8960 train 3.117 | loss on copies 0.432 on filler 4.366 | max prev-token 0.10 max induction 0.12
+FINAL layer 0: prev-token per head [0.09, 0.04, 0.02, 0.02] | induction per head [0.05, 0.05, 0.11, 0.12] | same-token (offset −s) per head [0.04, 0.04, 0.03, 0.11]
+FINAL layer 1: prev-token per head [0.04, 0.04, 0.04, 0.03] | induction per head [0.02, 0.02, 0.03, 0.02] | same-token (offset −s) per head [0.05, 0.06, 0.06, 0.06]
