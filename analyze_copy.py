@@ -24,6 +24,11 @@ class Model(nn.Module):
         return s.un(h)
 m = Model(); m.load_state_dict(ck["state"]); m.eval()
 torch.manual_seed(99); N = 512; x = torch.randint(0, V, (N, T)); S = torch.randint(8, 33, (N,))
+import os
+if float(os.environ.get("BIGRAM", 0)):  # evaluate on the training distribution: same skip-one map as train.py (seed 123)
+    NEXT = torch.randperm(64, generator=torch.Generator().manual_seed(123)); P = float(os.environ["BIGRAM"])
+    for t_ in range(2, T):
+        use = torch.rand(N) < P; x[use, t_] = NEXT[x[use, t_ - 2]]
 for r in range(N): s = S[r].item(); x[r, s:2 * s] = x[r, :s]
 cm = torch.zeros(N, T, dtype=torch.bool)
 for r in range(N): s = S[r].item(); cm[r, s:2 * s - 1] = True

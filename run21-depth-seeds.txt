@@ -1,0 +1,26 @@
+== L=2 BIGRAM=0.5 MLP=1 seed 1 6000 steps
+FINAL layer 0: prev-token per head [0.03, 0.06, 0.03, 0.03] | induction per head [0.09, 0.04, 0.09, 0.09] | same-token (offset −s) per head [0.08, 0.11, 0.06, 0.06]
+FINAL layer 1: prev-token per head [0.98, 0.98, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+step   6000 train 2.775 | loss on copies 2.260 on filler 2.929 | max prev-token 0.98 max induction 0.09
+== L=3 BIGRAM=0.5 MLP=1 seed 2 6000 steps
+FINAL layer 0: prev-token per head [0.45, 0.06, 0.05, 0.03] | induction per head [0.04, 0.07, 0.08, 0.06] | same-token (offset −s) per head [0.03, 0.17, 0.08, 0.27]
+FINAL layer 1: prev-token per head [0.05, 0.98, 0.98, 0.93] | induction per head [0.84, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.01, 0.0, 0.0, 0.0]
+FINAL layer 2: prev-token per head [0.82, 0.97, 0.95, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+step   6000 train 2.191 | loss on copies 0.300 on filler 2.899 | max prev-token 0.98 max induction 0.84
+== L=3 BIGRAM=0.5 MLP=1 seed 3 6000 steps
+FINAL layer 0: prev-token per head [0.03, 0.01, 0.03, 0.02] | induction per head [0.1, 0.04, 0.1, 0.1] | same-token (offset −s) per head [0.06, 0.53, 0.08, 0.1]
+FINAL layer 1: prev-token per head [0.08, 0.15, 0.09, 0.95] | induction per head [0.01, 0.01, 0.01, 0.0] | same-token (offset −s) per head [0.01, 0.01, 0.0, 0.0]
+FINAL layer 2: prev-token per head [0.98, 0.98, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+step   6000 train 2.478 | loss on copies 1.381 on filler 2.873 | max prev-token 0.98 max induction 0.10
+== L=4 BIGRAM=0.5 MLP=1 seed 2 6000 steps
+FINAL layer 0: prev-token per head [0.09, 0.09, 0.01, 0.05] | induction per head [0.04, 0.04, 0.01, 0.03] | same-token (offset −s) per head [0.04, 0.04, 0.58, 0.12]
+FINAL layer 1: prev-token per head [0.47, 0.98, 0.06, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 2: prev-token per head [0.98, 0.36, 0.97, 0.97] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.06, 0.02, 0.82, 0.02] | induction per head [0.48, 0.95, 0.0, 0.96] | same-token (offset −s) per head [0.08, 0.0, 0.0, 0.01]
+step   6000 train 1.978 | loss on copies 0.034 on filler 2.851 | max prev-token 0.98 max induction 0.96
+== L=4 BIGRAM=0.5 MLP=1 seed 3 6000 steps
+FINAL layer 0: prev-token per head [0.1, 0.01, 0.08, 0.08] | induction per head [0.04, 0.01, 0.04, 0.04] | same-token (offset −s) per head [0.03, 0.6, 0.08, 0.04]
+FINAL layer 1: prev-token per head [0.98, 0.11, 0.06, 0.52] | induction per head [0.0, 0.01, 0.04, 0.0] | same-token (offset −s) per head [0.0, 0.01, 0.04, 0.0]
+FINAL layer 2: prev-token per head [0.98, 0.98, 0.98, 0.97] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.87, 0.04, 0.02, 0.08] | induction per head [0.0, 0.88, 0.97, 0.78] | same-token (offset −s) per head [0.0, 0.02, 0.0, 0.07]
+step   6000 train 2.069 | loss on copies 0.025 on filler 2.832 | max prev-token 0.98 max induction 0.97

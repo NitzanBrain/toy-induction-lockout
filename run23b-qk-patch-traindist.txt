@@ -1,0 +1,4 @@
+L0H1 -> L1H0 | clean Q, clean K      : target mass 0.77 | copy loss with this pattern 0.085
+L0H1 -> L1H0 | ablated Q, clean K    : target mass 0.08 | copy loss with this pattern 0.813
+L0H1 -> L1H0 | clean Q, ablated K    : target mass 0.75 | copy loss with this pattern 0.097
+L0H1 -> L1H0 | ablated Q, ablated K  : target mass 0.08 | copy loss with this pattern 0.826
