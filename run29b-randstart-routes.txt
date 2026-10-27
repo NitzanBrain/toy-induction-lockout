@@ -1,0 +1,22 @@
+== R4s2 RANDSTART eval
+induction head L3H1: clean target mass 0.89
+   remove L1H3: from Q -> 0.82 | from K -> 0.21
+   remove L1H1: from Q -> 0.88 | from K -> 0.55
+   remove L2H0: from Q -> 0.90 | from K -> 0.60
+   remove L2H2: from Q -> 0.90 | from K -> 0.61
+induction head L3H3: clean target mass 0.92
+   remove L1H3: from Q -> 0.93 | from K -> 0.75
+   remove L2H2: from Q -> 0.93 | from K -> 0.80
+   remove L2H0: from Q -> 0.93 | from K -> 0.83
+   remove L2H3: from Q -> 0.93 | from K -> 0.84
+== R4s3 RANDSTART eval
+induction head L3H1: clean target mass 0.90
+   remove L1H0: from Q -> 0.77 | from K -> 0.03
+   remove L2H2: from Q -> 0.91 | from K -> 0.57
+   remove L2H0: from Q -> 0.92 | from K -> 0.64
+   remove L2H1: from Q -> 0.90 | from K -> 0.74
+induction head L3H2: clean target mass 0.98
+   remove L1H0: from Q -> 0.98 | from K -> 0.80
+   remove L2H2: from Q -> 0.98 | from K -> 0.90
+   remove L1H2: from Q -> 0.91 | from K -> 0.98
+   remove L2H1: from Q -> 0.98 | from K -> 0.93

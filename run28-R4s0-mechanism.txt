@@ -1,0 +1,21 @@
+copy loss clean 0.745
+L0 ablate one head Δcopy loss [0.097, 0.084, 0.071, 2.073] | whole layer +2.141
+L1 ablate one head Δcopy loss [0.566, 0.375, 0.074, 1.031] | whole layer +2.161
+L2 ablate one head Δcopy loss [0.067, 0.095, 0.108, 0.303] | whole layer +1.370
+L3 ablate one head Δcopy loss [0.087, 0.089, 0.079, 0.095] | whole layer +1.294
+L0H0: mass same-token 0.37 | x[j-1]==x[i] 0.04 | x[j+1]==x[i] 0.04 | self 0.04 | entropy 2.45 | offset (s-1)+[-3..3] [0.03, 0.03, 0.29, 0.03, 0.04, 0.03, 0.02]
+L0H1: mass same-token 0.21 | x[j-1]==x[i] 0.05 | x[j+1]==x[i] 0.05 | self 0.01 | entropy 2.87 | offset (s-1)+[-3..3] [0.03, 0.03, 0.16, 0.04, 0.04, 0.03, 0.03]
+L0H2: mass same-token 0.14 | x[j-1]==x[i] 0.05 | x[j+1]==x[i] 0.06 | self 0.01 | entropy 2.97 | offset (s-1)+[-3..3] [0.03, 0.03, 0.11, 0.04, 0.05, 0.04, 0.04]
+L0H3: mass same-token 0.03 | x[j-1]==x[i] 0.04 | x[j+1]==x[i] 0.04 | self 0.01 | entropy 1.93 | offset (s-1)+[-3..3] [0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02]
+L1H0: mass same-token 0.02 | x[j-1]==x[i] 0.02 | x[j+1]==x[i] 0.02 | self 0.00 | entropy 0.82 | offset (s-1)+[-3..3] [0.02, 0.01, 0.01, 0.01, 0.68, 0.01, 0.01]
+L1H1: mass same-token 0.02 | x[j-1]==x[i] 0.02 | x[j+1]==x[i] 0.02 | self 0.00 | entropy 0.53 | offset (s-1)+[-3..3] [0.01, 0.01, 0.01, 0.01, 0.73, 0.01, 0.01]
+L1H2: mass same-token 0.03 | x[j-1]==x[i] 0.03 | x[j+1]==x[i] 0.03 | self 0.00 | entropy 1.07 | offset (s-1)+[-3..3] [0.02, 0.01, 0.02, 0.01, 0.61, 0.01, 0.02]
+L1H3: mass same-token 0.02 | x[j-1]==x[i] 0.02 | x[j+1]==x[i] 0.02 | self 0.00 | entropy 0.84 | offset (s-1)+[-3..3] [0.01, 0.01, 0.01, 0.01, 0.69, 0.01, 0.02]
+L2H0: mass same-token 0.01 | x[j-1]==x[i] 0.01 | x[j+1]==x[i] 1.00 | self 0.00 | entropy 0.01 | offset (s-1)+[-3..3] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+L2H1: mass same-token 0.01 | x[j-1]==x[i] 0.01 | x[j+1]==x[i] 1.00 | self 0.00 | entropy 0.00 | offset (s-1)+[-3..3] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+L2H2: mass same-token 0.01 | x[j-1]==x[i] 0.01 | x[j+1]==x[i] 1.00 | self 0.00 | entropy 0.01 | offset (s-1)+[-3..3] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+L2H3: mass same-token 0.01 | x[j-1]==x[i] 0.02 | x[j+1]==x[i] 0.23 | self 0.10 | entropy 1.41 | offset (s-1)+[-3..3] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+L3H0: mass same-token 0.01 | x[j-1]==x[i] 0.01 | x[j+1]==x[i] 1.00 | self 0.00 | entropy 0.00 | offset (s-1)+[-3..3] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+L3H1: mass same-token 0.01 | x[j-1]==x[i] 0.01 | x[j+1]==x[i] 1.00 | self 0.00 | entropy 0.00 | offset (s-1)+[-3..3] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+L3H2: mass same-token 0.01 | x[j-1]==x[i] 0.01 | x[j+1]==x[i] 1.00 | self 0.00 | entropy 0.00 | offset (s-1)+[-3..3] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+L3H3: mass same-token 0.01 | x[j-1]==x[i] 0.01 | x[j+1]==x[i] 1.00 | self 0.00 | entropy 0.00 | offset (s-1)+[-3..3] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]

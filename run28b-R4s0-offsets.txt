@@ -1,0 +1,8 @@
+L0H0 all positions, i - argmax: 0:0.15, 27:0.05, 25:0.04, 23:0.04, 29:0.04
+L0H1 all positions, i - argmax: 0:0.11, 27:0.06, 23:0.05, 25:0.05, 26:0.04
+L0H2 all positions, i - argmax: 0:0.09, 27:0.05, 25:0.05, 19:0.04, 23:0.04
+L0H3 all positions, i - argmax: 2:0.60, 31:0.04, 36:0.02, 26:0.02, 30:0.02
+L1H0 all positions, i - argmax: 25:0.05, 0:0.04, 21:0.04, 23:0.04, 11:0.04
+L1H1 all positions, i - argmax: 25:0.05, 21:0.04, 23:0.04, 8:0.03, 13:0.03
+L1H2 all positions, i - argmax: 25:0.05, 23:0.04, 21:0.04, 20:0.04, 29:0.04
+L1H3 all positions, i - argmax: 25:0.05, 23:0.05, 21:0.04, 29:0.04, 14:0.03

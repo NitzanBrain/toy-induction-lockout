@@ -1,0 +1,17 @@
+copy loss clean 0.745
+L2 attention zeroed: 2.116
+L3 attention zeroed: 2.040
+L2 and L3 attention zeroed: 4.218
+L2+L3 zeroed except L2H0: 3.708
+L2+L3 zeroed except L2H1: 3.564
+L2+L3 zeroed except L2H2: 3.479
+L2+L3 zeroed except L2H3: 4.229
+L2+L3 zeroed except L3H0: 3.653
+L2+L3 zeroed except L3H1: 3.644
+L2+L3 zeroed except L3H2: 3.685
+L2+L3 zeroed except L3H3: 3.603
+clean (sanity): copy loss 0.745
+later-layer VALUES without layer 1: copy loss 2.936
+layer 1 removed everywhere: copy loss 2.907
+values without layer 1 in layer 2 only: copy loss 1.563
+values without layer 1 in layer 3 only: copy loss 1.644

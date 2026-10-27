@@ -142,7 +142,7 @@ Every training copy starts at position 0, which makes absolute position unusuall
 - **What I infer:** these toys learned induction together with something tied to absolute positions near the start. I haven't separated "copies start where they did in training" from "positions out of the usual range for each component".
 - **Not specific to the positional circuit.** The classic model is affected too.
 
-**Training with random copy starts (added 2026-10-27, run27).** I retrained with the first segment starting at a random position o ∈ [0, 64−2s] (`RANDSTART=1`; p = 0.5, MLPs, 6,000 steps, one seed per model). In the table:
+**Training with random copy starts (added 2026-10-27, run27).** I retrained with the first segment starting at a random position o ∈ [0, 64−2s] (`RANDSTART=1`; p = 0.5, MLPs, 6,000 steps). In the table:
 - *Copy loss* is on the training script's own evaluation batch, which has random starts.
 - The offset columns use fixed starts (analyze_offset.py).
 - The control in brackets has copies starting at 0 with segments as short as at start 20 (s ≤ 22).
@@ -150,12 +150,14 @@ Every training copy starts at position 0, which makes absolute position unusuall
 | model | copy loss | circuit | copy loss at start 0 / 4 / 10 / 20 (control) |
 |---|---|---|---|
 | 2L seed 0 | 2.49 | locked: all layer-1 heads are previous-token heads | not run |
-| 4L seed 0 | 0.78 | not identified: no head puts more than 0.05 on the target | 0.73 / 0.62 / 0.72 / 1.09 (0.97) |
+| 4L seed 0 | 0.78 | two-back head L0H3 → layer 1 via K, answer computed one step early (see below) | 0.73 / 0.62 / 0.72 / 1.09 (0.97) |
 | 4L seed 1 | 0.60 | pointer arithmetic: L0H0 → all four layer-1 heads via Q | 0.53 / 0.47 / 0.62 / 0.94 (0.73) |
 | 6L seed 0 | 0.18 | classic: previous-token head L1H1 → L2H1, L2H3 via K | 0.17 / 0.18 / 0.22 / 0.26 (0.27) |
+| 4L seed 2 (added later, run29) | 0.22 | classic: L1H3 → L3H1 via K | 0.23 / 0.21 / 0.25 / 0.32 (0.35) |
+| 4L seed 3 (added later, run29) | 0.20 | classic: L1H0 → L3H1 via K | 0.17 / 0.19 / 0.22 / 0.29 (0.25) |
 
-- **Copying works across starts 0–20.** At start 20, each escaped model's loss is within 0.00–0.21 of its matched control: 6L 0.26 vs 0.27, 4L seeds 0.94 vs 0.73 and 1.09 vs 0.97. Compare run26, where the fixed-start models went from 0.085–0.231 at start 0 to 2.76–2.92 at start 20. This fits the idea that fixed-start training caused the run26 failure, though I didn't test that directly (different models, one seed each), nor starts beyond 20.
-- **The lock-out still holds, and escape came later.** 2L stays locked. Both 4-layer models were still near 2.4 at step 4,500 and fell to 0.6–0.8 by 6,000. The fixed-start 4-layer runs (same p and steps) ended at 0.025–0.082. Their loss was still falling steeply, so I can't say whether they would end higher.
+- **Copying works across starts 0–20.** At start 20, each escaped model's loss is within 0.21 of its matched control: 6L 0.26 vs 0.27, 4L seeds 0.94 vs 0.73, 1.09 vs 0.97, 0.32 vs 0.35 and 0.29 vs 0.25. Compare run26, where the fixed-start models went from 0.085–0.231 at start 0 to 2.76–2.92 at start 20. This fits the idea that fixed-start training caused the run26 failure, though I didn't test that directly (different models, one seed each), nor starts beyond 20.
+- **The lock-out still holds in 2L. In 4L, how fast models escape depends on the seed** (corrected 2026-10-27; v4.2 said escape came later). Seeds 0 and 1 were still near 2.4 at step 4,500 and ended at 0.6–0.8. Seeds 2 and 3 were already at 0.70 and 1.16 by step 1,500, and ended at 0.22 and 0.20. For comparison, the fixed-start 4-layer runs (same p and steps) ended at 0.025–0.082.
 - **The pointer-arithmetic circuit forms again (4L seed 1).** Its heads are weaker than the > 0.5 bar used above (target attention 0.39–0.46), so I lowered the threshold to 0.3. Measured on random-start data (run27e, run27f):
   - Removing L0H0 from the query stream lowers all four layer-1 heads to 0.04. Removing it from the key stream barely matters (0.38–0.45).
   - L0H0's values from position embeddings alone keep 0.39 of 0.45. From token embeddings alone they give 0.04.
@@ -163,10 +165,36 @@ Every training copy starts at position 0, which makes absolute position unusuall
   - Its attention is blurrier: 0.45 on the target, 0.13 on j0, 0.22 on j0+2.
   - Measured on start-0 data only, the results are nearly identical (run27c, run27d).
 - **Limits:**
-  - one seed per model;
-  - runs probably not converged at 6,000 steps;
+  - one seed for 2L and 6L, four for 4L;
+  - seeds 0 and 1 probably not converged at 6,000 steps;
   - single-head route ablations;
-  - 4L seed 0's copying mechanism is unknown.
+  - single-run circuit analyses.
+
+**Another mechanism: induction one step early (4L seed 0, random starts; run28; added 2026-10-27).** This model copies (0.75 on random-start data), yet no head attends to the induction target. Measured on random-start data:
+- **Layer 0:** L0H3 attends two positions back. Its mean attention at offset 2 is 0.59, and at offset 1 it is 0.01. Removing it raises copy loss by 2.07.
+- **Layer 1:** at copy position i, all four heads attend to j0+2, one past the classic target (0.75–0.90 there, 0.02–0.03 on j0+1).
+- **The link is K-composition.** Removing L0H3 from the stream feeding layer 1's keys raises copy loss from 0.745 to 2.823. Removing it from the queries gives 0.728, and from the values 0.712.
+- **The answer appears to be computed one position early.** At every copy position p, layer 1 attends to j0(p)+2. For p = i−1 that position is j0+1, whose token is the answer for position i. I measured this as an average over all copy positions, not per position.
+- **Single-position test.** I zeroed layer 1's attention output at one position in every eight and measured copy loss at the positions i whose i−lag was the zeroed one (average over the 8 phases):
+
+| zeroed position | i | i−1 | i−2 | i−3 | none |
+|---|---|---|---|---|---|
+| copy loss at i | 0.93 | **2.97** | 0.83 | 0.78 | 0.745 |
+
+  Copying at i depends almost entirely on layer 1's output at i−1.
+- **It reaches i through later attention.** I computed the layer-2/3 attention values from a stream without layer 1's output (queries and keys left clean). Copy loss is 2.94, against 2.91 with layer 1 removed everywhere. With only layer 2's values patched it is 1.56; with only layer 3's, 1.64. So both later layers share the job, and no single late head suffices (3.48–4.23 with all others zeroed). Seven of their eight heads are previous-token heads (score 0.98; L2H3 is 0.17), which is consistent with moving information one position forward. I didn't trace the path per position, though, and in the both-layers test layer 3's values also lose what layer 2 computed from layer 1.
+- **Prior work.** This is an instance of a fixed-offset head followed by K-composition. Nichani, Damian & Lee (2024, arXiv 2402.14735) describe the general form: "each token i attends to all previous tokens j whose parent token p(j) has the same value", with parent sets of the previous n−1 tokens in their n-gram example (Sec 6). Akyürek et al. (2024, arXiv 2401.12973, Sec 5.1) show composed previous-token heads matching longer contexts. I didn't find the answer-formed-one-position-early step described, but my search wasn't exhaustive.
+- **Count across the four random-start 4L seeds:**
+  - two classic (seeds 2 and 3);
+  - one pointer-arithmetic model (seed 1, found at a lowered 0.3 threshold);
+  - this one (seed 0).
+
+  Each of the two non-classic mechanisms rests on a single model.
+- **Limits:**
+  - one model for this circuit;
+  - zero-ablations, not mean-ablations;
+  - MLP0 is recomputed in the Q/K/V patching, so "removing L0H3" includes its route through MLP0;
+  - the two-back token content in the keys wasn't read out directly.
 
 **Routes in the other deep runs (run24).** Of the 8 runs with copy loss < 0.5, I surveyed 7; I didn't retrain the second escaped 3L run (seed 2, copy loss 0.30). Each was retrained with weights saved. Their copy losses match the originals within 0.004 (run24b: e.g. 4L s2 0.038 vs 0.034, 6L s0 0.021 vs 0.019). For every induction head (attention on target > 0.5) and every earlier head, I zeroed the earlier head only in the stream feeding that induction head's queries or only its keys (4L s1 is from run23b):
 - **K-route (3):** 3L s1, 4L s0 (mostly K: best single head lowers target attention to 0.41), 6L s1.
@@ -207,6 +235,7 @@ Olsson et al. 2022, "In-context Learning and Induction Heads" (transformer-circu
 
 
 ## Files
+- `analyze_qkv.py`, `analyze_late.py`, `analyze_offsets_hist.py`: the one-step-early circuit (run28).
 - `analyze_offset.py`: §4 test with copies starting later than position 0 (run26, run27b). `train.py RANDSTART=1` trains with random copy starts (run27).
 - `train.py`: the training script (env vars BIGRAM, SWITCH, P2, P_EVAL, ANNEAL, P_END, RESET_QK, HEADS, MLP, OFFSETS, SAVE). `analyze_copy*.py`, `analyze_shift.py`: the §3 mechanism analysis; `analyze_qk.py`, `analyze_route.py`, `analyze_pos.py`: the §4 path patching, route survey and position tests (all need a model saved with SAVE=...; models are not included).
 - `run*.txt`, `summary*.txt`: raw logs of every run quoted above (run17 = the §3 mechanism analysis; run24–run25c = the §4 route survey and position tests).
