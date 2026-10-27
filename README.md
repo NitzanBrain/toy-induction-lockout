@@ -100,19 +100,59 @@ Two to four seeds per depth is too few to call this a law. I also can't say exac
 | L0H1 removed from the **query** stream | 0.08 | 0.813 |
 | L0H1 removed from the **key** stream | 0.75 | 0.097 |
 
-In this model, L0H1's signal reaches the induction head through its **query**. That's the reverse of classic induction, where a previous-token head writes "my predecessor was A" into every key (K-composition). Here the query carries "this token occurred before, there". Elhage et al. (2021) distinguish Q-, K- and V-composition, so this is a known kind of composition. What I can't yet say is how the keys single out the position right after that earlier occurrence; positional embeddings are the obvious suspect, but I haven't tested that. I path-patched only this one model, so I don't know which route the other deep runs use.
+In this model, L0H1's signal reaches the induction head through its **query**. That's the reverse of classic induction, where a previous-token head writes "my predecessor was A" into every key (K-composition). Here the query carries "this token occurred before, there". In the terms of Elhage et al. (2021), who distinguish Q-, K- and V-composition, this is Q-composition: a known kind, not a new mechanism. What's new to me is seeing it form when the classic route of Olsson et al. (2022) is blocked.
 
-**What it adds.** In this toy, the lock-out of §2–§3 disappears with depth. The shortcut and a copying circuit then coexist, and at least one model reached induction through a query-side route while the late layers were held by the shortcut. That makes depth a concrete candidate for why Pythia escapes, alongside the weak-shortcut explanation in §2.
+**How the keys find the right position (added 2026-10-27, run25, run25c).** Notation: i is the query position and j a key position. The target is j = j0+1, where j0 is the earlier occurrence of the current token (x[j0] = x[i]). I rebuilt only the stream feeding L1H0's keys, or only the inputs to L0H1's values (which reach L1H0's queries), with positions or tokens edited. "Full" edits change the embeddings before layer 0, so layer 0 and MLP0 are recomputed on them. "Direct" edits change only the embedding term in the residual stream and leave layer 0 and MLP0 clean. Numbers are L1H0's attention on the target:
+
+| edit | 4L seed 1 (query route) | 3L seed 1 (classic key route, control) |
+|---|---|---|
+| none | 0.77 | 0.92 |
+| keys, full: tokens replaced by random tokens | 0.69 | 0.06 |
+| keys, direct: tokens replaced by random tokens | 0.64 | 0.88 |
+| keys, full: positions shifted by one, pos(j+1) | 0.12 (0.62 moves to j0) | 0.91 |
+| keys, direct: positions shifted by one, pos(j+1) | 0.22 (0.39 moves to j0) | 0.84 |
+| keys, direct: positions permuted | 0.10 | 0.69 |
+| keys, direct: positions removed | 0.22 | 0.82 |
+| L0H1's values from token embeddings only | 0.08 | 0.92 |
+| L0H1's values from position embeddings only | 0.70 | 0.94 |
+
+In 4L seed 1 the edits are consistent with a **positional lookup**:
+- **Query side:** with L0H1's values built from position embeddings alone, the target attention stays at 0.70. Built from token embeddings alone, it falls to 0.08. So what L0H1 passes to the query is mostly the *position* of the earlier occurrence, not its identity.
+- **Key side:** the keys depend on absolute position and little on token identity (random key tokens: 0.64–0.69). Part of that position signal comes straight from the embedding (direct edits) and part through layer 0.
+- **Offset:** the match looks like "one position after the copied one". Shifting key positions by +1 moves 0.62 of the attention one position earlier, onto j0. Shifting them by −1 moves 0.66 one position later, onto j0+2. Shifting the positions in L0H1's values does the reverse: −1 moves 0.57 onto j0, +1 moves 0.64 onto j0+2. A +2 key shift gives no clean move. I inferred the +1 from these shifts and didn't read it off the weights.
+
+The control looks different:
+- Its keys need their tokens (random tokens before layer 0: 0.06), but only as processed by layer 0 (direct edits: 0.69–0.88).
+- A uniform position shift barely matters (full 0.85–0.91, direct 0.79–0.84), which suggests its key side uses relative position.
+- Its queries don't use L0H1 at all. That's expected, since L0H1 acts on this model only through K (run24), so those two rows are null results rather than a matched comparison.
+
+Some full-edit rows also change what layer 0 itself computes. That's why the direct rows are there; in 4L seed 1 the full permutation (0.03) is not a clean test on its own, and the direct one (0.10) is. Every training copy starts at position 0, which makes absolute position unusually informative in this data. I haven't tested copies that start later.
+
+So these two models copy in different ways:
+- 3L seed 1 has the classic circuit, with content written into the keys ("my predecessor was A").
+- 4L seed 1 has no layer-0 previous-token head (all scores ≤ 0.1). Its query instead carries roughly "A occurred at position p", and its keys are matched by position.
+
+**Routes in the other deep runs (run24).** Of the 8 runs with copy loss < 0.5, I surveyed 7; I didn't retrain the second escaped 3L run (seed 2, copy loss 0.30). Each was retrained with weights saved. Their copy losses match the originals within 0.004 (run24b: e.g. 4L s2 0.038 vs 0.034, 6L s0 0.021 vs 0.019). For every induction head (attention on target > 0.5) and every earlier head, I zeroed the earlier head only in the stream feeding that induction head's queries or only its keys (4L s1 is from run23b):
+- **K-route (3):** 3L s1, 4L s0 (mostly K: best single head lowers target attention to 0.41), 6L s1.
+- **Q-route (2):** 4L s1; 4L s2 (mostly Q: best single head lowers it to 0.35).
+- **Mixed (1):** 4L s3. One layer-0 head acts via Q and one layer-1 head via K.
+- **Distributed (1):** 6L s0. No single earlier head lowers the target attention below 0.69; the strongest act via Q.
+
+So single-head ablations in at least one other model (4L s2) also point to a query route, and two more use it in part. These are ablation readings only, and they undercount distributed circuits. The position tests cover only 4L s1, because the other query-route models have layers between the two heads and analyze_pos.py handles only a layer-0 → layer-1 pair.
+
+**What it adds.** In this toy, the lock-out of §2–§3 disappears with depth. The shortcut and a copying circuit then coexist, and at least one model reached induction through a query-side route while the late layers were held by the shortcut. That makes depth a hypothesis for why Pythia escapes, alongside the weak-shortcut explanation in §2.
 
 **Limits of this section.**
 - 2–4 seeds per depth, one shortcut strength, 6,000 steps.
-- The circuit analysis is one retrained model.
+- The detailed circuit analysis (ablations, path patching, positions) is one model, with one fixed permutation and one random-token draw; the route survey uses single-head ablations only.
 - run7's 2-layer seeds used the earlier 3,000-step setting.
 
 **Reproduce:**
 - Train: `BIGRAM=0.5 MLP=1 [SAVE=model.pt] python -I train.py <layers> 6000 <seed>`
 - Ablations: `BIGRAM=0.5 python -I analyze_copy.py model.pt`
 - Path patching: `BIGRAM=0.5 python -I analyze_qk.py model.pt 1 0`
+- Routes for every induction head: `BIGRAM=0.5 python -I analyze_route.py model.pt`
+- Position tests: `BIGRAM=0.5 python -I analyze_pos.py model.pt 1 0`
 
 Without `BIGRAM`, the analysis scripts evaluate on purely random tokens. My first pass did that by mistake (run22, run23: same conclusion, copy loss 0.131).
 
@@ -127,9 +167,9 @@ An early, immediately rewarded solution can crowd out a better one that needs tw
 - Whether Pythia's escape comes from weak shortcuts, depth (§4), or both is open.
 
 ## Sources
-Olsson et al. 2022, "In-context Learning and Induction Heads" (transformer-circuits.pub); Singh et al. 2023, "The Transient Nature of Emergent In-Context Learning" (arXiv 2311.08360); Nikishin et al. 2022, "The Primacy Bias in Deep Reinforcement Learning" (arXiv 2205.07802).
+Olsson et al. 2022, "In-context Learning and Induction Heads" (transformer-circuits.pub); Elhage et al. 2021, "A Mathematical Framework for Transformer Circuits" (transformer-circuits.pub); Singh et al. 2023, "The Transient Nature of Emergent In-Context Learning" (arXiv 2311.08360); Nikishin et al. 2022, "The Primacy Bias in Deep Reinforcement Learning" (arXiv 2205.07802).
 
 
 ## Files
-- `train.py`: the training script (env vars BIGRAM, SWITCH, P2, P_EVAL, ANNEAL, P_END, RESET_QK, HEADS, MLP, OFFSETS, SAVE). `analyze_copy*.py`, `analyze_shift.py`: the §3 mechanism analysis (they need a model saved with SAVE=...; models are not included).
-- `run*.txt`, `summary*.txt`: raw logs of every run quoted above (run17 = the mechanism analysis).
+- `train.py`: the training script (env vars BIGRAM, SWITCH, P2, P_EVAL, ANNEAL, P_END, RESET_QK, HEADS, MLP, OFFSETS, SAVE). `analyze_copy*.py`, `analyze_shift.py`: the §3 mechanism analysis; `analyze_qk.py`, `analyze_route.py`, `analyze_pos.py`: the §4 path patching, route survey and position tests (all need a model saved with SAVE=...; models are not included).
+- `run*.txt`, `summary*.txt`: raw logs of every run quoted above (run17 = the §3 mechanism analysis; run24–run25c = the §4 route survey and position tests).

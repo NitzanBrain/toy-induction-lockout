@@ -1,0 +1,7 @@
+L3s1 copy loss clean 0.231
+L4s0 copy loss clean 0.032
+L4s1 copy loss clean 0.085
+L4s2 copy loss clean 0.038
+L4s3 copy loss clean 0.023
+L6s0 copy loss clean 0.021
+L6s1 copy loss clean 0.021

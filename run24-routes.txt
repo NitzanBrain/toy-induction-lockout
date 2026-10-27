@@ -1,0 +1,76 @@
+== L=3 seed 1
+induction head L1H0: clean target mass 0.92
+   remove L0H1: from Q -> 0.93 | from K -> 0.03
+   remove L0H0: from Q -> 0.93 | from K -> 0.89
+   remove L0H3: from Q -> 0.94 | from K -> 0.93
+   remove L0H2: from Q -> 0.94 | from K -> 0.93
+== L=4 seed 0
+induction head L2H3: clean target mass 0.97
+   remove L1H3: from Q -> 0.97 | from K -> 0.41
+   remove L1H2: from Q -> 0.89 | from K -> 0.81
+   remove L0H0: from Q -> 0.87 | from K -> 0.97
+   remove L1H1: from Q -> 0.94 | from K -> 0.88
+== L=4 seed 2
+induction head L3H1: clean target mass 0.96
+   remove L0H2: from Q -> 0.35 | from K -> 0.98
+   remove L1H2: from Q -> 0.69 | from K -> 0.96
+   remove L1H3: from Q -> 0.94 | from K -> 0.77
+   remove L2H1: from Q -> 0.78 | from K -> 0.95
+induction head L3H3: clean target mass 0.96
+   remove L0H2: from Q -> 0.37 | from K -> 0.98
+   remove L1H3: from Q -> 0.92 | from K -> 0.69
+   remove L1H2: from Q -> 0.77 | from K -> 0.95
+   remove L2H1: from Q -> 0.81 | from K -> 0.95
+== L=4 seed 3
+induction head L3H1: clean target mass 0.89
+   remove L1H0: from Q -> 0.86 | from K -> 0.43
+   remove L0H1: from Q -> 0.52 | from K -> 0.84
+   remove L1H1: from Q -> 0.75 | from K -> 0.88
+   remove L2H2: from Q -> 0.87 | from K -> 0.76
+induction head L3H2: clean target mass 0.98
+   remove L0H1: from Q -> 0.40 | from K -> 0.98
+   remove L1H0: from Q -> 0.96 | from K -> 0.56
+   remove L1H1: from Q -> 0.80 | from K -> 0.98
+   remove L1H3: from Q -> 0.88 | from K -> 0.97
+induction head L3H3: clean target mass 0.78
+   remove L1H0: from Q -> 0.63 | from K -> 0.13
+   remove L0H1: from Q -> 0.53 | from K -> 0.78
+   remove L2H2: from Q -> 0.75 | from K -> 0.61
+   remove L2H0: from Q -> 0.77 | from K -> 0.62
+== L=6 seed 0
+induction head L5H0: clean target mass 0.94
+   remove L2H1: from Q -> 0.73 | from K -> 0.92
+   remove L1H0: from Q -> 0.76 | from K -> 0.92
+   remove L3H1: from Q -> 0.93 | from K -> 0.88
+   remove L3H3: from Q -> 0.91 | from K -> 0.88
+induction head L5H1: clean target mass 0.96
+   remove L2H1: from Q -> 0.79 | from K -> 0.94
+   remove L1H0: from Q -> 0.80 | from K -> 0.93
+   remove L3H1: from Q -> 0.95 | from K -> 0.90
+   remove L3H3: from Q -> 0.94 | from K -> 0.91
+induction head L5H2: clean target mass 0.90
+   remove L1H0: from Q -> 0.69 | from K -> 0.88
+   remove L2H1: from Q -> 0.77 | from K -> 0.88
+   remove L4H1: from Q -> 0.90 | from K -> 0.81
+   remove L3H1: from Q -> 0.89 | from K -> 0.82
+induction head L5H3: clean target mass 0.96
+   remove L2H1: from Q -> 0.71 | from K -> 0.95
+   remove L1H0: from Q -> 0.81 | from K -> 0.95
+   remove L4H1: from Q -> 0.95 | from K -> 0.92
+   remove L3H1: from Q -> 0.95 | from K -> 0.92
+== L=6 seed 1
+induction head L4H0: clean target mass 0.92
+   remove L2H2: from Q -> 0.87 | from K -> 0.28
+   remove L3H0: from Q -> 0.93 | from K -> 0.79
+   remove L3H3: from Q -> 0.93 | from K -> 0.83
+   remove L3H2: from Q -> 0.91 | from K -> 0.84
+induction head L4H1: clean target mass 0.78
+   remove L2H2: from Q -> 0.73 | from K -> 0.29
+   remove L3H0: from Q -> 0.81 | from K -> 0.66
+   remove L3H3: from Q -> 0.80 | from K -> 0.67
+   remove L3H2: from Q -> 0.78 | from K -> 0.69
+induction head L4H2: clean target mass 0.97
+   remove L2H2: from Q -> 0.93 | from K -> 0.37
+   remove L3H0: from Q -> 0.97 | from K -> 0.90
+   remove L3H3: from Q -> 0.97 | from K -> 0.92
+   remove L2H3: from Q -> 0.92 | from K -> 0.98
