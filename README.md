@@ -129,16 +129,44 @@ The control looks different:
 - A uniform position shift barely matters (full 0.85–0.91, direct 0.79–0.84), which suggests its key side uses relative position.
 - Its queries don't use L0H1 at all. That's expected, since L0H1 acts on this model only through K (run24), so those two rows are null results rather than a matched comparison.
 
-Some full-edit rows also change what layer 0 itself computes. That's why the direct rows are there; in 4L seed 1 the full permutation (0.03) is not a clean test on its own, and the direct one (0.10) is. Every training copy starts at position 0, which makes absolute position unusually informative in this data. **Copies that start later break both models (run26; one seed each, head L1H0 in both).** I moved the start of the first segment to position o, with filler before it. That shortens the possible copies (s ≤ (64−o)/2), so I added controls at o = 0 with the same shorter lengths.
-- **Length alone isn't the cause.** At o = 0 with s ≤ 22, copy loss is 0.112 (4L seed 1) and 0.257 (3L seed 1), against 0.085 and 0.231 at full length.
-- **The start position is.** At o = 4 copy loss rises to 1.18 and 1.08. At o = 20 it reaches 2.92 and 2.76, worse than a locked 2-layer model (2.21, 2.26; run19, run21).
-- **Attention isn't the only bottleneck.** At o = 4 the induction heads still put 0.72 and 0.89 on the target, so the loss rises mainly downstream of that attention. By o = 20 the attention has fallen too (0.26 and 0.43).
-- **What I infer:** these toys learned induction together with something tied to absolute positions near the start. I haven't separated "copies start where they did in training" from "positions out of the usual range for each component".
-- **Not specific to the positional circuit.** The classic model is affected too. Training with random copy starts would likely help, but I haven't tested that.
+Some full-edit rows also change what layer 0 itself computes. That's why the direct rows are there; in 4L seed 1 the full permutation (0.03) is not a clean test on its own, and the direct one (0.10) is.
 
-So these two models copy in different ways:
+So these two models (4L seed 1 and 3L seed 1) copy in different ways:
 - 3L seed 1 has the classic circuit, with content written into the keys ("my predecessor was A").
 - 4L seed 1 has no layer-0 previous-token head (all scores ≤ 0.1). Its query instead carries roughly "A occurred at position p", and its keys are matched by position.
+
+Every training copy starts at position 0, which makes absolute position unusually informative in this data. **Copies that start later break both models (run26; one seed each, head L1H0 in both).** I moved the start of the first segment to position o, with filler before it. That shortens the possible copies (s ≤ (64−o)/2), so I added controls at o = 0 with the same shorter lengths.
+- **Length alone isn't the cause.** At o = 0 with s ≤ 22, copy loss is 0.112 (4L seed 1) and 0.257 (3L seed 1), against 0.085 and 0.231 at full length.
+- **The start position is.** At o = 4 copy loss rises to 1.18 and 1.08. At o = 20 it reaches 2.92 and 2.76. For scale, locked 2-layer models scored 2.21 and 2.26 on the standard evaluation (run19, run21; a different evaluation set). Moving the start also adds a filler prefix, and I haven't separated the two effects.
+- **Attention isn't the only bottleneck.** At o = 4, L1H0 still puts 0.72 and 0.89 on the target, but the loss has already risen; I haven't located where it breaks. By o = 20 the attention has fallen too (0.26 and 0.43).
+- **What I infer:** these toys learned induction together with something tied to absolute positions near the start. I haven't separated "copies start where they did in training" from "positions out of the usual range for each component".
+- **Not specific to the positional circuit.** The classic model is affected too.
+
+**Training with random copy starts (added 2026-10-27, run27).** I retrained with the first segment starting at a random position o ∈ [0, 64−2s] (`RANDSTART=1`; p = 0.5, MLPs, 6,000 steps, one seed per model). In the table:
+- *Copy loss* is on the training script's own evaluation batch, which has random starts.
+- The offset columns use fixed starts (analyze_offset.py).
+- The control in brackets has copies starting at 0 with segments as short as at start 20 (s ≤ 22).
+
+| model | copy loss | circuit | copy loss at start 0 / 4 / 10 / 20 (control) |
+|---|---|---|---|
+| 2L seed 0 | 2.49 | locked: all layer-1 heads are previous-token heads | not run |
+| 4L seed 0 | 0.78 | not identified: no head puts more than 0.05 on the target | 0.73 / 0.62 / 0.72 / 1.09 (0.97) |
+| 4L seed 1 | 0.60 | pointer arithmetic: L0H0 → all four layer-1 heads via Q | 0.53 / 0.47 / 0.62 / 0.94 (0.73) |
+| 6L seed 0 | 0.18 | classic: previous-token head L1H1 → L2H1, L2H3 via K | 0.17 / 0.18 / 0.22 / 0.26 (0.27) |
+
+- **Copying works across starts 0–20.** At start 20, each escaped model's loss is within 0.00–0.21 of its matched control: 6L 0.26 vs 0.27, 4L seeds 0.94 vs 0.73 and 1.09 vs 0.97. Compare run26, where the fixed-start models went from 0.085–0.231 at start 0 to 2.76–2.92 at start 20. This fits the idea that fixed-start training caused the run26 failure, though I didn't test that directly (different models, one seed each), nor starts beyond 20.
+- **The lock-out still holds, and escape came later.** 2L stays locked. Both 4-layer models were still near 2.4 at step 4,500 and fell to 0.6–0.8 by 6,000. The fixed-start 4-layer runs (same p and steps) ended at 0.025–0.082. Their loss was still falling steeply, so I can't say whether they would end higher.
+- **The pointer-arithmetic circuit forms again (4L seed 1).** Its heads are weaker than the > 0.5 bar used above (target attention 0.39–0.46), so I lowered the threshold to 0.3. Measured on random-start data (run27e, run27f):
+  - Removing L0H0 from the query stream lowers all four layer-1 heads to 0.04. Removing it from the key stream barely matters (0.38–0.45).
+  - L0H0's values from position embeddings alone keep 0.39 of 0.45. From token embeddings alone they give 0.04.
+  - Key-position shifts move the attention as in the fixed-start model: +1 puts 0.30 on j0, −1 puts 0.39 on j0+2.
+  - Its attention is blurrier: 0.45 on the target, 0.13 on j0, 0.22 on j0+2.
+  - Measured on start-0 data only, the results are nearly identical (run27c, run27d).
+- **Limits:**
+  - one seed per model;
+  - runs probably not converged at 6,000 steps;
+  - single-head route ablations;
+  - 4L seed 0's copying mechanism is unknown.
 
 **Routes in the other deep runs (run24).** Of the 8 runs with copy loss < 0.5, I surveyed 7; I didn't retrain the second escaped 3L run (seed 2, copy loss 0.30). Each was retrained with weights saved. Their copy losses match the originals within 0.004 (run24b: e.g. 4L s2 0.038 vs 0.034, 6L s0 0.021 vs 0.019). For every induction head (attention on target > 0.5) and every earlier head, I zeroed the earlier head only in the stream feeding that induction head's queries or only its keys (4L s1 is from run23b):
 - **K-route (3):** 3L s1, 4L s0 (mostly K: best single head lowers target attention to 0.41), 6L s1.
@@ -179,6 +207,6 @@ Olsson et al. 2022, "In-context Learning and Induction Heads" (transformer-circu
 
 
 ## Files
-- `analyze_offset.py`: §4 test with copies starting later than position 0 (run26).
+- `analyze_offset.py`: §4 test with copies starting later than position 0 (run26, run27b). `train.py RANDSTART=1` trains with random copy starts (run27).
 - `train.py`: the training script (env vars BIGRAM, SWITCH, P2, P_EVAL, ANNEAL, P_END, RESET_QK, HEADS, MLP, OFFSETS, SAVE). `analyze_copy*.py`, `analyze_shift.py`: the §3 mechanism analysis; `analyze_qk.py`, `analyze_route.py`, `analyze_pos.py`: the §4 path patching, route survey and position tests (all need a model saved with SAVE=...; models are not included).
 - `run*.txt`, `summary*.txt`: raw logs of every run quoted above (run17 = the §3 mechanism analysis; run24–run25c = the §4 route survey and position tests).

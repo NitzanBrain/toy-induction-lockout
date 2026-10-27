@@ -1,0 +1,21 @@
+== R4s0 (layer 1 head 0)
+copy starts at  0, s<= 32: copy loss 0.726 | L1H0 target mass 0.02
+copy starts at  0, s<= 30: copy loss 0.747 | L1H0 target mass 0.02
+copy starts at  0, s<= 22: copy loss 0.970 | L1H0 target mass 0.03
+copy starts at  4, s<= 30: copy loss 0.621 | L1H0 target mass 0.02
+copy starts at 10, s<= 27: copy loss 0.721 | L1H0 target mass 0.02
+copy starts at 20, s<= 22: copy loss 1.085 | L1H0 target mass 0.02
+== R4s1 (layer 1 head 0)
+copy starts at  0, s<= 32: copy loss 0.526 | L1H0 target mass 0.46
+copy starts at  0, s<= 30: copy loss 0.552 | L1H0 target mass 0.46
+copy starts at  0, s<= 22: copy loss 0.728 | L1H0 target mass 0.45
+copy starts at  4, s<= 30: copy loss 0.473 | L1H0 target mass 0.46
+copy starts at 10, s<= 27: copy loss 0.615 | L1H0 target mass 0.46
+copy starts at 20, s<= 22: copy loss 0.936 | L1H0 target mass 0.44
+== R6s0 (layer 2 head 1)
+copy starts at  0, s<= 32: copy loss 0.170 | L2H1 target mass 0.95
+copy starts at  0, s<= 30: copy loss 0.180 | L2H1 target mass 0.95
+copy starts at  0, s<= 22: copy loss 0.266 | L2H1 target mass 0.95
+copy starts at  4, s<= 30: copy loss 0.178 | L2H1 target mass 0.95
+copy starts at 10, s<= 27: copy loss 0.222 | L2H1 target mass 0.94
+copy starts at 20, s<= 22: copy loss 0.264 | L2H1 target mass 0.93

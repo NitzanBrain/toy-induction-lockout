@@ -29,9 +29,11 @@ if float(os.environ.get("BIGRAM", 0)):  # evaluate on the training distribution:
     NEXT = torch.randperm(64, generator=torch.Generator().manual_seed(123)); P = float(os.environ["BIGRAM"])
     for t_ in range(2, T):
         use = torch.rand(N) < P; x[use, t_] = NEXT[x[use, t_ - 2]]
-for r in range(N): s = S[r].item(); x[r, s:2 * s] = x[r, :s]
+# RANDSTART=1: copies start at a random o ∈ [0, T−2s] as in train.py RANDSTART (default o=0; RNG drawn only when set)
+O = torch.stack([torch.randint(0, T - 2 * s + 1, ()) for s in S.tolist()]) if os.environ.get("RANDSTART") == "1" else torch.zeros(N, dtype=torch.long)
+for r in range(N): s, o = S[r].item(), O[r].item(); x[r, o + s:o + 2 * s] = x[r, o:o + s]
 cm = torch.zeros(N, T, dtype=torch.bool)
-for r in range(N): s = S[r].item(); cm[r, s:2 * s - 1] = True
+for r in range(N): s, o = S[r].item(), O[r].item(); cm[r, o + s:o + 2 * s - 1] = True
 def copy_loss():
     with torch.no_grad(): lg = m(x); ce = F.cross_entropy(lg[:, :-1].transpose(1, 2), x[:, 1:], reduction="none")
     return ce[cm[:, :-1]].mean().item()
@@ -53,7 +55,7 @@ for li, l in enumerate(m.layers):
         def mass(M): return (A * (M & causal)).sum(-1)[sel].mean().item()
         offs = []
         for dd in range(-3, 4):
-            v = [A[r, i, i - (S[r].item() - 1) + dd].item() if 0 <= i - (S[r].item() - 1) + dd <= i else 0.0 for r in range(0, N, 8) for i in range(S[r].item(), 2 * S[r].item() - 1)]
+            v = [A[r, i, i - (S[r].item() - 1) + dd].item() if 0 <= i - (S[r].item() - 1) + dd <= i else 0.0 for r in range(0, N, 8) for i in range(O[r].item() + S[r].item(), O[r].item() + 2 * S[r].item() - 1)]
             offs.append(round(sum(v) / len(v), 2))
         ent = (-(A * (A + 1e-12).log()).sum(-1))[sel].mean().item()
         print(f"L{li}H{h}: mass same-token {mass(same):.2f} | x[j-1]==x[i] {mass(prevm):.2f} | x[j+1]==x[i] {mass(nextm):.2f} | self {A.diagonal(dim1=1, dim2=2)[sel].mean():.2f} | entropy {ent:.2f} | offset (s-1)+[-3..3] {offs}")

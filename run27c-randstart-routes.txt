@@ -1,0 +1,33 @@
+== R4s1
+== R6s0
+induction head L2H1: clean target mass 0.95
+   remove L1H1: from Q -> 0.88 | from K -> 0.21
+   remove L1H2: from Q -> 0.95 | from K -> 0.86
+   remove L1H0: from Q -> 0.95 | from K -> 0.94
+   remove L1H3: from Q -> 0.94 | from K -> 0.95
+induction head L2H3: clean target mass 0.93
+   remove L1H1: from Q -> 0.85 | from K -> 0.18
+   remove L1H2: from Q -> 0.93 | from K -> 0.84
+   remove L1H0: from Q -> 0.93 | from K -> 0.92
+   remove L1H3: from Q -> 0.93 | from K -> 0.92
+== R4s1 THRESH=0.3
+induction head L1H0: clean target mass 0.46
+   remove L0H0: from Q -> 0.06 | from K -> 0.44
+   remove L0H1: from Q -> 0.47 | from K -> 0.44
+   remove L0H2: from Q -> 0.46 | from K -> 0.46
+   remove L0H3: from Q -> 0.46 | from K -> 0.46
+induction head L1H1: clean target mass 0.47
+   remove L0H0: from Q -> 0.06 | from K -> 0.46
+   remove L0H1: from Q -> 0.47 | from K -> 0.45
+   remove L0H2: from Q -> 0.47 | from K -> 0.46
+   remove L0H3: from Q -> 0.47 | from K -> 0.47
+induction head L1H2: clean target mass 0.43
+   remove L0H0: from Q -> 0.05 | from K -> 0.41
+   remove L0H1: from Q -> 0.43 | from K -> 0.41
+   remove L0H2: from Q -> 0.43 | from K -> 0.42
+   remove L0H3: from Q -> 0.43 | from K -> 0.43
+induction head L1H3: clean target mass 0.40
+   remove L0H0: from Q -> 0.06 | from K -> 0.38
+   remove L0H1: from Q -> 0.40 | from K -> 0.38
+   remove L0H2: from Q -> 0.40 | from K -> 0.40
+   remove L0H3: from Q -> 0.40 | from K -> 0.40

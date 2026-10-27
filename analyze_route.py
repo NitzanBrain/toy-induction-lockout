@@ -2,7 +2,7 @@
 # an earlier layer, zero that earlier head in the residual stream that feeds ONLY the induction head's queries, or ONLY
 # its keys (everything between is recomputed), and measure the induction head's attention on its target.
 # Generalises analyze_qk.py (which did one L0 -> L1 pair). Evaluated on the training distribution if BIGRAM is set.
-# Run: <venv>/bin/python -I analyze_route.py <model.pt>
+# Run: [THRESH=0.5] <venv>/bin/python -I analyze_route.py <model.pt>
 import sys
 src = open(__file__.replace("analyze_route.py", "analyze_copy.py")).read().split("base = copy_loss()")[0]
 exec(src)
@@ -31,7 +31,7 @@ for li in range(1, NL):
     clean = stream_before(li)
     for hh in range(H):
         base = target_mass(li, hh, clean, clean)
-        if base < 0.5: continue
+        if base < float(os.environ.get("THRESH", 0.5)): continue
         print(f"induction head L{li}H{hh}: clean target mass {base:.2f}")
         rows = []
         for lj in range(li):

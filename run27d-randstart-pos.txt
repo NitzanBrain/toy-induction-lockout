@@ -1,0 +1,23 @@
+== R4s1 L0H0 -> L1H0
+L0H0 -> L1H0; columns: mass on x[j-1]==x[i] (induction target) | x[j]==x[i] | x[j-2]==x[i]
+clean                                       : x[j-1]==x[i] 0.46 | x[j]==x[i] 0.14 | x[j-2]==x[i] 0.23
+-- keys only (queries clean)
+K: positions permuted                       : x[j-1]==x[i] 0.05 | x[j]==x[i] 0.05 | x[j-2]==x[i] 0.03
+K: positions shifted pos(j-1)               : x[j-1]==x[i] 0.23 | x[j]==x[i] 0.04 | x[j-2]==x[i] 0.39
+K: positions shifted pos(j+1)               : x[j-1]==x[i] 0.27 | x[j]==x[i] 0.31 | x[j-2]==x[i] 0.07
+K: positions shifted pos(j+2)               : x[j-1]==x[i] 0.08 | x[j]==x[i] 0.17 | x[j-2]==x[i] 0.03
+K: tokens replaced by random                : x[j-1]==x[i] 0.41 | x[j]==x[i] 0.21 | x[j-2]==x[i] 0.23
+K: tokens zeroed                            : x[j-1]==x[i] 0.43 | x[j]==x[i] 0.19 | x[j-2]==x[i] 0.25
+K: positions zeroed                         : x[j-1]==x[i] 0.05 | x[j]==x[i] 0.03 | x[j-2]==x[i] 0.04
+-- keys only, DIRECT term only: edit the embedding added to the residual, layer 0 + MLP0 left clean
+K direct: positions permuted                : x[j-1]==x[i] 0.18 | x[j]==x[i] 0.12 | x[j-2]==x[i] 0.09
+K direct: positions shifted pos(j-1)        : x[j-1]==x[i] 0.33 | x[j]==x[i] 0.09 | x[j-2]==x[i] 0.32
+K direct: positions shifted pos(j+1)        : x[j-1]==x[i] 0.36 | x[j]==x[i] 0.26 | x[j-2]==x[i] 0.13
+K direct: tokens replaced by random         : x[j-1]==x[i] 0.39 | x[j]==x[i] 0.21 | x[j-2]==x[i] 0.23
+K direct: positions removed                 : x[j-1]==x[i] 0.20 | x[j]==x[i] 0.10 | x[j-2]==x[i] 0.11
+-- queries only (keys clean): inputs to L0H0's values
+Q: L0H0 values from token emb only          : x[j-1]==x[i] 0.06 | x[j]==x[i] 0.03 | x[j-2]==x[i] 0.05
+Q: L0H0 values from position emb only       : x[j-1]==x[i] 0.41 | x[j]==x[i] 0.14 | x[j-2]==x[i] 0.21
+Q: L0H0 value positions shifted pos(j-1)    : x[j-1]==x[i] 0.29 | x[j]==x[i] 0.30 | x[j-2]==x[i] 0.08
+Q: L0H0 value positions shifted pos(j+1)    : x[j-1]==x[i] 0.24 | x[j]==x[i] 0.04 | x[j-2]==x[i] 0.39
+Q: L0H0 value positions permuted            : x[j-1]==x[i] 0.07 | x[j]==x[i] 0.02 | x[j-2]==x[i] 0.05

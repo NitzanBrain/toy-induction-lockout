@@ -35,15 +35,18 @@ def batch(n=B):
         # the direct embedding→unembedding path handles it without attention).
         for t_ in range(2, T):
             use = torch.rand(n) < BIGRAM; x[use, t_] = NEXT[x[use, t_ - 2]]
+    # RANDSTART=1: the first segment starts at a random position o ∈ [0, T−2s] instead of 0 (filler before it), so absolute
+    # position no longer tells where copies are (10-27: models trained with o=0 fail when o>0, run26).
+    O = torch.stack([torch.randint(0, T - 2 * s + 1, ()) for s in S.tolist()]) if os.environ.get("RANDSTART") == "1" else torch.zeros(n, dtype=torch.long)
     for r in range(n):
-        s = S[r].item(); x[r, s:2 * s] = x[r, :s]
-    batch.S = S; return x
+        s, o = S[r].item(), O[r].item(); x[r, o + s:o + 2 * s] = x[r, o:o + s]
+    batch.S = S; batch.O = O; return x
 m = Model(); opt = torch.optim.AdamW(m.parameters(), lr=1e-3, weight_decay=0.01)
 _b = BIGRAM; BIGRAM = float(os.environ.get("P_EVAL", BIGRAM))  # eval set's shortcut strength (default: the initial p)
-evx = batch(256); evS = batch.S.clone(); BIGRAM = _b; j = torch.arange(1, T)
+evx = batch(256); evS = batch.S.clone(); evO = batch.O.clone(); BIGRAM = _b; j = torch.arange(1, T)
 cmask = torch.zeros(256, T, dtype=torch.bool); fmask = torch.zeros(256, T, dtype=torch.bool)
 for r in range(256):
-    s = evS[r].item(); cmask[r, s:2 * s - 1] = True; fmask[r, 2 * s:T - 1] = True  # positions predicting copied / filler tokens
+    s, o = evS[r].item(), evO[r].item(); cmask[r, o + s:o + 2 * s - 1] = True; fmask[r, o + 2 * s:T - 1] = True  # positions predicting copied / filler tokens
 SWITCH = int(os.environ.get("SWITCH", 0)); P2 = float(os.environ.get("P2", 0))
 ANNEAL = os.environ.get("ANNEAL") == "1"; P0 = BIGRAM; P_END = float(os.environ.get("P_END", 0))  # curriculum: change p at step SWITCH
 for step in range(STEPS + 1):
@@ -65,7 +68,7 @@ for step in range(STEPS + 1):
             ind = 0.0
             for l in m.layers:
                 for h in range(H):
-                    sc = [l.pat[r, h, torch.arange(s, 2 * s - 1), torch.arange(1, s)].mean().item() for r, s in enumerate(evS.tolist())]
+                    sc = [l.pat[r, h, torch.arange(o + s, o + 2 * s - 1), torch.arange(o + 1, o + s)].mean().item() for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist()))]
                     ind = max(ind, sum(sc) / len(sc))
         print(f"step {step:6d} train {loss.item():.3f} | loss on copies {l2:.3f} on filler {lf:.3f} | max prev-token {prev:.2f} max induction {ind:.2f}", flush=True)
 # final per-layer report: which layer holds the prev-token head, and the induction scores per layer
@@ -73,8 +76,8 @@ with torch.no_grad():
     m(evx)
     for li, l in enumerate(m.layers):
         pv = [round(l.pat[:, h][:, j, j - 1].mean().item(), 2) for h in range(H)]
-        iv = [round(sum(l.pat[r, h, torch.arange(s, 2 * s - 1), torch.arange(1, s)].mean().item() for r, s in enumerate(evS.tolist())) / len(evS), 2) for h in range(H)]
-        dv = [round(sum(l.pat[r, h, torch.arange(s, 2 * s - 1), torch.arange(0, s - 1)].mean().item() for r, s in enumerate(evS.tolist())) / len(evS), 2) for h in range(H)]
+        iv = [round(sum(l.pat[r, h, torch.arange(o + s, o + 2 * s - 1), torch.arange(o + 1, o + s)].mean().item() for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist()))) / len(evS), 2) for h in range(H)]
+        dv = [round(sum(l.pat[r, h, torch.arange(o + s, o + 2 * s - 1), torch.arange(o, o + s - 1)].mean().item() for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist()))) / len(evS), 2) for h in range(H)]
         print(f"FINAL layer {li}: prev-token per head {pv} | induction per head {iv} | same-token (offset −s) per head {dv}")
 # optional: where do heads look on copy positions? histogram of (i − argmax attention) relative to the segment length s
 if os.environ.get("OFFSETS"):
@@ -84,8 +87,8 @@ if os.environ.get("OFFSETS"):
         for li, l in enumerate(m.layers):
             for h in range(H):
                 c = collections.Counter()
-                for r, s in enumerate(evS.tolist()):
-                    for i_ in range(s + 1, 2 * s - 1):
+                for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist())):
+                    for i_ in range(o + s + 1, o + 2 * s - 1):
                         k = int(l.pat[r, h, i_].argmax()); d = i_ - k
                         c["s-1 (induction)" if d == s - 1 else "s (same token)" if d == s else "1 (prev)" if d == 1 else "0 (self)" if d == 0 else ("abs pos %d" % k if k < 3 else "s-1±2" if abs(d - (s - 1)) <= 2 else "rel %+d" % (d - s))] += 1
                 tot = sum(c.values()); print(f"OFFSETS L{li}H{h}: " + ", ".join(f"{k} {v / tot:.2f}" for k, v in c.most_common(4)))
