@@ -100,7 +100,10 @@ Two to four seeds per depth is too few to call this a law. I also can't say exac
 | L0H1 removed from the **query** stream | 0.08 | 0.813 |
 | L0H1 removed from the **key** stream | 0.75 | 0.097 |
 
-In this model, L0H1's signal reaches the induction head through its **query**. That's the reverse of classic induction, where a previous-token head writes "my predecessor was A" into every key (K-composition). Here the query carries "this token occurred before, there". In the terms of Elhage et al. (2021), who distinguish Q-, K- and V-composition, this is Q-composition: a known kind, not a new mechanism. What's new to me is seeing it form when the classic route of Olsson et al. (2022) is blocked.
+In this model, L0H1's signal reaches the induction head through its **query**. That's the reverse of classic induction, where a previous-token head writes "my predecessor was A" into every key (K-composition). Here the query carries "this token occurred before, there". In the terms of Elhage et al. (2021), who distinguish Q-, K- and V-composition, this is Q-composition. **The circuit itself is already described in Olsson et al. (2022)** (correction 2026-10-27: earlier versions of this note didn't credit it). They wrote that GPT-2 shows evidence of a second "pointer-arithmetic" mechanism for induction heads, where "the earlier attention head attends to previous copies of the current token, and its W_OV circuit copies their positional embedding into a subspace in the present token. The induction head then uses Q-composition to rotate that position embedding one token forward, and thereby attend to the following token." What this toy adds is narrower:
+- the circuit forms from scratch when the classic route is blocked by a shortcut;
+- causal tests of each side (below);
+- the finding that it breaks when copies start later than in training (run26).
 
 **How the keys find the right position (added 2026-10-27, run25, run25c).** Notation: i is the query position and j a key position. The target is j = j0+1, where j0 is the earlier occurrence of the current token (x[j0] = x[i]). I rebuilt only the stream feeding L1H0's keys, or only the inputs to L0H1's values (which reach L1H0's queries), with positions or tokens edited. "Full" edits change the embeddings before layer 0, so layer 0 and MLP0 are recomputed on them. "Direct" edits change only the embedding term in the residual stream and leave layer 0 and MLP0 clean. Numbers are L1H0's attention on the target:
 
@@ -116,7 +119,7 @@ In this model, L0H1's signal reaches the induction head through its **query**. T
 | L0H1's values from token embeddings only | 0.08 | 0.92 |
 | L0H1's values from position embeddings only | 0.70 | 0.94 |
 
-In 4L seed 1 the edits are consistent with a **positional lookup**:
+In 4L seed 1 the edits are consistent with Olsson et al.'s pointer-arithmetic description:
 - **Query side:** with L0H1's values built from position embeddings alone, the target attention stays at 0.70. Built from token embeddings alone, it falls to 0.08. So what L0H1 passes to the query is mostly the *position* of the earlier occurrence, not its identity.
 - **Key side:** the keys depend on absolute position and little on token identity (random key tokens: 0.64–0.69). Part of that position signal comes straight from the embedding (direct edits) and part through layer 0.
 - **Offset:** the match looks like "one position after the copied one". Shifting key positions by +1 moves 0.62 of the attention one position earlier, onto j0. Shifting them by −1 moves 0.66 one position later, onto j0+2. Shifting the positions in L0H1's values does the reverse: −1 moves 0.57 onto j0, +1 moves 0.64 onto j0+2. A +2 key shift gives no clean move. I inferred the +1 from these shifts and didn't read it off the weights.
