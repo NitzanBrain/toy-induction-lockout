@@ -126,7 +126,12 @@ The control looks different:
 - A uniform position shift barely matters (full 0.85–0.91, direct 0.79–0.84), which suggests its key side uses relative position.
 - Its queries don't use L0H1 at all. That's expected, since L0H1 acts on this model only through K (run24), so those two rows are null results rather than a matched comparison.
 
-Some full-edit rows also change what layer 0 itself computes. That's why the direct rows are there; in 4L seed 1 the full permutation (0.03) is not a clean test on its own, and the direct one (0.10) is. Every training copy starts at position 0, which makes absolute position unusually informative in this data. I haven't tested copies that start later.
+Some full-edit rows also change what layer 0 itself computes. That's why the direct rows are there; in 4L seed 1 the full permutation (0.03) is not a clean test on its own, and the direct one (0.10) is. Every training copy starts at position 0, which makes absolute position unusually informative in this data. **Copies that start later break both models (run26; one seed each, head L1H0 in both).** I moved the start of the first segment to position o, with filler before it. That shortens the possible copies (s ≤ (64−o)/2), so I added controls at o = 0 with the same shorter lengths.
+- **Length alone isn't the cause.** At o = 0 with s ≤ 22, copy loss is 0.112 (4L seed 1) and 0.257 (3L seed 1), against 0.085 and 0.231 at full length.
+- **The start position is.** At o = 4 copy loss rises to 1.18 and 1.08. At o = 20 it reaches 2.92 and 2.76, worse than a locked 2-layer model (2.21, 2.26; run19, run21).
+- **Attention isn't the only bottleneck.** At o = 4 the induction heads still put 0.72 and 0.89 on the target, so the loss rises mainly downstream of that attention. By o = 20 the attention has fallen too (0.26 and 0.43).
+- **What I infer:** these toys learned induction together with something tied to absolute positions near the start. I haven't separated "copies start where they did in training" from "positions out of the usual range for each component".
+- **Not specific to the positional circuit.** The classic model is affected too. Training with random copy starts would likely help, but I haven't tested that.
 
 So these two models copy in different ways:
 - 3L seed 1 has the classic circuit, with content written into the keys ("my predecessor was A").
@@ -171,5 +176,6 @@ Olsson et al. 2022, "In-context Learning and Induction Heads" (transformer-circu
 
 
 ## Files
+- `analyze_offset.py`: §4 test with copies starting later than position 0 (run26).
 - `train.py`: the training script (env vars BIGRAM, SWITCH, P2, P_EVAL, ANNEAL, P_END, RESET_QK, HEADS, MLP, OFFSETS, SAVE). `analyze_copy*.py`, `analyze_shift.py`: the §3 mechanism analysis; `analyze_qk.py`, `analyze_route.py`, `analyze_pos.py`: the §4 path patching, route survey and position tests (all need a model saved with SAVE=...; models are not included).
 - `run*.txt`, `summary*.txt`: raw logs of every run quoted above (run17 = the §3 mechanism analysis; run24–run25c = the §4 route survey and position tests).
