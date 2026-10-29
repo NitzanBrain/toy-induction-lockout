@@ -1,0 +1,13 @@
+L0H0 mean attention at offset d=0..4: [0.64, 0.01, 0.01, 0.01, 0.01]
+L1H0: mass on j0+1 (classic target) 0.02 | on j0+2 0.02
+L1H1: mass on j0+1 (classic target) 0.03 | on j0+2 0.86
+L1H2: mass on j0+1 (classic target) 0.04 | on j0+2 0.65
+L1H3: mass on j0+1 (classic target) 0.03 | on j0+2 0.85
+copy loss, L1 rebuilt clean (sanity): 0.490
+copy loss, L0H0 removed from layer-1 Q: 1.417
+copy loss, from K: 0.612
+copy loss, from V: 0.901
+copy loss, from Q, K and V: 1.746
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 0.640 | where only i-1 zeroed 3.074 | nothing zeroed: 0.490
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 0.685 | where only i-1 zeroed 3.091 | nothing zeroed: 0.490
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.635 | i-1: 3.098 | i-2: 0.494 | i-3: 0.494 | clean 0.490

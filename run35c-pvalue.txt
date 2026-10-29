@@ -1,0 +1,1 @@
+U obs (logged-rounded values) = 34.5 /40; p one-sided = 0.02097902097902098 over 1001 splits

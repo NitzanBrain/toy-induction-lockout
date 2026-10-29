@@ -1,0 +1,78 @@
+== R4s15L L0H0
+L0H0 mean attention at offset d=0..4: [0.64, 0.01, 0.01, 0.01, 0.01]
+L1H0: mass on j0+1 (classic target) 0.02 | on j0+2 0.91
+L1H1: mass on j0+1 (classic target) 0.02 | on j0+2 0.61
+L1H2: mass on j0+1 (classic target) 0.02 | on j0+2 0.93
+L1H3: mass on j0+1 (classic target) 0.02 | on j0+2 0.02
+copy loss, L1 rebuilt clean (sanity): 0.402
+copy loss, L0H0 removed from layer-1 Q: 1.258
+copy loss, from K: 0.510
+copy loss, from V: 0.647
+copy loss, from Q, K and V: 1.651
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.132 | where only i-1 zeroed 3.063 | nothing zeroed: 0.402
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.106 | where only i-1 zeroed 3.071 | nothing zeroed: 0.402
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.795 | i-1: 3.155 | i-2: 0.491 | i-3: 0.457 | clean 0.402
+-- late
+copy loss clean 0.402
+L2 attention zeroed: 2.930
+L3 attention zeroed: 0.731
+L2 and L3 attention zeroed: 4.345
+L2+L3 zeroed except L2H0: 2.895
+L2+L3 zeroed except L2H1: 3.027
+L2+L3 zeroed except L2H2: 2.781
+L2+L3 zeroed except L2H3: 3.052
+L2+L3 zeroed except L3H0: 4.255
+L2+L3 zeroed except L3H1: 3.755
+L2+L3 zeroed except L3H2: 4.020
+L2+L3 zeroed except L3H3: 3.870
+clean (sanity): copy loss 0.402
+later-layer VALUES without layer 1: copy loss 3.049
+layer 1 removed everywhere: copy loss 2.997
+values without layer 1 in layer 2 only: copy loss 2.523
+values without layer 1 in layer 3 only: copy loss 0.661
+== R4s16L L0H2
+L0H2 mean attention at offset d=0..4: [0.03, 0.02, 0.87, 0.01, 0.01]
+L1H0: mass on j0+1 (classic target) 0.02 | on j0+2 0.91
+L1H1: mass on j0+1 (classic target) 0.02 | on j0+2 0.89
+L1H2: mass on j0+1 (classic target) 0.03 | on j0+2 0.67
+L1H3: mass on j0+1 (classic target) 0.02 | on j0+2 0.98
+copy loss, L1 rebuilt clean (sanity): 0.439
+copy loss, L0H2 removed from layer-1 Q: 0.446
+copy loss, from K: 3.188
+copy loss, from V: 0.500
+copy loss, from Q, K and V: 3.232
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.031 | where only i-1 zeroed 3.101 | nothing zeroed: 0.439
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.074 | where only i-1 zeroed 3.123 | nothing zeroed: 0.439
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.690 | i-1: 3.157 | i-2: 0.530 | i-3: 0.464 | clean 0.439
+== R4s16L L0H0
+L0H0 mean attention at offset d=0..4: [0.6, 0.01, 0.01, 0.01, 0.01]
+L1H0: mass on j0+1 (classic target) 0.02 | on j0+2 0.91
+L1H1: mass on j0+1 (classic target) 0.02 | on j0+2 0.89
+L1H2: mass on j0+1 (classic target) 0.03 | on j0+2 0.67
+L1H3: mass on j0+1 (classic target) 0.02 | on j0+2 0.98
+copy loss, L1 rebuilt clean (sanity): 0.439
+copy loss, L0H0 removed from layer-1 Q: 0.498
+copy loss, from K: 0.446
+copy loss, from V: 0.421
+copy loss, from Q, K and V: 0.496
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.031 | where only i-1 zeroed 3.101 | nothing zeroed: 0.439
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.074 | where only i-1 zeroed 3.123 | nothing zeroed: 0.439
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.690 | i-1: 3.157 | i-2: 0.530 | i-3: 0.464 | clean 0.439
+-- late
+copy loss clean 0.439
+L2 attention zeroed: 2.970
+L3 attention zeroed: 0.768
+L2 and L3 attention zeroed: 4.248
+L2+L3 zeroed except L2H0: 2.883
+L2+L3 zeroed except L2H1: 3.684
+L2+L3 zeroed except L2H2: 3.748
+L2+L3 zeroed except L2H3: 3.660
+L2+L3 zeroed except L3H0: 3.945
+L2+L3 zeroed except L3H1: 3.912
+L2+L3 zeroed except L3H2: 4.005
+L2+L3 zeroed except L3H3: 3.970
+clean (sanity): copy loss 0.439
+later-layer VALUES without layer 1: copy loss 3.262
+layer 1 removed everywhere: copy loss 3.267
+values without layer 1 in layer 2 only: copy loss 2.268
+values without layer 1 in layer 3 only: copy loss 0.696

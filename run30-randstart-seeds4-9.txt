@@ -1,0 +1,95 @@
+== RANDSTART L=4 seed 4
+step   1500 train 2.887 | loss on copies 2.785 on filler 2.887 | max prev-token 0.98 max induction 0.03
+step   6000 train 2.711 | loss on copies 2.201 on filler 2.904 | max prev-token 0.98 max induction 0.07
+saved models/R4s4.pt
+-- routes
+== RANDSTART L=4 seed 5
+step   1500 train 2.829 | loss on copies 2.757 on filler 2.920 | max prev-token 0.98 max induction 0.04
+step   6000 train 2.164 | loss on copies 0.441 on filler 2.934 | max prev-token 0.98 max induction 0.79
+saved models/R4s5.pt
+-- routes
+induction head L1H0: clean target mass 0.96
+   remove L0H2: from Q -> 0.96 | from K -> 0.12
+   remove L0H1: from Q -> 0.96 | from K -> 0.93
+   remove L0H3: from Q -> 0.96 | from K -> 0.95
+   remove L0H0: from Q -> 0.96 | from K -> 0.95
+induction head L1H1: clean target mass 0.51
+   remove L0H2: from Q -> 0.52 | from K -> 0.07
+   remove L0H1: from Q -> 0.51 | from K -> 0.45
+   remove L0H0: from Q -> 0.52 | from K -> 0.50
+   remove L0H3: from Q -> 0.51 | from K -> 0.50
+induction head L1H3: clean target mass 0.92
+   remove L0H2: from Q -> 0.92 | from K -> 0.11
+   remove L0H1: from Q -> 0.92 | from K -> 0.87
+   remove L0H3: from Q -> 0.92 | from K -> 0.92
+   remove L0H0: from Q -> 0.92 | from K -> 0.92
+== RANDSTART L=4 seed 6
+step   1500 train 2.883 | loss on copies 2.803 on filler 2.891 | max prev-token 0.98 max induction 0.04
+step   6000 train 2.252 | loss on copies 0.551 on filler 2.917 | max prev-token 0.98 max induction 0.70
+saved models/R4s6.pt
+-- routes
+induction head L1H0: clean target mass 0.89
+   remove L0H1: from Q -> 0.89 | from K -> 0.05
+   remove L0H2: from Q -> 0.89 | from K -> 0.88
+   remove L0H3: from Q -> 0.89 | from K -> 0.89
+   remove L0H0: from Q -> 0.89 | from K -> 0.89
+induction head L1H1: clean target mass 0.88
+   remove L0H1: from Q -> 0.89 | from K -> 0.05
+   remove L0H2: from Q -> 0.89 | from K -> 0.88
+   remove L0H0: from Q -> 0.88 | from K -> 0.88
+   remove L0H3: from Q -> 0.89 | from K -> 0.89
+== RANDSTART L=4 seed 7
+step   1500 train 2.955 | loss on copies 2.758 on filler 2.910 | max prev-token 0.98 max induction 0.03
+step   6000 train 2.496 | loss on copies 1.187 on filler 2.938 | max prev-token 0.98 max induction 0.27
+saved models/R4s7.pt
+-- routes
+induction head L1H1: clean target mass 0.34
+   remove L0H0: from Q -> 0.04 | from K -> 0.32
+   remove L0H3: from Q -> 0.34 | from K -> 0.33
+   remove L0H2: from Q -> 0.34 | from K -> 0.34
+   remove L0H1: from Q -> 0.34 | from K -> 0.34
+induction head L1H3: clean target mass 0.32
+   remove L0H0: from Q -> 0.04 | from K -> 0.31
+   remove L0H3: from Q -> 0.32 | from K -> 0.32
+   remove L0H2: from Q -> 0.32 | from K -> 0.32
+   remove L0H1: from Q -> 0.32 | from K -> 0.32
+== RANDSTART L=4 seed 8
+step   1500 train 2.889 | loss on copies 2.760 on filler 2.920 | max prev-token 0.98 max induction 0.04
+step   6000 train 2.323 | loss on copies 0.570 on filler 2.947 | max prev-token 0.98 max induction 0.67
+saved models/R4s8.pt
+-- routes
+induction head L1H0: clean target mass 0.84
+   remove L0H3: from Q -> 0.84 | from K -> 0.08
+   remove L0H0: from Q -> 0.84 | from K -> 0.83
+   remove L0H2: from Q -> 0.84 | from K -> 0.83
+   remove L0H1: from Q -> 0.84 | from K -> 0.84
+induction head L1H1: clean target mass 0.83
+   remove L0H3: from Q -> 0.84 | from K -> 0.07
+   remove L0H2: from Q -> 0.83 | from K -> 0.82
+   remove L0H0: from Q -> 0.83 | from K -> 0.82
+   remove L0H1: from Q -> 0.83 | from K -> 0.83
+induction head L1H2: clean target mass 0.77
+   remove L0H3: from Q -> 0.78 | from K -> 0.07
+   remove L0H2: from Q -> 0.77 | from K -> 0.76
+   remove L0H0: from Q -> 0.77 | from K -> 0.76
+   remove L0H1: from Q -> 0.77 | from K -> 0.77
+== RANDSTART L=4 seed 9
+step   1500 train 2.223 | loss on copies 0.309 on filler 2.890 | max prev-token 0.98 max induction 0.87
+step   6000 train 2.084 | loss on copies 0.211 on filler 2.823 | max prev-token 0.98 max induction 0.90
+saved models/R4s9.pt
+-- routes
+induction head L3H1: clean target mass 0.92
+   remove L1H0: from Q -> 0.90 | from K -> 0.31
+   remove L1H1: from Q -> 0.92 | from K -> 0.56
+   remove L2H0: from Q -> 0.93 | from K -> 0.60
+   remove L2H2: from Q -> 0.94 | from K -> 0.70
+induction head L3H2: clean target mass 0.96
+   remove L2H3: from Q -> 0.97 | from K -> 0.89
+   remove L2H2: from Q -> 0.98 | from K -> 0.91
+   remove L1H0: from Q -> 0.98 | from K -> 0.93
+   remove L2H0: from Q -> 0.98 | from K -> 0.94
+induction head L3H3: clean target mass 0.85
+   remove L1H0: from Q -> 0.89 | from K -> 0.76
+   remove L2H3: from Q -> 0.86 | from K -> 0.77
+   remove L2H2: from Q -> 0.86 | from K -> 0.77
+   remove L2H0: from Q -> 0.88 | from K -> 0.78

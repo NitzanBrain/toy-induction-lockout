@@ -1,0 +1,104 @@
+== RANDSTART L=4 seed 7, 18000 steps
+step      0 train 4.587 | loss on copies 4.494 on filler 4.534 | max prev-token 0.06 max induction 0.03
+step   2250 train 2.863 | loss on copies 2.626 on filler 2.946 | max prev-token 0.98 max induction 0.04
+step   4500 train 2.819 | loss on copies 2.419 on filler 2.972 | max prev-token 0.98 max induction 0.05
+step   6750 train 2.173 | loss on copies 0.613 on filler 2.876 | max prev-token 0.98 max induction 0.40
+step   9000 train 2.134 | loss on copies 0.310 on filler 2.858 | max prev-token 0.98 max induction 0.52
+step  11250 train 2.060 | loss on copies 0.244 on filler 2.838 | max prev-token 0.99 max induction 0.57
+step  13500 train 2.094 | loss on copies 0.201 on filler 2.835 | max prev-token 0.99 max induction 0.57
+step  15750 train 2.046 | loss on copies 0.196 on filler 2.831 | max prev-token 0.99 max induction 0.62
+step  18000 train 2.070 | loss on copies 0.192 on filler 2.829 | max prev-token 0.99 max induction 0.65
+FINAL layer 0: prev-token per head [0.0, 0.06, 0.07, 0.07] | induction per head [0.01, 0.03, 0.03, 0.03] | same-token (offset −s) per head [0.82, 0.04, 0.04, 0.03]
+FINAL layer 1: prev-token per head [0.18, 0.05, 0.04, 0.05] | induction per head [0.02, 0.65, 0.09, 0.59] | same-token (offset −s) per head [0.01, 0.06, 0.02, 0.08]
+FINAL layer 2: prev-token per head [0.99, 0.99, 0.99, 0.55] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.01]
+FINAL layer 3: prev-token per head [0.85, 0.83, 0.9, 0.86] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s7L.pt
+-- routes
+induction head L1H1: clean target mass 0.74
+   remove L0H0: from Q -> 0.05 | from K -> 0.71
+   remove L0H3: from Q -> 0.74 | from K -> 0.72
+   remove L0H2: from Q -> 0.73 | from K -> 0.73
+   remove L0H1: from Q -> 0.74 | from K -> 0.73
+induction head L1H3: clean target mass 0.68
+   remove L0H0: from Q -> 0.05 | from K -> 0.65
+   remove L0H3: from Q -> 0.68 | from K -> 0.66
+   remove L0H2: from Q -> 0.68 | from K -> 0.67
+   remove L0H1: from Q -> 0.68 | from K -> 0.67
+== RANDSTART L=4 seed 1, 18000 steps
+step      0 train 4.576 | loss on copies 4.527 on filler 4.491 | max prev-token 0.07 max induction 0.03
+step   2250 train 2.819 | loss on copies 2.553 on filler 2.950 | max prev-token 0.98 max induction 0.04
+step   4500 train 2.838 | loss on copies 2.373 on filler 2.957 | max prev-token 0.98 max induction 0.05
+step   6750 train 2.116 | loss on copies 0.470 on filler 2.888 | max prev-token 0.98 max induction 0.41
+step   9000 train 2.238 | loss on copies 0.329 on filler 2.865 | max prev-token 0.98 max induction 0.43
+step  11250 train 2.055 | loss on copies 0.274 on filler 2.849 | max prev-token 0.98 max induction 0.49
+step  13500 train 2.177 | loss on copies 0.253 on filler 2.844 | max prev-token 0.98 max induction 0.53
+step  15750 train 2.176 | loss on copies 0.242 on filler 2.835 | max prev-token 0.98 max induction 0.56
+step  18000 train 2.104 | loss on copies 0.219 on filler 2.837 | max prev-token 0.98 max induction 0.58
+FINAL layer 0: prev-token per head [0.01, 0.07, 0.06, 0.02] | induction per head [0.01, 0.03, 0.03, 0.01] | same-token (offset −s) per head [0.8, 0.02, 0.03, 0.25]
+FINAL layer 1: prev-token per head [0.06, 0.06, 0.07, 0.05] | induction per head [0.58, 0.58, 0.47, 0.12] | same-token (offset −s) per head [0.08, 0.08, 0.12, 0.03]
+FINAL layer 2: prev-token per head [0.98, 0.34, 0.98, 0.98] | induction per head [0.0, 0.01, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.01, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.97, 0.95, 0.98, 0.97] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s1L.pt
+-- routes
+induction head L1H0: clean target mass 0.65
+   remove L0H0: from Q -> 0.05 | from K -> 0.65
+   remove L0H1: from Q -> 0.65 | from K -> 0.63
+   remove L0H2: from Q -> 0.65 | from K -> 0.65
+   remove L0H3: from Q -> 0.66 | from K -> 0.66
+induction head L1H1: clean target mass 0.64
+   remove L0H0: from Q -> 0.05 | from K -> 0.64
+   remove L0H1: from Q -> 0.64 | from K -> 0.63
+   remove L0H2: from Q -> 0.64 | from K -> 0.64
+   remove L0H3: from Q -> 0.64 | from K -> 0.65
+induction head L1H2: clean target mass 0.54
+   remove L0H0: from Q -> 0.05 | from K -> 0.53
+   remove L0H1: from Q -> 0.54 | from K -> 0.52
+   remove L0H3: from Q -> 0.53 | from K -> 0.54
+   remove L0H2: from Q -> 0.54 | from K -> 0.54
+== RANDSTART L=4 seed 4, 18000 steps
+step      0 train 4.584 | loss on copies 4.491 on filler 4.528 | max prev-token 0.07 max induction 0.03
+step   2250 train 2.845 | loss on copies 2.671 on filler 2.933 | max prev-token 0.98 max induction 0.04
+step   4500 train 2.818 | loss on copies 2.481 on filler 2.968 | max prev-token 0.98 max induction 0.04
+step   6750 train 2.340 | loss on copies 0.714 on filler 2.895 | max prev-token 0.98 max induction 0.41
+step   9000 train 2.191 | loss on copies 0.401 on filler 2.844 | max prev-token 0.98 max induction 0.37
+step  11250 train 2.161 | loss on copies 0.283 on filler 2.829 | max prev-token 0.98 max induction 0.38
+step  13500 train 2.151 | loss on copies 0.237 on filler 2.825 | max prev-token 0.98 max induction 0.41
+step  15750 train 2.027 | loss on copies 0.229 on filler 2.819 | max prev-token 0.98 max induction 0.41
+step  18000 train 2.036 | loss on copies 0.226 on filler 2.820 | max prev-token 0.98 max induction 0.41
+FINAL layer 0: prev-token per head [0.07, 0.0, 0.06, 0.06] | induction per head [0.03, 0.01, 0.03, 0.03] | same-token (offset −s) per head [0.04, 0.83, 0.04, 0.04]
+FINAL layer 1: prev-token per head [0.05, 0.11, 0.09, 0.18] | induction per head [0.41, 0.02, 0.04, 0.0] | same-token (offset −s) per head [0.12, 0.02, 0.01, 0.0]
+FINAL layer 2: prev-token per head [0.98, 0.98, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.54, 0.16, 0.64, 0.03] | induction per head [0.01, 0.01, 0.01, 0.0] | same-token (offset −s) per head [0.0, 0.01, 0.0, 0.03]
+saved models/R4s4L.pt
+-- routes
+induction head L1H0: clean target mass 0.49
+   remove L0H1: from Q -> 0.04 | from K -> 0.48
+   remove L0H3: from Q -> 0.49 | from K -> 0.48
+   remove L0H2: from Q -> 0.48 | from K -> 0.48
+   remove L0H0: from Q -> 0.49 | from K -> 0.49
+== RANDSTART L=4 seed 5, 18000 steps
+step      0 train 4.547 | loss on copies 4.485 on filler 4.500 | max prev-token 0.07 max induction 0.03
+step   2250 train 2.837 | loss on copies 2.620 on filler 2.949 | max prev-token 0.98 max induction 0.05
+step   4500 train 2.231 | loss on copies 0.626 on filler 2.969 | max prev-token 0.98 max induction 0.69
+step   6750 train 2.152 | loss on copies 0.300 on filler 2.929 | max prev-token 0.98 max induction 0.86
+step   9000 train 2.141 | loss on copies 0.180 on filler 2.866 | max prev-token 0.98 max induction 0.93
+step  11250 train 2.012 | loss on copies 0.143 on filler 2.845 | max prev-token 0.99 max induction 0.93
+step  13500 train 2.026 | loss on copies 0.164 on filler 2.826 | max prev-token 0.99 max induction 0.94
+step  15750 train 2.081 | loss on copies 0.143 on filler 2.826 | max prev-token 0.99 max induction 0.94
+step  18000 train 2.072 | loss on copies 0.123 on filler 2.821 | max prev-token 0.99 max induction 0.94
+FINAL layer 0: prev-token per head [0.02, 0.34, 0.99, 0.0] | induction per head [0.0, 0.03, 0.0, 0.01] | same-token (offset −s) per head [0.0, 0.02, 0.0, 0.72]
+FINAL layer 1: prev-token per head [0.04, 0.11, 0.98, 0.05] | induction per head [0.94, 0.02, 0.0, 0.94] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 2: prev-token per head [0.55, 0.99, 0.1, 0.98] | induction per head [0.0, 0.0, 0.02, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.01, 0.0]
+FINAL layer 3: prev-token per head [0.82, 0.94, 0.9, 0.87] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s5L.pt
+-- routes
+induction head L1H0: clean target mass 0.98
+   remove L0H2: from Q -> 0.88 | from K -> 0.33
+   remove L0H0: from Q -> 0.98 | from K -> 0.86
+   remove L0H3: from Q -> 0.95 | from K -> 0.98
+   remove L0H1: from Q -> 0.98 | from K -> 0.97
+induction head L1H3: clean target mass 0.99
+   remove L0H2: from Q -> 0.95 | from K -> 0.29
+   remove L0H0: from Q -> 0.99 | from K -> 0.92
+   remove L0H3: from Q -> 0.97 | from K -> 0.98
+   remove L0H1: from Q -> 0.98 | from K -> 0.98

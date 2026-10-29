@@ -13,7 +13,10 @@ class Attn(nn.Module):
         super().__init__(); s.qkv = nn.Linear(D, 3 * D, bias=False); s.o = nn.Linear(D, D, bias=False)
     def forward(s, x):
         b, t, _ = x.shape; q, k, v = s.qkv(x).view(b, t, 3, H, D // H).permute(2, 0, 3, 1, 4)
-        a = (q @ k.transpose(-1, -2)) / math.sqrt(D // H); a = a.masked_fill(torch.triu(torch.ones(t, t, dtype=torch.bool), 1), -1e9).softmax(-1)
+        a = (q @ k.transpose(-1, -2)) / math.sqrt(D // H); a = a.masked_fill(torch.triu(torch.ones(t, t, dtype=torch.bool), 1), -1e9)
+        if getattr(s, "maskprev", False): a = a.masked_fill(torch.diag(torch.ones(t - 1, dtype=torch.bool), -1), -1e9)  # forbid key i−1
+        if getattr(s, "biasprev", 0): a = a + s.biasprev * torch.diag(torch.ones(t - 1), -1)  # converse test: push toward key i−1
+        a = a.softmax(-1)
         s.pat = a.detach(); return s.o((a @ v).transpose(1, 2).reshape(b, t, D))
 class Model(nn.Module):
     def __init__(s):
@@ -58,7 +61,9 @@ for step in range(STEPS + 1):
             with torch.no_grad():
                 w = m.layers[-1].qkv.weight; fresh = nn.Linear(D, 3 * D, bias=False).weight; w[:2 * D] = fresh[:2 * D]
             opt = torch.optim.AdamW(m.parameters(), lr=1e-3, weight_decay=0.01); print("--- reset last-layer Q,K + optimiser", flush=True)
-    x = batch(); lg = m(x); loss = F.cross_entropy(lg[:, :-1].reshape(-1, V), x[:, 1:].reshape(-1))
+    m.layers[0].maskprev = step < int(os.environ.get("MASKPREV_L0", 0))  # causal test (run36): no prev-token attention in L0 early
+    m.layers[0].biasprev = float(os.environ.get("BIASPREV_L0", 0)) if step < int(os.environ.get("BIASPREV_STEPS", 0)) else 0  # run37: the converse
+    x = batch(); lg = m(x); loss =F.cross_entropy(lg[:, :-1].reshape(-1, V), x[:, 1:].reshape(-1))
     opt.zero_grad(); loss.backward(); opt.step()
     if step % (STEPS // 80) == 0:
         with torch.no_grad():
@@ -71,6 +76,12 @@ for step in range(STEPS + 1):
                     sc = [l.pat[r, h, torch.arange(o + s, o + 2 * s - 1), torch.arange(o + 1, o + s)].mean().item() for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist()))]
                     ind = max(ind, sum(sc) / len(sc))
         print(f"step {step:6d} train {loss.item():.3f} | loss on copies {l2:.3f} on filler {lf:.3f} | max prev-token {prev:.2f} max induction {ind:.2f}", flush=True)
+        if os.environ.get("HEADLOG"):  # per-head L0 prev-token, L0 same-token (offset −s) and L1 induction scores, to see which forms first
+            l0, l1 = m.layers[0], m.layers[1]
+            pv = [round(l0.pat[:, h][:, j, j - 1].mean().item(), 2) for h in range(H)]
+            sv = [round(sum(l0.pat[r, h, torch.arange(o + s, o + 2 * s - 1), torch.arange(o, o + s - 1)].mean().item() for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist()))) / len(evS), 2) for h in range(H)]
+            iv = [round(sum(l1.pat[r, h, torch.arange(o + s, o + 2 * s - 1), torch.arange(o + 1, o + s)].mean().item() for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist()))) / len(evS), 2) for h in range(H)]
+            print(f"  HEADS L0 prev {pv} | L0 same {sv} | L1 ind {iv}", flush=True)
 # final per-layer report: which layer holds the prev-token head, and the induction scores per layer
 with torch.no_grad():
     m(evx)
