@@ -1,0 +1,52 @@
+== R4s20L L0H2
+L1H0: mass on j0+1 (classic target) 0.02 | on j0+2 0.02
+L1H1: mass on j0+1 (classic target) 0.03 | on j0+2 0.18
+L1H2: mass on j0+1 (classic target) 0.02 | on j0+2 0.96
+L1H3: mass on j0+1 (classic target) 0.02 | on j0+2 0.87
+copy loss, L1 rebuilt clean (sanity): 0.432
+copy loss, L0H2 removed from layer-1 Q: 1.044
+copy loss, from K: 0.509
+copy loss, from V: 0.504
+copy loss, from Q, K and V: 1.136
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.194 | where only i-1 zeroed 2.990 | nothing zeroed: 0.432
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.244 | where only i-1 zeroed 3.041 | nothing zeroed: 0.432
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.766 | i-1: 3.016 | i-2: 0.482 | i-3: 0.435 | clean 0.432
+== R4s24L L0H2
+L1H0: mass on j0+1 (classic target) 0.03 | on j0+2 0.70
+L1H1: mass on j0+1 (classic target) 0.03 | on j0+2 0.87
+L1H2: mass on j0+1 (classic target) 0.02 | on j0+2 0.02
+L1H3: mass on j0+1 (classic target) 0.03 | on j0+2 0.87
+copy loss, L1 rebuilt clean (sanity): 0.433
+copy loss, L0H2 removed from layer-1 Q: 1.244
+copy loss, from K: 0.515
+copy loss, from V: 0.906
+copy loss, from Q, K and V: 1.425
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 0.575 | where only i-1 zeroed 3.266 | nothing zeroed: 0.433
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 0.606 | where only i-1 zeroed 3.275 | nothing zeroed: 0.433
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.549 | i-1: 3.274 | i-2: 0.442 | i-3: 0.433 | clean 0.433
+== R4s30L L0H1
+L1H0: mass on j0+1 (classic target) 0.03 | on j0+2 0.82
+L1H1: mass on j0+1 (classic target) 0.01 | on j0+2 0.02
+L1H2: mass on j0+1 (classic target) 0.02 | on j0+2 0.95
+L1H3: mass on j0+1 (classic target) 0.03 | on j0+2 0.86
+copy loss, L1 rebuilt clean (sanity): 0.445
+copy loss, L0H1 removed from layer-1 Q: 0.653
+copy loss, from K: 0.467
+copy loss, from V: 0.440
+copy loss, from Q, K and V: 0.707
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.325 | where only i-1 zeroed 3.095 | nothing zeroed: 0.445
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.322 | where only i-1 zeroed 3.114 | nothing zeroed: 0.445
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.988 | i-1: 3.142 | i-2: 0.533 | i-3: 0.469 | clean 0.445
+== R4s30L L0H2
+L1H0: mass on j0+1 (classic target) 0.03 | on j0+2 0.82
+L1H1: mass on j0+1 (classic target) 0.01 | on j0+2 0.02
+L1H2: mass on j0+1 (classic target) 0.02 | on j0+2 0.95
+L1H3: mass on j0+1 (classic target) 0.03 | on j0+2 0.86
+copy loss, L1 rebuilt clean (sanity): 0.445
+copy loss, L0H2 removed from layer-1 Q: 0.467
+copy loss, from K: 0.448
+copy loss, from V: 0.427
+copy loss, from Q, K and V: 0.453
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.325 | where only i-1 zeroed 3.095 | nothing zeroed: 0.445
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.322 | where only i-1 zeroed 3.114 | nothing zeroed: 0.445
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.988 | i-1: 3.142 | i-2: 0.533 | i-3: 0.469 | clean 0.445

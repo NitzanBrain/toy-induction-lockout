@@ -1,0 +1,13 @@
+run41 sealed predictions (rule: score < 0.178 -> Q), computed 2026-10-30T16:44
+s20 n_evals=34 score=0.231 predict=K
+s21 n_evals=34 score=0.176 predict=Q
+s22 n_evals=34 score=0.149 predict=Q
+s23 n_evals=34 score=0.345 predict=K
+s24 n_evals=34 score=0.193 predict=K
+s25 n_evals=34 score=0.166 predict=Q
+s26 n_evals=34 score=0.111 predict=Q
+s27 n_evals=34 score=0.357 predict=K
+s28 n_evals=34 score=0.334 predict=K
+s29 n_evals=34 score=0.171 predict=Q
+s30 n_evals=34 score=0.207 predict=K
+s31 n_evals=34 score=0.317 predict=K
