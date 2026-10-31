@@ -1,0 +1,32 @@
+== window 500 900
+prev  : AUC(one-step-early higher than classic) = 0.50  (n_early=6, n_classic=24)
+same  : AUC(one-step-early higher than classic) = 0.48  (n_early=6, n_classic=24)
+ind   : AUC(one-step-early higher than classic) = 0.79  (n_early=6, n_classic=24)
+tb    : AUC(one-step-early higher than classic) = 0.36  (n_early=6, n_classic=24)
+early : AUC(one-step-early higher than classic) = 0.74  (n_early=6, n_classic=24)
+cl    : AUC(one-step-early higher than classic) = 0.75  (n_early=6, n_classic=24)
+== window 1000 1500
+prev  : AUC(one-step-early higher than classic) = 0.53  (n_early=6, n_classic=24)
+same  : AUC(one-step-early higher than classic) = 0.46  (n_early=6, n_classic=24)
+ind   : AUC(one-step-early higher than classic) = 0.52  (n_early=6, n_classic=24)
+tb    : AUC(one-step-early higher than classic) = 0.45  (n_early=6, n_classic=24)
+early : AUC(one-step-early higher than classic) = 0.75  (n_early=6, n_classic=24)
+cl    : AUC(one-step-early higher than classic) = 0.70  (n_early=6, n_classic=24)
+== window 1500 2000
+prev  : AUC(one-step-early higher than classic) = 0.60  (n_early=6, n_classic=24)
+same  : AUC(one-step-early higher than classic) = 0.40  (n_early=6, n_classic=24)
+ind   : AUC(one-step-early higher than classic) = 0.79  (n_early=6, n_classic=24)
+tb    : AUC(one-step-early higher than classic) = 0.56  (n_early=6, n_classic=24)
+early : AUC(one-step-early higher than classic) = 0.78  (n_early=6, n_classic=24)
+cl    : AUC(one-step-early higher than classic) = 0.72  (n_early=6, n_classic=24)
+== window 2000 2500
+prev  : AUC(one-step-early higher than classic) = 0.55  (n_early=6, n_classic=24)
+same  : AUC(one-step-early higher than classic) = 0.22  (n_early=6, n_classic=24)
+ind   : AUC(one-step-early higher than classic) = 0.68  (n_early=6, n_classic=24)
+tb    : AUC(one-step-early higher than classic) = 0.72  (n_early=6, n_classic=24)
+early : AUC(one-step-early higher than classic) = 0.83  (n_early=6, n_classic=24)
+cl    : AUC(one-step-early higher than classic) = 0.69  (n_early=6, n_classic=24)
+window 500-900: AUC of max_h(L1 early - L1 classic) one-step-early>classic = 0.62; eK/eQ: {0: 0.0017, 15: 0.0014, 16: 0.0014, 20: 0.0016, 24: 0.0011, 30: 0.001} classic range -0.0003 0.0033
+window 1000-1500: AUC of max_h(L1 early - L1 classic) one-step-early>classic = 0.85; eK/eQ: {0: 0.003, 15: 0.0064, 16: 0.0053, 20: 0.0035, 24: 0.0027, 30: 0.0025} classic range 0.0006 0.0056
+window 1500-2000: AUC of max_h(L1 early - L1 classic) one-step-early>classic = 0.89; eK/eQ: {0: 0.0063, 15: 0.0121, 16: 0.0085, 20: 0.0076, 24: 0.0068, 30: 0.0069} classic range 0.0005 0.0118
+window 2000-2500: AUC of max_h(L1 early - L1 classic) one-step-early>classic = 0.90; eK/eQ: {0: 0.0122, 15: 0.0163, 16: 0.014, 20: 0.0111, 24: 0.0124, 30: 0.013} classic range 0.0007 0.0178

@@ -1,0 +1,17 @@
+run43 sealed marker scores (higher = predicted more likely one-step-early), computed 2026-10-30T21:35
+s47 n_evals=28 marker=0.00913
+s36 n_evals=28 marker=0.00746
+s32 n_evals=28 marker=0.00644
+s33 n_evals=28 marker=0.00610
+s38 n_evals=28 marker=0.00608
+s44 n_evals=28 marker=0.00586
+s46 n_evals=28 marker=0.00409
+s41 n_evals=28 marker=0.00390
+s35 n_evals=28 marker=0.00318
+s43 n_evals=28 marker=0.00302
+s40 n_evals=28 marker=0.00277
+s45 n_evals=28 marker=0.00250
+s42 n_evals=28 marker=0.00219
+s39 n_evals=28 marker=0.00154
+s34 n_evals=28 marker=0.00150
+s37 n_evals=28 marker=0.00134

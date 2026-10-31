@@ -1,0 +1,1 @@
+- NOTE (before training): the j0+3 mass is implemented as an extra column in analyze_qkv.py, not a new analyze_off3.py as PREREG-run45 says. The method is the same.

@@ -16,6 +16,7 @@ class Attn(nn.Module):
         a = (q @ k.transpose(-1, -2)) / math.sqrt(D // H); a = a.masked_fill(torch.triu(torch.ones(t, t, dtype=torch.bool), 1), -1e9)
         if getattr(s, "maskprev", False): a = a.masked_fill(torch.diag(torch.ones(t - 1, dtype=torch.bool), -1), -1e9)  # forbid key i−1
         if getattr(s, "biasprev", 0): a = a + s.biasprev * torch.diag(torch.ones(t - 1), -1)  # converse test: push toward key i−1
+        if getattr(s, "biasmat", None) is not None and s.biasmat.shape[0] == b: a = a + s.biasmat  # run44: per-sample bias toward j0+2 or j0+1 on copy positions
         a = a.softmax(-1)
         s.pat = a.detach(); return s.o((a @ v).transpose(1, 2).reshape(b, t, D))
 class Model(nn.Module):
@@ -63,7 +64,17 @@ for step in range(STEPS + 1):
             opt = torch.optim.AdamW(m.parameters(), lr=1e-3, weight_decay=0.01); print("--- reset last-layer Q,K + optimiser", flush=True)
     m.layers[0].maskprev = step < int(os.environ.get("MASKPREV_L0", 0))  # causal test (run36): no prev-token attention in L0 early
     m.layers[0].biasprev = float(os.environ.get("BIASPREV_L0", 0)) if step < int(os.environ.get("BIASPREV_STEPS", 0)) else 0  # run37: the converse
-    x = batch(); lg = m(x); loss =F.cross_entropy(lg[:, :-1].reshape(-1, V), x[:, 1:].reshape(-1))
+    x = batch()
+    if NL > 1:  # run44 causal test: BIASL1=<b> BIASL1_OFF=2 (key j0+2, one step early) or 1 (key j0+1, classic) for steps < BIASL1_STEPS
+        bl1 = float(os.environ.get("BIASL1", 0)) if step < int(os.environ.get("BIASL1_STEPS", 0)) else 0
+        if bl1:
+            off = int(os.environ.get("BIASL1_OFF", 2)); bm = torch.zeros(x.shape[0], 1, T, T)
+            for r, (s_, o_) in enumerate(zip(batch.S.tolist(), batch.O.tolist())):
+                i = torch.arange(o_ + s_, o_ + 2 * s_ - off); bm[r, 0, i, i - s_ + off] = bl1
+            m.layers[1].biasmat = bm
+        else: m.layers[1].biasmat = None
+    lg = m(x); loss =F.cross_entropy(lg[:, :-1].reshape(-1, V), x[:, 1:].reshape(-1))
+    if NL > 1: m.layers[1].biasmat = None
     opt.zero_grad(); loss.backward(); opt.step()
     if step % (STEPS // 80) == 0:
         with torch.no_grad():
@@ -82,6 +93,11 @@ for step in range(STEPS + 1):
             sv = [round(sum(l0.pat[r, h, torch.arange(o + s, o + 2 * s - 1), torch.arange(o, o + s - 1)].mean().item() for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist()))) / len(evS), 2) for h in range(H)]
             iv = [round(sum(l1.pat[r, h, torch.arange(o + s, o + 2 * s - 1), torch.arange(o + 1, o + s)].mean().item() for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist()))) / len(evS), 2) for h in range(H)]
             print(f"  HEADS L0 prev {pv} | L0 same {sv} | L1 ind {iv}", flush=True)
+            if os.environ.get("HEADLOG2"):  # run42: L0 two-back (key i−2) and L1 one-step-early (key j0+2) per head, to look for what predicts the one-step-early route
+                tb = [round(l0.pat[:, h][:, j[1:], j[1:] - 2].mean().item(), 4) for h in range(H)]
+                ev = [round(sum(l1.pat[r, h, torch.arange(o + s, o + 2 * s - 2), torch.arange(o + 2, o + s)].mean().item() for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist()))) / len(evS), 4) for h in range(H)]
+                cl = [round(sum(l1.pat[r, h, torch.arange(o + s, o + 2 * s - 1), torch.arange(o + 1, o + s)].mean().item() for r, (s, o) in enumerate(zip(evS.tolist(), evO.tolist()))) / len(evS), 4) for h in range(H)]
+                print(f"  HEADS2 L0 twoback {tb} | L1 early {ev} | L1 classic {cl}", flush=True)
 # final per-layer report: which layer holds the prev-token head, and the induction scores per layer
 with torch.no_grad():
     m(evx)

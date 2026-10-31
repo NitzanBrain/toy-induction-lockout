@@ -34,7 +34,7 @@ with torch.no_grad():
     same = (x[:, :, None] == x[:, None, :]); causal = torch.tril(torch.ones(T, T, dtype=torch.bool), -1)
     def sh(M, d): o = torch.zeros_like(M); o[:, :, d:] = M[:, :, :-d]; return o
     for hh in range(H):
-        print(f"L1H{hh}: mass on j0+1 (classic target) {(a[:, hh] * (sh(same, 1) & causal)).sum(-1)[cm].mean():.2f} | on j0+2 {(a[:, hh] * (sh(same, 2) & causal)).sum(-1)[cm].mean():.2f}")
+        print(f"L1H{hh}: mass on j0+1 (classic target) {(a[:, hh] * (sh(same, 1) & causal)).sum(-1)[cm].mean():.2f} | on j0+2 {(a[:, hh] * (sh(same, 2) & causal)).sum(-1)[cm].mean():.2f} | on j0+3 {(a[:, hh] * (sh(same, 3) & causal)).sum(-1)[cm].mean():.2f}")  # j0+3 added for run45 (control)
     print(f"copy loss, L1 rebuilt clean (sanity): {base:.3f}")
     for name, (q, k, v) in {"L0H%d removed from layer-1 Q" % H0: (qa, kc, vc), "from K": (qc, ka, vc), "from V": (qc, kc, va),
                             "from Q, K and V": (qa, ka, va)}.items():
