@@ -1,0 +1,900 @@
+== RANDSTART L=4 seed 39, 8000 steps, BIASL1=0 OFF=2 STEPS<2500
+step      0 train 4.572 | loss on copies 4.516 on filler 4.506 | max prev-token 0.06 max induction 0.03
+step    100 train 3.945 | loss on copies 4.035 on filler 4.157 | max prev-token 0.19 max induction 0.03
+step    200 train 3.205 | loss on copies 3.135 on filler 3.291 | max prev-token 0.74 max induction 0.03
+step    300 train 2.905 | loss on copies 2.927 on filler 3.079 | max prev-token 0.96 max induction 0.03
+step    400 train 2.956 | loss on copies 2.878 on filler 3.034 | max prev-token 0.97 max induction 0.03
+step    500 train 2.950 | loss on copies 2.863 on filler 3.014 | max prev-token 0.97 max induction 0.03
+step    600 train 2.921 | loss on copies 2.855 on filler 3.003 | max prev-token 0.98 max induction 0.03
+step    700 train 2.931 | loss on copies 2.847 on filler 2.994 | max prev-token 0.98 max induction 0.03
+step    800 train 2.876 | loss on copies 2.824 on filler 2.981 | max prev-token 0.98 max induction 0.03
+step    900 train 2.879 | loss on copies 2.812 on filler 2.974 | max prev-token 0.98 max induction 0.03
+step   1000 train 2.911 | loss on copies 2.817 on filler 2.983 | max prev-token 0.98 max induction 0.03
+step   1100 train 2.872 | loss on copies 2.799 on filler 2.981 | max prev-token 0.98 max induction 0.03
+step   1200 train 2.870 | loss on copies 2.789 on filler 2.976 | max prev-token 0.98 max induction 0.03
+step   1300 train 2.851 | loss on copies 2.778 on filler 2.982 | max prev-token 0.98 max induction 0.03
+step   1400 train 2.840 | loss on copies 2.759 on filler 2.979 | max prev-token 0.98 max induction 0.03
+step   1500 train 2.873 | loss on copies 2.742 on filler 2.983 | max prev-token 0.98 max induction 0.03
+step   1600 train 2.912 | loss on copies 2.728 on filler 3.002 | max prev-token 0.98 max induction 0.03
+step   1700 train 2.934 | loss on copies 2.712 on filler 2.999 | max prev-token 0.98 max induction 0.04
+step   1800 train 2.786 | loss on copies 2.691 on filler 3.000 | max prev-token 0.98 max induction 0.04
+step   1900 train 2.852 | loss on copies 2.674 on filler 3.008 | max prev-token 0.98 max induction 0.04
+step   2000 train 2.818 | loss on copies 2.659 on filler 3.011 | max prev-token 0.98 max induction 0.04
+step   2100 train 2.848 | loss on copies 2.646 on filler 3.016 | max prev-token 0.98 max induction 0.04
+step   2200 train 2.896 | loss on copies 2.631 on filler 3.017 | max prev-token 0.98 max induction 0.04
+step   2300 train 2.788 | loss on copies 2.618 on filler 3.034 | max prev-token 0.98 max induction 0.04
+step   2400 train 2.805 | loss on copies 2.602 on filler 3.036 | max prev-token 0.98 max induction 0.04
+step   2500 train 2.811 | loss on copies 2.580 on filler 3.028 | max prev-token 0.98 max induction 0.04
+step   2600 train 2.779 | loss on copies 2.579 on filler 3.044 | max prev-token 0.98 max induction 0.04
+step   2700 train 2.826 | loss on copies 2.552 on filler 3.045 | max prev-token 0.98 max induction 0.04
+step   2800 train 2.895 | loss on copies 2.542 on filler 3.048 | max prev-token 0.98 max induction 0.04
+step   2900 train 2.799 | loss on copies 2.535 on filler 3.048 | max prev-token 0.98 max induction 0.04
+step   3000 train 2.855 | loss on copies 2.526 on filler 3.059 | max prev-token 0.98 max induction 0.04
+step   3100 train 2.797 | loss on copies 2.514 on filler 3.052 | max prev-token 0.98 max induction 0.04
+step   3200 train 2.806 | loss on copies 2.520 on filler 3.050 | max prev-token 0.98 max induction 0.04
+step   3300 train 2.820 | loss on copies 2.490 on filler 3.068 | max prev-token 0.98 max induction 0.05
+step   3400 train 2.842 | loss on copies 2.480 on filler 3.063 | max prev-token 0.98 max induction 0.05
+step   3500 train 2.847 | loss on copies 2.478 on filler 3.062 | max prev-token 0.98 max induction 0.05
+step   3600 train 2.788 | loss on copies 2.462 on filler 3.077 | max prev-token 0.98 max induction 0.06
+step   3700 train 2.828 | loss on copies 2.423 on filler 3.070 | max prev-token 0.98 max induction 0.09
+step   3800 train 2.729 | loss on copies 2.257 on filler 3.097 | max prev-token 0.98 max induction 0.21
+step   3900 train 2.532 | loss on copies 1.381 on filler 3.259 | max prev-token 0.98 max induction 0.58
+step   4000 train 2.277 | loss on copies 0.995 on filler 3.243 | max prev-token 0.98 max induction 0.66
+step   4100 train 2.369 | loss on copies 0.832 on filler 3.220 | max prev-token 0.98 max induction 0.68
+step   4200 train 2.390 | loss on copies 0.783 on filler 3.136 | max prev-token 0.98 max induction 0.69
+step   4300 train 2.345 | loss on copies 0.697 on filler 3.148 | max prev-token 0.98 max induction 0.70
+step   4400 train 2.337 | loss on copies 0.692 on filler 3.092 | max prev-token 0.98 max induction 0.73
+step   4500 train 2.343 | loss on copies 0.664 on filler 3.081 | max prev-token 0.98 max induction 0.74
+step   4600 train 2.204 | loss on copies 0.648 on filler 3.071 | max prev-token 0.98 max induction 0.75
+step   4700 train 2.329 | loss on copies 0.596 on filler 3.055 | max prev-token 0.98 max induction 0.75
+step   4800 train 2.284 | loss on copies 0.608 on filler 3.042 | max prev-token 0.98 max induction 0.76
+step   4900 train 2.293 | loss on copies 0.548 on filler 3.044 | max prev-token 0.98 max induction 0.77
+step   5000 train 2.181 | loss on copies 0.546 on filler 3.026 | max prev-token 0.98 max induction 0.77
+step   5100 train 2.220 | loss on copies 0.528 on filler 3.016 | max prev-token 0.98 max induction 0.77
+step   5200 train 2.116 | loss on copies 0.518 on filler 3.021 | max prev-token 0.98 max induction 0.77
+step   5300 train 2.321 | loss on copies 0.473 on filler 3.021 | max prev-token 0.98 max induction 0.78
+step   5400 train 2.178 | loss on copies 0.470 on filler 3.013 | max prev-token 0.98 max induction 0.78
+step   5500 train 2.267 | loss on copies 0.413 on filler 3.016 | max prev-token 0.98 max induction 0.80
+step   5600 train 2.205 | loss on copies 0.393 on filler 3.010 | max prev-token 0.98 max induction 0.84
+step   5700 train 2.151 | loss on copies 0.347 on filler 3.005 | max prev-token 0.98 max induction 0.85
+step   5800 train 2.165 | loss on copies 0.328 on filler 2.995 | max prev-token 0.98 max induction 0.87
+step   5900 train 2.194 | loss on copies 0.319 on filler 2.993 | max prev-token 0.98 max induction 0.88
+step   6000 train 2.132 | loss on copies 0.296 on filler 2.987 | max prev-token 0.98 max induction 0.88
+step   6100 train 2.150 | loss on copies 0.284 on filler 2.993 | max prev-token 0.98 max induction 0.89
+step   6200 train 2.167 | loss on copies 0.286 on filler 2.984 | max prev-token 0.98 max induction 0.89
+step   6300 train 2.080 | loss on copies 0.258 on filler 2.994 | max prev-token 0.98 max induction 0.90
+step   6400 train 2.006 | loss on copies 0.264 on filler 2.992 | max prev-token 0.98 max induction 0.91
+step   6500 train 2.200 | loss on copies 0.276 on filler 2.979 | max prev-token 0.98 max induction 0.91
+step   6600 train 2.093 | loss on copies 0.278 on filler 2.978 | max prev-token 0.98 max induction 0.91
+step   6700 train 2.161 | loss on copies 0.267 on filler 2.984 | max prev-token 0.98 max induction 0.91
+step   6800 train 2.077 | loss on copies 0.244 on filler 2.981 | max prev-token 0.98 max induction 0.91
+step   6900 train 2.045 | loss on copies 0.252 on filler 2.979 | max prev-token 0.98 max induction 0.91
+step   7000 train 2.088 | loss on copies 0.244 on filler 2.979 | max prev-token 0.98 max induction 0.91
+step   7100 train 2.201 | loss on copies 0.238 on filler 2.978 | max prev-token 0.98 max induction 0.92
+step   7200 train 2.144 | loss on copies 0.236 on filler 2.974 | max prev-token 0.98 max induction 0.92
+step   7300 train 2.105 | loss on copies 0.245 on filler 2.971 | max prev-token 0.98 max induction 0.92
+step   7400 train 2.079 | loss on copies 0.235 on filler 2.971 | max prev-token 0.98 max induction 0.92
+step   7500 train 2.192 | loss on copies 0.241 on filler 2.961 | max prev-token 0.98 max induction 0.92
+step   7600 train 2.067 | loss on copies 0.248 on filler 2.955 | max prev-token 0.98 max induction 0.92
+step   7700 train 2.157 | loss on copies 0.225 on filler 2.952 | max prev-token 0.98 max induction 0.92
+step   7800 train 2.113 | loss on copies 0.238 on filler 2.958 | max prev-token 0.98 max induction 0.92
+step   7900 train 2.127 | loss on copies 0.219 on filler 2.955 | max prev-token 0.98 max induction 0.92
+step   8000 train 2.130 | loss on copies 0.234 on filler 2.958 | max prev-token 0.98 max induction 0.92
+FINAL layer 0: prev-token per head [0.01, 0.01, 0.98, 0.02] | induction per head [0.02, 0.01, 0.0, 0.01] | same-token (offset −s) per head [0.39, 0.56, 0.0, 0.0]
+FINAL layer 1: prev-token per head [0.05, 0.05, 0.06, 0.09] | induction per head [0.91, 0.92, 0.92, 0.03] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.02]
+FINAL layer 2: prev-token per head [0.98, 0.98, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.94, 0.13, 0.92, 0.95] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s39_bl1d0.pt
+-- qkv (L1 masses)
+L1H0: mass on j0+1 (classic target) 0.97 | on j0+2 0.02 | on j0+3 0.02
+L1H1: mass on j0+1 (classic target) 0.97 | on j0+2 0.02 | on j0+3 0.01
+L1H2: mass on j0+1 (classic target) 0.97 | on j0+2 0.01 | on j0+3 0.01
+L1H3: mass on j0+1 (classic target) 0.04 | on j0+2 0.05 | on j0+3 0.05
+copy loss, L1 rebuilt clean (sanity): 0.202
+copy loss, L0H0 removed from layer-1 Q: 0.210
+copy loss, from K: 0.212
+copy loss, from V: 0.294
+copy loss, from Q, K and V: 0.309
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 3.040 | where only i-1 zeroed 0.513 | nothing zeroed: 0.202
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 3.012 | where only i-1 zeroed 0.501 | nothing zeroed: 0.202
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 3.303 | i-1: 0.520 | i-2: 0.248 | i-3: 0.207 | clean 0.202
+== RANDSTART L=4 seed 45, 8000 steps, BIASL1=0 OFF=2 STEPS<2500
+step      0 train 4.595 | loss on copies 4.508 on filler 4.501 | max prev-token 0.07 max induction 0.03
+step    100 train 3.920 | loss on copies 4.011 on filler 4.155 | max prev-token 0.18 max induction 0.03
+step    200 train 3.093 | loss on copies 3.144 on filler 3.120 | max prev-token 0.90 max induction 0.03
+step    300 train 3.004 | loss on copies 2.994 on filler 2.947 | max prev-token 0.97 max induction 0.03
+step    400 train 3.001 | loss on copies 2.953 on filler 2.918 | max prev-token 0.98 max induction 0.03
+step    500 train 2.941 | loss on copies 2.936 on filler 2.905 | max prev-token 0.98 max induction 0.03
+step    600 train 3.011 | loss on copies 2.913 on filler 2.883 | max prev-token 0.98 max induction 0.03
+step    700 train 2.920 | loss on copies 2.904 on filler 2.885 | max prev-token 0.98 max induction 0.03
+step    800 train 2.967 | loss on copies 2.891 on filler 2.889 | max prev-token 0.98 max induction 0.03
+step    900 train 2.945 | loss on copies 2.885 on filler 2.879 | max prev-token 0.98 max induction 0.03
+step   1000 train 2.920 | loss on copies 2.869 on filler 2.885 | max prev-token 0.98 max induction 0.03
+step   1100 train 2.885 | loss on copies 2.850 on filler 2.882 | max prev-token 0.98 max induction 0.03
+step   1200 train 2.867 | loss on copies 2.842 on filler 2.887 | max prev-token 0.98 max induction 0.03
+step   1300 train 2.926 | loss on copies 2.822 on filler 2.882 | max prev-token 0.98 max induction 0.03
+step   1400 train 2.875 | loss on copies 2.805 on filler 2.901 | max prev-token 0.98 max induction 0.03
+step   1500 train 2.888 | loss on copies 2.788 on filler 2.895 | max prev-token 0.98 max induction 0.04
+step   1600 train 2.952 | loss on copies 2.775 on filler 2.898 | max prev-token 0.98 max induction 0.04
+step   1700 train 2.919 | loss on copies 2.761 on filler 2.906 | max prev-token 0.98 max induction 0.04
+step   1800 train 2.969 | loss on copies 2.741 on filler 2.909 | max prev-token 0.98 max induction 0.04
+step   1900 train 2.873 | loss on copies 2.725 on filler 2.923 | max prev-token 0.98 max induction 0.04
+step   2000 train 2.882 | loss on copies 2.700 on filler 2.913 | max prev-token 0.98 max induction 0.04
+step   2100 train 2.847 | loss on copies 2.693 on filler 2.919 | max prev-token 0.98 max induction 0.04
+step   2200 train 2.883 | loss on copies 2.678 on filler 2.920 | max prev-token 0.98 max induction 0.04
+step   2300 train 2.865 | loss on copies 2.664 on filler 2.927 | max prev-token 0.98 max induction 0.04
+step   2400 train 2.869 | loss on copies 2.651 on filler 2.930 | max prev-token 0.98 max induction 0.05
+step   2500 train 2.861 | loss on copies 2.635 on filler 2.935 | max prev-token 0.98 max induction 0.05
+step   2600 train 2.835 | loss on copies 2.622 on filler 2.936 | max prev-token 0.98 max induction 0.05
+step   2700 train 2.899 | loss on copies 2.608 on filler 2.947 | max prev-token 0.98 max induction 0.05
+step   2800 train 2.884 | loss on copies 2.608 on filler 2.940 | max prev-token 0.98 max induction 0.05
+step   2900 train 2.828 | loss on copies 2.595 on filler 2.951 | max prev-token 0.98 max induction 0.05
+step   3000 train 2.819 | loss on copies 2.575 on filler 2.960 | max prev-token 0.98 max induction 0.05
+step   3100 train 2.834 | loss on copies 2.575 on filler 2.955 | max prev-token 0.98 max induction 0.05
+step   3200 train 2.799 | loss on copies 2.568 on filler 2.958 | max prev-token 0.98 max induction 0.05
+step   3300 train 2.812 | loss on copies 2.559 on filler 2.950 | max prev-token 0.98 max induction 0.05
+step   3400 train 2.820 | loss on copies 2.547 on filler 2.947 | max prev-token 0.98 max induction 0.05
+step   3500 train 2.783 | loss on copies 2.533 on filler 2.963 | max prev-token 0.98 max induction 0.06
+step   3600 train 2.846 | loss on copies 2.512 on filler 2.956 | max prev-token 0.98 max induction 0.07
+step   3700 train 2.802 | loss on copies 2.459 on filler 2.974 | max prev-token 0.98 max induction 0.10
+step   3800 train 2.752 | loss on copies 2.359 on filler 2.986 | max prev-token 0.98 max induction 0.15
+step   3900 train 2.729 | loss on copies 2.041 on filler 3.021 | max prev-token 0.98 max induction 0.38
+step   4000 train 2.534 | loss on copies 1.203 on filler 3.151 | max prev-token 0.98 max induction 0.62
+step   4100 train 2.476 | loss on copies 0.947 on filler 3.068 | max prev-token 0.98 max induction 0.65
+step   4200 train 2.233 | loss on copies 0.838 on filler 3.009 | max prev-token 0.98 max induction 0.66
+step   4300 train 2.318 | loss on copies 0.808 on filler 2.952 | max prev-token 0.98 max induction 0.67
+step   4400 train 2.236 | loss on copies 0.734 on filler 2.964 | max prev-token 0.98 max induction 0.66
+step   4500 train 2.354 | loss on copies 0.696 on filler 2.947 | max prev-token 0.98 max induction 0.66
+step   4600 train 2.192 | loss on copies 0.649 on filler 2.961 | max prev-token 0.98 max induction 0.67
+step   4700 train 2.355 | loss on copies 0.667 on filler 2.945 | max prev-token 0.98 max induction 0.66
+step   4800 train 2.329 | loss on copies 0.636 on filler 2.935 | max prev-token 0.98 max induction 0.67
+step   4900 train 2.278 | loss on copies 0.618 on filler 2.922 | max prev-token 0.98 max induction 0.69
+step   5000 train 2.283 | loss on copies 0.595 on filler 2.922 | max prev-token 0.98 max induction 0.69
+step   5100 train 2.251 | loss on copies 0.555 on filler 2.930 | max prev-token 0.98 max induction 0.71
+step   5200 train 2.275 | loss on copies 0.543 on filler 2.912 | max prev-token 0.98 max induction 0.72
+step   5300 train 2.367 | loss on copies 0.522 on filler 2.932 | max prev-token 0.98 max induction 0.73
+step   5400 train 2.103 | loss on copies 0.531 on filler 2.916 | max prev-token 0.98 max induction 0.75
+step   5500 train 2.271 | loss on copies 0.502 on filler 2.921 | max prev-token 0.98 max induction 0.75
+step   5600 train 2.153 | loss on copies 0.466 on filler 2.908 | max prev-token 0.98 max induction 0.77
+step   5700 train 2.325 | loss on copies 0.458 on filler 2.913 | max prev-token 0.98 max induction 0.79
+step   5800 train 2.258 | loss on copies 0.422 on filler 2.924 | max prev-token 0.98 max induction 0.78
+step   5900 train 2.198 | loss on copies 0.428 on filler 2.914 | max prev-token 0.98 max induction 0.79
+step   6000 train 2.276 | loss on copies 0.407 on filler 2.909 | max prev-token 0.98 max induction 0.80
+step   6100 train 2.176 | loss on copies 0.373 on filler 2.905 | max prev-token 0.98 max induction 0.81
+step   6200 train 2.201 | loss on copies 0.357 on filler 2.892 | max prev-token 0.98 max induction 0.82
+step   6300 train 2.112 | loss on copies 0.302 on filler 2.911 | max prev-token 0.98 max induction 0.86
+step   6400 train 2.180 | loss on copies 0.295 on filler 2.906 | max prev-token 0.98 max induction 0.87
+step   6500 train 2.171 | loss on copies 0.302 on filler 2.885 | max prev-token 0.98 max induction 0.88
+step   6600 train 2.093 | loss on copies 0.287 on filler 2.869 | max prev-token 0.98 max induction 0.89
+step   6700 train 2.075 | loss on copies 0.275 on filler 2.888 | max prev-token 0.98 max induction 0.90
+step   6800 train 2.152 | loss on copies 0.237 on filler 2.884 | max prev-token 0.98 max induction 0.90
+step   6900 train 2.117 | loss on copies 0.241 on filler 2.871 | max prev-token 0.98 max induction 0.92
+step   7000 train 2.117 | loss on copies 0.252 on filler 2.864 | max prev-token 0.98 max induction 0.91
+step   7100 train 2.247 | loss on copies 0.238 on filler 2.864 | max prev-token 0.98 max induction 0.92
+step   7200 train 2.147 | loss on copies 0.240 on filler 2.866 | max prev-token 0.98 max induction 0.92
+step   7300 train 2.145 | loss on copies 0.240 on filler 2.861 | max prev-token 0.98 max induction 0.93
+step   7400 train 2.148 | loss on copies 0.197 on filler 2.871 | max prev-token 0.98 max induction 0.93
+step   7500 train 2.094 | loss on copies 0.209 on filler 2.867 | max prev-token 0.98 max induction 0.93
+step   7600 train 2.080 | loss on copies 0.212 on filler 2.860 | max prev-token 0.98 max induction 0.93
+step   7700 train 2.190 | loss on copies 0.223 on filler 2.856 | max prev-token 0.98 max induction 0.93
+step   7800 train 2.154 | loss on copies 0.199 on filler 2.859 | max prev-token 0.98 max induction 0.93
+step   7900 train 2.044 | loss on copies 0.198 on filler 2.866 | max prev-token 0.98 max induction 0.93
+step   8000 train 2.179 | loss on copies 0.187 on filler 2.865 | max prev-token 0.98 max induction 0.93
+FINAL layer 0: prev-token per head [0.01, 0.98, 0.02, 0.04] | induction per head [0.01, 0.0, 0.01, 0.03] | same-token (offset −s) per head [0.62, 0.0, 0.01, 0.14]
+FINAL layer 1: prev-token per head [0.08, 0.05, 0.06, 0.06] | induction per head [0.04, 0.92, 0.93, 0.89] | same-token (offset −s) per head [0.02, 0.0, 0.0, 0.0]
+FINAL layer 2: prev-token per head [0.98, 0.53, 0.98, 0.44] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.93, 0.94, 0.94, 0.94] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s45_bl1d0.pt
+-- qkv (L1 masses)
+L1H0: mass on j0+1 (classic target) 0.04 | on j0+2 0.05 | on j0+3 0.05
+L1H1: mass on j0+1 (classic target) 0.97 | on j0+2 0.02 | on j0+3 0.02
+L1H2: mass on j0+1 (classic target) 0.98 | on j0+2 0.02 | on j0+3 0.02
+L1H3: mass on j0+1 (classic target) 0.97 | on j0+2 0.02 | on j0+3 0.02
+copy loss, L1 rebuilt clean (sanity): 0.177
+copy loss, L0H0 removed from layer-1 Q: 0.207
+copy loss, from K: 0.347
+copy loss, from V: 0.276
+copy loss, from Q, K and V: 0.259
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 3.248 | where only i-1 zeroed 0.445 | nothing zeroed: 0.177
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 3.211 | where only i-1 zeroed 0.458 | nothing zeroed: 0.177
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 3.652 | i-1: 0.374 | i-2: 0.209 | i-3: 0.181 | clean 0.177
+== RANDSTART L=4 seed 40, 8000 steps, BIASL1=0 OFF=2 STEPS<2500
+step      0 train 4.530 | loss on copies 4.470 on filler 4.474 | max prev-token 0.06 max induction 0.03
+step    100 train 3.929 | loss on copies 4.017 on filler 4.186 | max prev-token 0.17 max induction 0.03
+step    200 train 3.166 | loss on copies 3.111 on filler 3.204 | max prev-token 0.90 max induction 0.03
+step    300 train 3.032 | loss on copies 2.958 on filler 3.021 | max prev-token 0.97 max induction 0.03
+step    400 train 3.012 | loss on copies 2.916 on filler 2.992 | max prev-token 0.97 max induction 0.03
+step    500 train 2.916 | loss on copies 2.894 on filler 2.965 | max prev-token 0.97 max induction 0.03
+step    600 train 2.947 | loss on copies 2.885 on filler 2.949 | max prev-token 0.97 max induction 0.03
+step    700 train 2.877 | loss on copies 2.878 on filler 2.951 | max prev-token 0.97 max induction 0.03
+step    800 train 2.862 | loss on copies 2.856 on filler 2.933 | max prev-token 0.98 max induction 0.03
+step    900 train 2.942 | loss on copies 2.854 on filler 2.933 | max prev-token 0.97 max induction 0.03
+step   1000 train 2.895 | loss on copies 2.835 on filler 2.930 | max prev-token 0.98 max induction 0.03
+step   1100 train 2.933 | loss on copies 2.824 on filler 2.939 | max prev-token 0.98 max induction 0.03
+step   1200 train 2.949 | loss on copies 2.814 on filler 2.934 | max prev-token 0.98 max induction 0.03
+step   1300 train 2.913 | loss on copies 2.797 on filler 2.933 | max prev-token 0.98 max induction 0.03
+step   1400 train 2.862 | loss on copies 2.782 on filler 2.935 | max prev-token 0.98 max induction 0.03
+step   1500 train 2.973 | loss on copies 2.765 on filler 2.944 | max prev-token 0.98 max induction 0.03
+step   1600 train 2.962 | loss on copies 2.753 on filler 2.948 | max prev-token 0.98 max induction 0.04
+step   1700 train 2.938 | loss on copies 2.728 on filler 2.957 | max prev-token 0.98 max induction 0.04
+step   1800 train 2.856 | loss on copies 2.718 on filler 2.957 | max prev-token 0.98 max induction 0.04
+step   1900 train 2.872 | loss on copies 2.709 on filler 2.969 | max prev-token 0.98 max induction 0.04
+step   2000 train 2.886 | loss on copies 2.687 on filler 2.966 | max prev-token 0.98 max induction 0.04
+step   2100 train 2.812 | loss on copies 2.668 on filler 2.972 | max prev-token 0.98 max induction 0.04
+step   2200 train 2.862 | loss on copies 2.650 on filler 2.980 | max prev-token 0.98 max induction 0.04
+step   2300 train 2.824 | loss on copies 2.642 on filler 2.979 | max prev-token 0.98 max induction 0.04
+step   2400 train 2.886 | loss on copies 2.627 on filler 2.977 | max prev-token 0.98 max induction 0.04
+step   2500 train 2.862 | loss on copies 2.607 on filler 2.994 | max prev-token 0.98 max induction 0.04
+step   2600 train 2.821 | loss on copies 2.599 on filler 2.994 | max prev-token 0.98 max induction 0.04
+step   2700 train 2.888 | loss on copies 2.592 on filler 2.999 | max prev-token 0.98 max induction 0.04
+step   2800 train 2.834 | loss on copies 2.578 on filler 3.008 | max prev-token 0.98 max induction 0.04
+step   2900 train 2.821 | loss on copies 2.562 on filler 3.012 | max prev-token 0.98 max induction 0.04
+step   3000 train 2.837 | loss on copies 2.556 on filler 3.010 | max prev-token 0.98 max induction 0.04
+step   3100 train 2.798 | loss on copies 2.561 on filler 3.009 | max prev-token 0.98 max induction 0.04
+step   3200 train 2.868 | loss on copies 2.547 on filler 3.012 | max prev-token 0.98 max induction 0.04
+step   3300 train 2.860 | loss on copies 2.524 on filler 3.027 | max prev-token 0.98 max induction 0.04
+step   3400 train 2.789 | loss on copies 2.518 on filler 3.018 | max prev-token 0.98 max induction 0.04
+step   3500 train 2.837 | loss on copies 2.514 on filler 3.027 | max prev-token 0.98 max induction 0.04
+step   3600 train 2.809 | loss on copies 2.509 on filler 3.021 | max prev-token 0.98 max induction 0.04
+step   3700 train 2.802 | loss on copies 2.507 on filler 3.025 | max prev-token 0.98 max induction 0.04
+step   3800 train 2.817 | loss on copies 2.498 on filler 3.024 | max prev-token 0.98 max induction 0.04
+step   3900 train 2.785 | loss on copies 2.492 on filler 3.021 | max prev-token 0.98 max induction 0.04
+step   4000 train 2.830 | loss on copies 2.486 on filler 3.022 | max prev-token 0.98 max induction 0.04
+step   4100 train 2.764 | loss on copies 2.469 on filler 3.017 | max prev-token 0.98 max induction 0.05
+step   4200 train 2.828 | loss on copies 2.456 on filler 3.022 | max prev-token 0.98 max induction 0.05
+step   4300 train 2.791 | loss on copies 2.368 on filler 3.039 | max prev-token 0.98 max induction 0.07
+step   4400 train 2.841 | loss on copies 2.126 on filler 3.040 | max prev-token 0.98 max induction 0.12
+step   4500 train 2.628 | loss on copies 1.725 on filler 3.057 | max prev-token 0.98 max induction 0.18
+step   4600 train 2.445 | loss on copies 1.336 on filler 3.059 | max prev-token 0.98 max induction 0.24
+step   4700 train 2.366 | loss on copies 1.096 on filler 3.048 | max prev-token 0.98 max induction 0.28
+step   4800 train 2.354 | loss on copies 0.967 on filler 3.018 | max prev-token 0.98 max induction 0.31
+step   4900 train 2.349 | loss on copies 0.879 on filler 3.007 | max prev-token 0.98 max induction 0.33
+step   5000 train 2.336 | loss on copies 0.819 on filler 2.987 | max prev-token 0.98 max induction 0.34
+step   5100 train 2.378 | loss on copies 0.784 on filler 2.966 | max prev-token 0.98 max induction 0.34
+step   5200 train 2.293 | loss on copies 0.752 on filler 2.961 | max prev-token 0.98 max induction 0.35
+step   5300 train 2.230 | loss on copies 0.713 on filler 2.953 | max prev-token 0.98 max induction 0.35
+step   5400 train 2.289 | loss on copies 0.683 on filler 2.954 | max prev-token 0.98 max induction 0.36
+step   5500 train 2.316 | loss on copies 0.669 on filler 2.940 | max prev-token 0.98 max induction 0.37
+step   5600 train 2.312 | loss on copies 0.630 on filler 2.948 | max prev-token 0.98 max induction 0.36
+step   5700 train 2.196 | loss on copies 0.633 on filler 2.934 | max prev-token 0.98 max induction 0.37
+step   5800 train 2.325 | loss on copies 0.582 on filler 2.940 | max prev-token 0.98 max induction 0.39
+step   5900 train 2.234 | loss on copies 0.599 on filler 2.928 | max prev-token 0.98 max induction 0.39
+step   6000 train 2.243 | loss on copies 0.571 on filler 2.933 | max prev-token 0.98 max induction 0.41
+step   6100 train 2.169 | loss on copies 0.554 on filler 2.939 | max prev-token 0.98 max induction 0.41
+step   6200 train 2.194 | loss on copies 0.528 on filler 2.931 | max prev-token 0.98 max induction 0.42
+step   6300 train 2.082 | loss on copies 0.524 on filler 2.920 | max prev-token 0.98 max induction 0.42
+step   6400 train 2.184 | loss on copies 0.498 on filler 2.926 | max prev-token 0.98 max induction 0.43
+step   6500 train 2.182 | loss on copies 0.475 on filler 2.926 | max prev-token 0.98 max induction 0.44
+step   6600 train 2.191 | loss on copies 0.499 on filler 2.916 | max prev-token 0.98 max induction 0.45
+step   6700 train 2.210 | loss on copies 0.478 on filler 2.914 | max prev-token 0.98 max induction 0.46
+step   6800 train 2.257 | loss on copies 0.449 on filler 2.929 | max prev-token 0.98 max induction 0.45
+step   6900 train 2.234 | loss on copies 0.428 on filler 2.923 | max prev-token 0.98 max induction 0.46
+step   7000 train 2.161 | loss on copies 0.434 on filler 2.917 | max prev-token 0.98 max induction 0.46
+step   7100 train 2.218 | loss on copies 0.428 on filler 2.912 | max prev-token 0.98 max induction 0.47
+step   7200 train 2.149 | loss on copies 0.405 on filler 2.911 | max prev-token 0.98 max induction 0.48
+step   7300 train 2.127 | loss on copies 0.418 on filler 2.909 | max prev-token 0.98 max induction 0.48
+step   7400 train 2.187 | loss on copies 0.398 on filler 2.911 | max prev-token 0.98 max induction 0.49
+step   7500 train 2.124 | loss on copies 0.387 on filler 2.915 | max prev-token 0.98 max induction 0.49
+step   7600 train 2.222 | loss on copies 0.399 on filler 2.909 | max prev-token 0.98 max induction 0.50
+step   7700 train 2.113 | loss on copies 0.371 on filler 2.921 | max prev-token 0.98 max induction 0.51
+step   7800 train 2.126 | loss on copies 0.368 on filler 2.914 | max prev-token 0.98 max induction 0.51
+step   7900 train 2.052 | loss on copies 0.383 on filler 2.911 | max prev-token 0.98 max induction 0.51
+step   8000 train 2.159 | loss on copies 0.369 on filler 2.910 | max prev-token 0.98 max induction 0.51
+FINAL layer 0: prev-token per head [0.1, 0.01, 0.07, 0.04] | induction per head [0.03, 0.01, 0.03, 0.03] | same-token (offset −s) per head [0.03, 0.78, 0.04, 0.07]
+FINAL layer 1: prev-token per head [0.07, 0.07, 0.06, 0.07] | induction per head [0.51, 0.49, 0.14, 0.27] | same-token (offset −s) per head [0.11, 0.12, 0.03, 0.07]
+FINAL layer 2: prev-token per head [0.98, 0.5, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.97, 0.97, 0.97, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s40_bl1d0.pt
+-- qkv (L1 masses)
+L1H0: mass on j0+1 (classic target) 0.60 | on j0+2 0.11 | on j0+3 0.03
+L1H1: mass on j0+1 (classic target) 0.58 | on j0+2 0.12 | on j0+3 0.04
+L1H2: mass on j0+1 (classic target) 0.18 | on j0+2 0.53 | on j0+3 0.15
+L1H3: mass on j0+1 (classic target) 0.33 | on j0+2 0.36 | on j0+3 0.09
+copy loss, L1 rebuilt clean (sanity): 0.322
+copy loss, L0H0 removed from layer-1 Q: 0.341
+copy loss, from K: 0.335
+copy loss, from V: 0.401
+copy loss, from Q, K and V: 0.420
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.128 | where only i-1 zeroed 0.974 | nothing zeroed: 0.322
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.165 | where only i-1 zeroed 0.967 | nothing zeroed: 0.322
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 1.033 | i-1: 0.911 | i-2: 0.361 | i-3: 0.345 | clean 0.322
+== RANDSTART L=4 seed 39, 8000 steps, BIASL1=0.1 OFF=2 STEPS<2500
+step      0 train 4.572 | loss on copies 4.516 on filler 4.506 | max prev-token 0.06 max induction 0.03
+step    100 train 3.945 | loss on copies 4.035 on filler 4.157 | max prev-token 0.19 max induction 0.03
+step    200 train 3.204 | loss on copies 3.134 on filler 3.291 | max prev-token 0.75 max induction 0.03
+step    300 train 2.905 | loss on copies 2.927 on filler 3.078 | max prev-token 0.96 max induction 0.03
+step    400 train 2.956 | loss on copies 2.878 on filler 3.034 | max prev-token 0.97 max induction 0.03
+step    500 train 2.950 | loss on copies 2.863 on filler 3.014 | max prev-token 0.97 max induction 0.03
+step    600 train 2.921 | loss on copies 2.854 on filler 3.003 | max prev-token 0.98 max induction 0.03
+step    700 train 2.930 | loss on copies 2.846 on filler 2.994 | max prev-token 0.98 max induction 0.03
+step    800 train 2.876 | loss on copies 2.823 on filler 2.981 | max prev-token 0.98 max induction 0.03
+step    900 train 2.879 | loss on copies 2.811 on filler 2.974 | max prev-token 0.98 max induction 0.03
+step   1000 train 2.910 | loss on copies 2.816 on filler 2.984 | max prev-token 0.98 max induction 0.03
+step   1100 train 2.872 | loss on copies 2.797 on filler 2.981 | max prev-token 0.98 max induction 0.03
+step   1200 train 2.869 | loss on copies 2.787 on filler 2.978 | max prev-token 0.98 max induction 0.03
+step   1300 train 2.851 | loss on copies 2.776 on filler 2.984 | max prev-token 0.98 max induction 0.03
+step   1400 train 2.839 | loss on copies 2.756 on filler 2.981 | max prev-token 0.98 max induction 0.03
+step   1500 train 2.872 | loss on copies 2.739 on filler 2.986 | max prev-token 0.98 max induction 0.03
+step   1600 train 2.911 | loss on copies 2.725 on filler 3.005 | max prev-token 0.98 max induction 0.03
+step   1700 train 2.933 | loss on copies 2.708 on filler 3.003 | max prev-token 0.98 max induction 0.04
+step   1800 train 2.786 | loss on copies 2.685 on filler 3.005 | max prev-token 0.98 max induction 0.04
+step   1900 train 2.849 | loss on copies 2.667 on filler 3.014 | max prev-token 0.98 max induction 0.04
+step   2000 train 2.813 | loss on copies 2.650 on filler 3.016 | max prev-token 0.98 max induction 0.04
+step   2100 train 2.845 | loss on copies 2.635 on filler 3.020 | max prev-token 0.98 max induction 0.04
+step   2200 train 2.894 | loss on copies 2.621 on filler 3.023 | max prev-token 0.98 max induction 0.04
+step   2300 train 2.785 | loss on copies 2.606 on filler 3.040 | max prev-token 0.98 max induction 0.04
+step   2400 train 2.800 | loss on copies 2.590 on filler 3.042 | max prev-token 0.98 max induction 0.04
+step   2500 train 2.810 | loss on copies 2.572 on filler 3.030 | max prev-token 0.98 max induction 0.04
+step   2600 train 2.777 | loss on copies 2.569 on filler 3.048 | max prev-token 0.98 max induction 0.04
+step   2700 train 2.825 | loss on copies 2.542 on filler 3.048 | max prev-token 0.98 max induction 0.04
+step   2800 train 2.891 | loss on copies 2.535 on filler 3.051 | max prev-token 0.98 max induction 0.04
+step   2900 train 2.798 | loss on copies 2.526 on filler 3.052 | max prev-token 0.98 max induction 0.04
+step   3000 train 2.853 | loss on copies 2.521 on filler 3.058 | max prev-token 0.98 max induction 0.04
+step   3100 train 2.795 | loss on copies 2.508 on filler 3.049 | max prev-token 0.98 max induction 0.04
+step   3200 train 2.805 | loss on copies 2.513 on filler 3.052 | max prev-token 0.98 max induction 0.04
+step   3300 train 2.819 | loss on copies 2.484 on filler 3.069 | max prev-token 0.98 max induction 0.05
+step   3400 train 2.839 | loss on copies 2.476 on filler 3.064 | max prev-token 0.98 max induction 0.05
+step   3500 train 2.842 | loss on copies 2.464 on filler 3.064 | max prev-token 0.98 max induction 0.05
+step   3600 train 2.786 | loss on copies 2.441 on filler 3.082 | max prev-token 0.98 max induction 0.06
+step   3700 train 2.820 | loss on copies 2.394 on filler 3.072 | max prev-token 0.98 max induction 0.07
+step   3800 train 2.746 | loss on copies 2.297 on filler 3.093 | max prev-token 0.98 max induction 0.08
+step   3900 train 2.658 | loss on copies 1.966 on filler 3.173 | max prev-token 0.98 max induction 0.05
+step   4000 train 2.406 | loss on copies 1.442 on filler 3.234 | max prev-token 0.98 max induction 0.04
+step   4100 train 2.479 | loss on copies 1.119 on filler 3.229 | max prev-token 0.98 max induction 0.04
+step   4200 train 2.445 | loss on copies 1.052 on filler 3.126 | max prev-token 0.98 max induction 0.04
+step   4300 train 2.384 | loss on copies 0.912 on filler 3.112 | max prev-token 0.98 max induction 0.04
+step   4400 train 2.363 | loss on copies 0.869 on filler 3.045 | max prev-token 0.98 max induction 0.04
+step   4500 train 2.367 | loss on copies 0.820 on filler 3.031 | max prev-token 0.98 max induction 0.04
+step   4600 train 2.250 | loss on copies 0.815 on filler 3.006 | max prev-token 0.98 max induction 0.04
+step   4700 train 2.337 | loss on copies 0.753 on filler 3.013 | max prev-token 0.98 max induction 0.04
+step   4800 train 2.312 | loss on copies 0.749 on filler 3.003 | max prev-token 0.98 max induction 0.04
+step   4900 train 2.309 | loss on copies 0.723 on filler 3.003 | max prev-token 0.98 max induction 0.04
+step   5000 train 2.199 | loss on copies 0.705 on filler 2.993 | max prev-token 0.98 max induction 0.04
+step   5100 train 2.255 | loss on copies 0.694 on filler 2.988 | max prev-token 0.98 max induction 0.04
+step   5200 train 2.142 | loss on copies 0.677 on filler 2.996 | max prev-token 0.98 max induction 0.04
+step   5300 train 2.344 | loss on copies 0.671 on filler 2.995 | max prev-token 0.98 max induction 0.04
+step   5400 train 2.211 | loss on copies 0.662 on filler 2.988 | max prev-token 0.98 max induction 0.04
+step   5500 train 2.316 | loss on copies 0.683 on filler 2.984 | max prev-token 0.98 max induction 0.04
+step   5600 train 2.276 | loss on copies 0.634 on filler 2.985 | max prev-token 0.98 max induction 0.04
+step   5700 train 2.218 | loss on copies 0.637 on filler 2.982 | max prev-token 0.98 max induction 0.04
+step   5800 train 2.227 | loss on copies 0.621 on filler 2.975 | max prev-token 0.98 max induction 0.04
+step   5900 train 2.273 | loss on copies 0.653 on filler 2.967 | max prev-token 0.98 max induction 0.04
+step   6000 train 2.194 | loss on copies 0.619 on filler 2.974 | max prev-token 0.98 max induction 0.04
+step   6100 train 2.244 | loss on copies 0.616 on filler 2.976 | max prev-token 0.98 max induction 0.04
+step   6200 train 2.231 | loss on copies 0.616 on filler 2.968 | max prev-token 0.98 max induction 0.04
+step   6300 train 2.168 | loss on copies 0.627 on filler 2.965 | max prev-token 0.98 max induction 0.04
+step   6400 train 2.082 | loss on copies 0.622 on filler 2.973 | max prev-token 0.98 max induction 0.04
+step   6500 train 2.289 | loss on copies 0.707 on filler 2.956 | max prev-token 0.98 max induction 0.04
+step   6600 train 2.187 | loss on copies 0.597 on filler 2.976 | max prev-token 0.98 max induction 0.04
+step   6700 train 2.256 | loss on copies 0.593 on filler 2.979 | max prev-token 0.98 max induction 0.04
+step   6800 train 2.147 | loss on copies 0.602 on filler 2.966 | max prev-token 0.98 max induction 0.04
+step   6900 train 2.122 | loss on copies 0.600 on filler 2.972 | max prev-token 0.98 max induction 0.04
+step   7000 train 2.183 | loss on copies 0.591 on filler 2.981 | max prev-token 0.98 max induction 0.04
+step   7100 train 2.293 | loss on copies 0.572 on filler 2.973 | max prev-token 0.98 max induction 0.04
+step   7200 train 2.222 | loss on copies 0.567 on filler 2.965 | max prev-token 0.98 max induction 0.04
+step   7300 train 2.192 | loss on copies 0.566 on filler 2.969 | max prev-token 0.98 max induction 0.04
+step   7400 train 2.156 | loss on copies 0.569 on filler 2.962 | max prev-token 0.98 max induction 0.04
+step   7500 train 2.283 | loss on copies 0.565 on filler 2.965 | max prev-token 0.98 max induction 0.04
+step   7600 train 2.139 | loss on copies 0.555 on filler 2.964 | max prev-token 0.98 max induction 0.04
+step   7700 train 2.255 | loss on copies 0.551 on filler 2.966 | max prev-token 0.98 max induction 0.04
+step   7800 train 2.187 | loss on copies 0.563 on filler 2.961 | max prev-token 0.98 max induction 0.04
+step   7900 train 2.209 | loss on copies 0.551 on filler 2.965 | max prev-token 0.98 max induction 0.04
+step   8000 train 2.222 | loss on copies 0.562 on filler 2.958 | max prev-token 0.98 max induction 0.04
+FINAL layer 0: prev-token per head [0.04, 0.01, 0.02, 0.06] | induction per head [0.04, 0.01, 0.0, 0.04] | same-token (offset −s) per head [0.06, 0.53, 0.0, 0.03]
+FINAL layer 1: prev-token per head [0.05, 0.06, 0.05, 0.37] | induction per head [0.02, 0.02, 0.02, 0.0] | same-token (offset −s) per head [0.01, 0.02, 0.02, 0.0]
+FINAL layer 2: prev-token per head [0.98, 0.98, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.97, 0.63, 0.95, 0.96] | induction per head [0.0, 0.01, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s39_bl1d0.1.pt
+-- qkv (L1 masses)
+L1H0: mass on j0+1 (classic target) 0.03 | on j0+2 0.84 | on j0+3 0.03
+L1H1: mass on j0+1 (classic target) 0.03 | on j0+2 0.83 | on j0+3 0.03
+L1H2: mass on j0+1 (classic target) 0.03 | on j0+2 0.82 | on j0+3 0.03
+L1H3: mass on j0+1 (classic target) 0.02 | on j0+2 0.02 | on j0+3 0.02
+copy loss, L1 rebuilt clean (sanity): 0.499
+copy loss, L0H0 removed from layer-1 Q: 0.505
+copy loss, from K: 0.521
+copy loss, from V: 0.533
+copy loss, from Q, K and V: 0.552
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 0.756 | where only i-1 zeroed 3.098 | nothing zeroed: 0.499
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 0.762 | where only i-1 zeroed 3.113 | nothing zeroed: 0.499
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.727 | i-1: 3.105 | i-2: 0.504 | i-3: 0.501 | clean 0.499
+== RANDSTART L=4 seed 45, 8000 steps, BIASL1=0.1 OFF=2 STEPS<2500
+step      0 train 4.595 | loss on copies 4.508 on filler 4.501 | max prev-token 0.07 max induction 0.03
+step    100 train 3.920 | loss on copies 4.011 on filler 4.155 | max prev-token 0.18 max induction 0.03
+step    200 train 3.093 | loss on copies 3.144 on filler 3.120 | max prev-token 0.90 max induction 0.03
+step    300 train 3.004 | loss on copies 2.994 on filler 2.947 | max prev-token 0.97 max induction 0.03
+step    400 train 3.001 | loss on copies 2.953 on filler 2.918 | max prev-token 0.98 max induction 0.03
+step    500 train 2.941 | loss on copies 2.936 on filler 2.905 | max prev-token 0.98 max induction 0.03
+step    600 train 3.011 | loss on copies 2.912 on filler 2.884 | max prev-token 0.98 max induction 0.03
+step    700 train 2.919 | loss on copies 2.903 on filler 2.885 | max prev-token 0.98 max induction 0.03
+step    800 train 2.966 | loss on copies 2.890 on filler 2.889 | max prev-token 0.98 max induction 0.03
+step    900 train 2.945 | loss on copies 2.883 on filler 2.879 | max prev-token 0.98 max induction 0.03
+step   1000 train 2.920 | loss on copies 2.868 on filler 2.885 | max prev-token 0.98 max induction 0.03
+step   1100 train 2.884 | loss on copies 2.848 on filler 2.883 | max prev-token 0.98 max induction 0.03
+step   1200 train 2.866 | loss on copies 2.840 on filler 2.887 | max prev-token 0.98 max induction 0.03
+step   1300 train 2.926 | loss on copies 2.820 on filler 2.882 | max prev-token 0.98 max induction 0.03
+step   1400 train 2.874 | loss on copies 2.802 on filler 2.904 | max prev-token 0.98 max induction 0.04
+step   1500 train 2.887 | loss on copies 2.784 on filler 2.898 | max prev-token 0.98 max induction 0.04
+step   1600 train 2.950 | loss on copies 2.770 on filler 2.900 | max prev-token 0.98 max induction 0.04
+step   1700 train 2.917 | loss on copies 2.753 on filler 2.908 | max prev-token 0.98 max induction 0.04
+step   1800 train 2.967 | loss on copies 2.733 on filler 2.911 | max prev-token 0.98 max induction 0.04
+step   1900 train 2.869 | loss on copies 2.717 on filler 2.926 | max prev-token 0.98 max induction 0.04
+step   2000 train 2.880 | loss on copies 2.690 on filler 2.918 | max prev-token 0.98 max induction 0.04
+step   2100 train 2.847 | loss on copies 2.683 on filler 2.925 | max prev-token 0.98 max induction 0.04
+step   2200 train 2.878 | loss on copies 2.667 on filler 2.924 | max prev-token 0.98 max induction 0.04
+step   2300 train 2.860 | loss on copies 2.653 on filler 2.931 | max prev-token 0.98 max induction 0.04
+step   2400 train 2.865 | loss on copies 2.640 on filler 2.937 | max prev-token 0.98 max induction 0.04
+step   2500 train 2.860 | loss on copies 2.624 on filler 2.939 | max prev-token 0.98 max induction 0.04
+step   2600 train 2.834 | loss on copies 2.613 on filler 2.942 | max prev-token 0.98 max induction 0.05
+step   2700 train 2.896 | loss on copies 2.601 on filler 2.950 | max prev-token 0.98 max induction 0.05
+step   2800 train 2.883 | loss on copies 2.598 on filler 2.943 | max prev-token 0.98 max induction 0.05
+step   2900 train 2.827 | loss on copies 2.589 on filler 2.956 | max prev-token 0.98 max induction 0.05
+step   3000 train 2.814 | loss on copies 2.562 on filler 2.963 | max prev-token 0.98 max induction 0.05
+step   3100 train 2.830 | loss on copies 2.562 on filler 2.959 | max prev-token 0.98 max induction 0.05
+step   3200 train 2.798 | loss on copies 2.548 on filler 2.964 | max prev-token 0.98 max induction 0.05
+step   3300 train 2.805 | loss on copies 2.516 on filler 2.958 | max prev-token 0.98 max induction 0.06
+step   3400 train 2.803 | loss on copies 2.452 on filler 2.971 | max prev-token 0.98 max induction 0.07
+step   3500 train 2.697 | loss on copies 2.138 on filler 3.060 | max prev-token 0.98 max induction 0.04
+step   3600 train 2.541 | loss on copies 1.477 on filler 3.138 | max prev-token 0.98 max induction 0.04
+step   3700 train 2.522 | loss on copies 1.246 on filler 3.142 | max prev-token 0.98 max induction 0.03
+step   3800 train 2.451 | loss on copies 1.156 on filler 3.083 | max prev-token 0.98 max induction 0.03
+step   3900 train 2.473 | loss on copies 1.045 on filler 3.069 | max prev-token 0.98 max induction 0.03
+step   4000 train 2.429 | loss on copies 0.968 on filler 3.036 | max prev-token 0.98 max induction 0.03
+step   4100 train 2.461 | loss on copies 0.950 on filler 2.993 | max prev-token 0.98 max induction 0.03
+step   4200 train 2.237 | loss on copies 0.908 on filler 2.988 | max prev-token 0.98 max induction 0.03
+step   4300 train 2.347 | loss on copies 0.915 on filler 2.945 | max prev-token 0.98 max induction 0.03
+step   4400 train 2.299 | loss on copies 0.890 on filler 2.966 | max prev-token 0.98 max induction 0.03
+step   4500 train 2.394 | loss on copies 0.872 on filler 2.947 | max prev-token 0.98 max induction 0.03
+step   4600 train 2.253 | loss on copies 0.853 on filler 2.947 | max prev-token 0.98 max induction 0.03
+step   4700 train 2.408 | loss on copies 0.850 on filler 2.942 | max prev-token 0.98 max induction 0.03
+step   4800 train 2.373 | loss on copies 0.839 on filler 2.940 | max prev-token 0.98 max induction 0.03
+step   4900 train 2.345 | loss on copies 0.832 on filler 2.929 | max prev-token 0.98 max induction 0.03
+step   5000 train 2.343 | loss on copies 0.782 on filler 2.936 | max prev-token 0.98 max induction 0.03
+step   5100 train 2.312 | loss on copies 0.746 on filler 2.939 | max prev-token 0.98 max induction 0.03
+step   5200 train 2.331 | loss on copies 0.748 on filler 2.930 | max prev-token 0.98 max induction 0.03
+step   5300 train 2.412 | loss on copies 0.728 on filler 2.941 | max prev-token 0.98 max induction 0.03
+step   5400 train 2.191 | loss on copies 0.722 on filler 2.923 | max prev-token 0.98 max induction 0.03
+step   5500 train 2.338 | loss on copies 0.724 on filler 2.926 | max prev-token 0.98 max induction 0.03
+step   5600 train 2.205 | loss on copies 0.677 on filler 2.932 | max prev-token 0.98 max induction 0.03
+step   5700 train 2.379 | loss on copies 0.666 on filler 2.914 | max prev-token 0.98 max induction 0.03
+step   5800 train 2.297 | loss on copies 0.668 on filler 2.915 | max prev-token 0.98 max induction 0.03
+step   5900 train 2.231 | loss on copies 0.648 on filler 2.905 | max prev-token 0.98 max induction 0.03
+step   6000 train 2.333 | loss on copies 0.628 on filler 2.913 | max prev-token 0.98 max induction 0.03
+step   6100 train 2.263 | loss on copies 0.608 on filler 2.909 | max prev-token 0.98 max induction 0.03
+step   6200 train 2.267 | loss on copies 0.640 on filler 2.891 | max prev-token 0.98 max induction 0.03
+step   6300 train 2.176 | loss on copies 0.607 on filler 2.894 | max prev-token 0.98 max induction 0.03
+step   6400 train 2.265 | loss on copies 0.588 on filler 2.904 | max prev-token 0.98 max induction 0.04
+step   6500 train 2.246 | loss on copies 0.618 on filler 2.883 | max prev-token 0.98 max induction 0.04
+step   6600 train 2.185 | loss on copies 0.599 on filler 2.868 | max prev-token 0.98 max induction 0.04
+step   6700 train 2.164 | loss on copies 0.580 on filler 2.889 | max prev-token 0.98 max induction 0.04
+step   6800 train 2.229 | loss on copies 0.594 on filler 2.868 | max prev-token 0.98 max induction 0.04
+step   6900 train 2.205 | loss on copies 0.589 on filler 2.862 | max prev-token 0.98 max induction 0.04
+step   7000 train 2.208 | loss on copies 0.560 on filler 2.883 | max prev-token 0.98 max induction 0.04
+step   7100 train 2.354 | loss on copies 0.580 on filler 2.869 | max prev-token 0.98 max induction 0.04
+step   7200 train 2.253 | loss on copies 0.568 on filler 2.864 | max prev-token 0.98 max induction 0.04
+step   7300 train 2.233 | loss on copies 0.549 on filler 2.864 | max prev-token 0.98 max induction 0.04
+step   7400 train 2.247 | loss on copies 0.573 on filler 2.863 | max prev-token 0.98 max induction 0.04
+step   7500 train 2.189 | loss on copies 0.550 on filler 2.871 | max prev-token 0.98 max induction 0.04
+step   7600 train 2.169 | loss on copies 0.545 on filler 2.873 | max prev-token 0.98 max induction 0.04
+step   7700 train 2.304 | loss on copies 0.539 on filler 2.882 | max prev-token 0.98 max induction 0.04
+step   7800 train 2.247 | loss on copies 0.545 on filler 2.866 | max prev-token 0.98 max induction 0.04
+step   7900 train 2.146 | loss on copies 0.519 on filler 2.872 | max prev-token 0.98 max induction 0.04
+step   8000 train 2.287 | loss on copies 0.543 on filler 2.865 | max prev-token 0.98 max induction 0.04
+FINAL layer 0: prev-token per head [0.01, 0.01, 0.06, 0.04] | induction per head [0.01, 0.0, 0.03, 0.04] | same-token (offset −s) per head [0.54, 0.0, 0.05, 0.09]
+FINAL layer 1: prev-token per head [0.09, 0.04, 0.05, 0.05] | induction per head [0.03, 0.02, 0.02, 0.01] | same-token (offset −s) per head [0.02, 0.02, 0.01, 0.01]
+FINAL layer 2: prev-token per head [0.98, 0.43, 0.98, 0.49] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.98, 0.98, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s45_bl1d0.1.pt
+-- qkv (L1 masses)
+L1H0: mass on j0+1 (classic target) 0.04 | on j0+2 0.04 | on j0+3 0.04
+L1H1: mass on j0+1 (classic target) 0.03 | on j0+2 0.83 | on j0+3 0.02
+L1H2: mass on j0+1 (classic target) 0.02 | on j0+2 0.90 | on j0+3 0.02
+L1H3: mass on j0+1 (classic target) 0.02 | on j0+2 0.90 | on j0+3 0.02
+copy loss, L1 rebuilt clean (sanity): 0.515
+copy loss, L0H0 removed from layer-1 Q: 0.758
+copy loss, from K: 0.552
+copy loss, from V: 0.548
+copy loss, from Q, K and V: 0.845
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.121 | where only i-1 zeroed 3.376 | nothing zeroed: 0.515
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.072 | where only i-1 zeroed 3.331 | nothing zeroed: 0.515
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.848 | i-1: 3.662 | i-2: 0.824 | i-3: 0.816 | clean 0.515
+== RANDSTART L=4 seed 40, 8000 steps, BIASL1=0.1 OFF=2 STEPS<2500
+step      0 train 4.530 | loss on copies 4.470 on filler 4.474 | max prev-token 0.06 max induction 0.03
+step    100 train 3.929 | loss on copies 4.017 on filler 4.186 | max prev-token 0.17 max induction 0.03
+step    200 train 3.166 | loss on copies 3.111 on filler 3.204 | max prev-token 0.90 max induction 0.03
+step    300 train 3.032 | loss on copies 2.958 on filler 3.021 | max prev-token 0.97 max induction 0.03
+step    400 train 3.012 | loss on copies 2.915 on filler 2.992 | max prev-token 0.97 max induction 0.03
+step    500 train 2.915 | loss on copies 2.894 on filler 2.966 | max prev-token 0.97 max induction 0.03
+step    600 train 2.947 | loss on copies 2.884 on filler 2.949 | max prev-token 0.97 max induction 0.03
+step    700 train 2.877 | loss on copies 2.877 on filler 2.951 | max prev-token 0.97 max induction 0.03
+step    800 train 2.862 | loss on copies 2.856 on filler 2.933 | max prev-token 0.98 max induction 0.03
+step    900 train 2.942 | loss on copies 2.852 on filler 2.934 | max prev-token 0.97 max induction 0.03
+step   1000 train 2.894 | loss on copies 2.834 on filler 2.931 | max prev-token 0.98 max induction 0.03
+step   1100 train 2.933 | loss on copies 2.822 on filler 2.941 | max prev-token 0.98 max induction 0.03
+step   1200 train 2.948 | loss on copies 2.812 on filler 2.936 | max prev-token 0.98 max induction 0.03
+step   1300 train 2.912 | loss on copies 2.794 on filler 2.936 | max prev-token 0.98 max induction 0.03
+step   1400 train 2.861 | loss on copies 2.778 on filler 2.938 | max prev-token 0.98 max induction 0.03
+step   1500 train 2.973 | loss on copies 2.758 on filler 2.949 | max prev-token 0.98 max induction 0.04
+step   1600 train 2.959 | loss on copies 2.747 on filler 2.953 | max prev-token 0.98 max induction 0.04
+step   1700 train 2.935 | loss on copies 2.719 on filler 2.962 | max prev-token 0.98 max induction 0.04
+step   1800 train 2.852 | loss on copies 2.709 on filler 2.963 | max prev-token 0.98 max induction 0.04
+step   1900 train 2.869 | loss on copies 2.699 on filler 2.977 | max prev-token 0.98 max induction 0.04
+step   2000 train 2.881 | loss on copies 2.676 on filler 2.972 | max prev-token 0.98 max induction 0.04
+step   2100 train 2.808 | loss on copies 2.655 on filler 2.979 | max prev-token 0.98 max induction 0.04
+step   2200 train 2.859 | loss on copies 2.640 on filler 2.985 | max prev-token 0.98 max induction 0.04
+step   2300 train 2.819 | loss on copies 2.635 on filler 2.983 | max prev-token 0.98 max induction 0.04
+step   2400 train 2.882 | loss on copies 2.619 on filler 2.984 | max prev-token 0.98 max induction 0.04
+step   2500 train 2.860 | loss on copies 2.601 on filler 2.996 | max prev-token 0.98 max induction 0.04
+step   2600 train 2.819 | loss on copies 2.595 on filler 2.997 | max prev-token 0.98 max induction 0.04
+step   2700 train 2.887 | loss on copies 2.587 on filler 3.002 | max prev-token 0.98 max induction 0.04
+step   2800 train 2.834 | loss on copies 2.576 on filler 3.012 | max prev-token 0.98 max induction 0.04
+step   2900 train 2.818 | loss on copies 2.556 on filler 3.014 | max prev-token 0.98 max induction 0.04
+step   3000 train 2.836 | loss on copies 2.552 on filler 3.015 | max prev-token 0.98 max induction 0.04
+step   3100 train 2.795 | loss on copies 2.560 on filler 3.010 | max prev-token 0.98 max induction 0.04
+step   3200 train 2.870 | loss on copies 2.543 on filler 3.012 | max prev-token 0.98 max induction 0.04
+step   3300 train 2.861 | loss on copies 2.522 on filler 3.029 | max prev-token 0.98 max induction 0.04
+step   3400 train 2.785 | loss on copies 2.515 on filler 3.015 | max prev-token 0.98 max induction 0.04
+step   3500 train 2.839 | loss on copies 2.506 on filler 3.028 | max prev-token 0.98 max induction 0.04
+step   3600 train 2.801 | loss on copies 2.495 on filler 3.020 | max prev-token 0.98 max induction 0.05
+step   3700 train 2.795 | loss on copies 2.471 on filler 3.029 | max prev-token 0.98 max induction 0.05
+step   3800 train 2.784 | loss on copies 2.377 on filler 3.031 | max prev-token 0.98 max induction 0.07
+step   3900 train 2.681 | loss on copies 2.112 on filler 3.038 | max prev-token 0.98 max induction 0.12
+step   4000 train 2.628 | loss on copies 1.726 on filler 3.071 | max prev-token 0.98 max induction 0.18
+step   4100 train 2.480 | loss on copies 1.382 on filler 3.055 | max prev-token 0.98 max induction 0.24
+step   4200 train 2.454 | loss on copies 1.136 on filler 3.047 | max prev-token 0.98 max induction 0.28
+step   4300 train 2.392 | loss on copies 1.004 on filler 3.025 | max prev-token 0.98 max induction 0.32
+step   4400 train 2.531 | loss on copies 0.938 on filler 3.003 | max prev-token 0.98 max induction 0.34
+step   4500 train 2.374 | loss on copies 0.857 on filler 2.981 | max prev-token 0.98 max induction 0.36
+step   4600 train 2.257 | loss on copies 0.796 on filler 2.980 | max prev-token 0.98 max induction 0.37
+step   4700 train 2.243 | loss on copies 0.752 on filler 2.977 | max prev-token 0.98 max induction 0.37
+step   4800 train 2.251 | loss on copies 0.728 on filler 2.961 | max prev-token 0.98 max induction 0.37
+step   4900 train 2.277 | loss on copies 0.681 on filler 2.959 | max prev-token 0.98 max induction 0.38
+step   5000 train 2.274 | loss on copies 0.673 on filler 2.956 | max prev-token 0.98 max induction 0.38
+step   5100 train 2.335 | loss on copies 0.648 on filler 2.945 | max prev-token 0.98 max induction 0.39
+step   5200 train 2.246 | loss on copies 0.651 on filler 2.925 | max prev-token 0.98 max induction 0.40
+step   5300 train 2.192 | loss on copies 0.601 on filler 2.936 | max prev-token 0.98 max induction 0.42
+step   5400 train 2.257 | loss on copies 0.585 on filler 2.933 | max prev-token 0.98 max induction 0.44
+step   5500 train 2.287 | loss on copies 0.572 on filler 2.931 | max prev-token 0.98 max induction 0.44
+step   5600 train 2.278 | loss on copies 0.543 on filler 2.936 | max prev-token 0.98 max induction 0.46
+step   5700 train 2.164 | loss on copies 0.554 on filler 2.926 | max prev-token 0.98 max induction 0.47
+step   5800 train 2.305 | loss on copies 0.518 on filler 2.930 | max prev-token 0.98 max induction 0.48
+step   5900 train 2.208 | loss on copies 0.514 on filler 2.924 | max prev-token 0.98 max induction 0.50
+step   6000 train 2.222 | loss on copies 0.495 on filler 2.927 | max prev-token 0.98 max induction 0.52
+step   6100 train 2.154 | loss on copies 0.466 on filler 2.940 | max prev-token 0.98 max induction 0.53
+step   6200 train 2.168 | loss on copies 0.461 on filler 2.929 | max prev-token 0.98 max induction 0.54
+step   6300 train 2.065 | loss on copies 0.435 on filler 2.919 | max prev-token 0.98 max induction 0.55
+step   6400 train 2.165 | loss on copies 0.418 on filler 2.925 | max prev-token 0.98 max induction 0.55
+step   6500 train 2.176 | loss on copies 0.399 on filler 2.930 | max prev-token 0.98 max induction 0.56
+step   6600 train 2.173 | loss on copies 0.419 on filler 2.915 | max prev-token 0.98 max induction 0.56
+step   6700 train 2.199 | loss on copies 0.408 on filler 2.917 | max prev-token 0.98 max induction 0.57
+step   6800 train 2.233 | loss on copies 0.389 on filler 2.934 | max prev-token 0.98 max induction 0.56
+step   6900 train 2.221 | loss on copies 0.374 on filler 2.934 | max prev-token 0.98 max induction 0.57
+step   7000 train 2.151 | loss on copies 0.393 on filler 2.917 | max prev-token 0.98 max induction 0.58
+step   7100 train 2.195 | loss on copies 0.376 on filler 2.912 | max prev-token 0.98 max induction 0.58
+step   7200 train 2.143 | loss on copies 0.357 on filler 2.919 | max prev-token 0.98 max induction 0.59
+step   7300 train 2.124 | loss on copies 0.374 on filler 2.906 | max prev-token 0.98 max induction 0.58
+step   7400 train 2.182 | loss on copies 0.377 on filler 2.913 | max prev-token 0.98 max induction 0.58
+step   7500 train 2.122 | loss on copies 0.365 on filler 2.923 | max prev-token 0.98 max induction 0.58
+step   7600 train 2.217 | loss on copies 0.360 on filler 2.914 | max prev-token 0.98 max induction 0.58
+step   7700 train 2.103 | loss on copies 0.348 on filler 2.913 | max prev-token 0.98 max induction 0.59
+step   7800 train 2.110 | loss on copies 0.344 on filler 2.916 | max prev-token 0.98 max induction 0.59
+step   7900 train 2.045 | loss on copies 0.344 on filler 2.916 | max prev-token 0.98 max induction 0.59
+step   8000 train 2.162 | loss on copies 0.342 on filler 2.910 | max prev-token 0.98 max induction 0.59
+FINAL layer 0: prev-token per head [0.09, 0.01, 0.07, 0.05] | induction per head [0.03, 0.01, 0.03, 0.03] | same-token (offset −s) per head [0.03, 0.78, 0.03, 0.07]
+FINAL layer 1: prev-token per head [0.06, 0.07, 0.06, 0.07] | induction per head [0.27, 0.59, 0.15, 0.33] | same-token (offset −s) per head [0.06, 0.1, 0.03, 0.08]
+FINAL layer 2: prev-token per head [0.98, 0.5, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.97, 0.97, 0.97, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s40_bl1d0.1.pt
+-- qkv (L1 masses)
+L1H0: mass on j0+1 (classic target) 0.33 | on j0+2 0.38 | on j0+3 0.10
+L1H1: mass on j0+1 (classic target) 0.69 | on j0+2 0.08 | on j0+3 0.02
+L1H2: mass on j0+1 (classic target) 0.19 | on j0+2 0.47 | on j0+3 0.16
+L1H3: mass on j0+1 (classic target) 0.39 | on j0+2 0.30 | on j0+3 0.08
+copy loss, L1 rebuilt clean (sanity): 0.308
+copy loss, L0H0 removed from layer-1 Q: 0.317
+copy loss, from K: 0.322
+copy loss, from V: 0.357
+copy loss, from Q, K and V: 0.370
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.187 | where only i-1 zeroed 1.064 | nothing zeroed: 0.308
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.197 | where only i-1 zeroed 1.024 | nothing zeroed: 0.308
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 1.019 | i-1: 0.935 | i-2: 0.367 | i-3: 0.351 | clean 0.308
+== RANDSTART L=4 seed 39, 8000 steps, BIASL1=0.25 OFF=2 STEPS<2500
+step      0 train 4.572 | loss on copies 4.516 on filler 4.506 | max prev-token 0.06 max induction 0.03
+step    100 train 3.946 | loss on copies 4.035 on filler 4.157 | max prev-token 0.19 max induction 0.03
+step    200 train 3.204 | loss on copies 3.133 on filler 3.290 | max prev-token 0.75 max induction 0.03
+step    300 train 2.905 | loss on copies 2.926 on filler 3.078 | max prev-token 0.96 max induction 0.03
+step    400 train 2.955 | loss on copies 2.878 on filler 3.034 | max prev-token 0.97 max induction 0.03
+step    500 train 2.950 | loss on copies 2.863 on filler 3.014 | max prev-token 0.97 max induction 0.03
+step    600 train 2.921 | loss on copies 2.854 on filler 3.003 | max prev-token 0.98 max induction 0.03
+step    700 train 2.930 | loss on copies 2.845 on filler 2.994 | max prev-token 0.98 max induction 0.03
+step    800 train 2.875 | loss on copies 2.822 on filler 2.982 | max prev-token 0.98 max induction 0.03
+step    900 train 2.879 | loss on copies 2.810 on filler 2.975 | max prev-token 0.98 max induction 0.03
+step   1000 train 2.910 | loss on copies 2.814 on filler 2.985 | max prev-token 0.98 max induction 0.03
+step   1100 train 2.871 | loss on copies 2.794 on filler 2.984 | max prev-token 0.98 max induction 0.03
+step   1200 train 2.868 | loss on copies 2.782 on filler 2.982 | max prev-token 0.98 max induction 0.03
+step   1300 train 2.849 | loss on copies 2.770 on filler 2.989 | max prev-token 0.98 max induction 0.03
+step   1400 train 2.836 | loss on copies 2.748 on filler 2.987 | max prev-token 0.98 max induction 0.03
+step   1500 train 2.867 | loss on copies 2.729 on filler 2.994 | max prev-token 0.98 max induction 0.04
+step   1600 train 2.907 | loss on copies 2.711 on filler 3.013 | max prev-token 0.98 max induction 0.04
+step   1700 train 2.927 | loss on copies 2.692 on filler 3.013 | max prev-token 0.98 max induction 0.04
+step   1800 train 2.783 | loss on copies 2.665 on filler 3.016 | max prev-token 0.98 max induction 0.04
+step   1900 train 2.840 | loss on copies 2.647 on filler 3.027 | max prev-token 0.98 max induction 0.04
+step   2000 train 2.804 | loss on copies 2.628 on filler 3.028 | max prev-token 0.98 max induction 0.04
+step   2100 train 2.837 | loss on copies 2.615 on filler 3.027 | max prev-token 0.98 max induction 0.04
+step   2200 train 2.888 | loss on copies 2.602 on filler 3.034 | max prev-token 0.98 max induction 0.04
+step   2300 train 2.777 | loss on copies 2.583 on filler 3.051 | max prev-token 0.98 max induction 0.04
+step   2400 train 2.788 | loss on copies 2.571 on filler 3.060 | max prev-token 0.98 max induction 0.04
+step   2500 train 2.805 | loss on copies 2.554 on filler 3.038 | max prev-token 0.98 max induction 0.04
+step   2600 train 2.775 | loss on copies 2.552 on filler 3.062 | max prev-token 0.98 max induction 0.04
+step   2700 train 2.823 | loss on copies 2.526 on filler 3.056 | max prev-token 0.98 max induction 0.04
+step   2800 train 2.887 | loss on copies 2.522 on filler 3.057 | max prev-token 0.98 max induction 0.04
+step   2900 train 2.797 | loss on copies 2.514 on filler 3.061 | max prev-token 0.98 max induction 0.04
+step   3000 train 2.847 | loss on copies 2.507 on filler 3.063 | max prev-token 0.98 max induction 0.04
+step   3100 train 2.790 | loss on copies 2.494 on filler 3.055 | max prev-token 0.98 max induction 0.04
+step   3200 train 2.802 | loss on copies 2.496 on filler 3.059 | max prev-token 0.98 max induction 0.04
+step   3300 train 2.813 | loss on copies 2.459 on filler 3.077 | max prev-token 0.98 max induction 0.05
+step   3400 train 2.831 | loss on copies 2.436 on filler 3.069 | max prev-token 0.98 max induction 0.05
+step   3500 train 2.822 | loss on copies 2.344 on filler 3.081 | max prev-token 0.98 max induction 0.06
+step   3600 train 2.690 | loss on copies 2.064 on filler 3.127 | max prev-token 0.98 max induction 0.08
+step   3700 train 2.591 | loss on copies 1.459 on filler 3.130 | max prev-token 0.98 max induction 0.06
+step   3800 train 2.407 | loss on copies 1.091 on filler 3.064 | max prev-token 0.98 max induction 0.06
+step   3900 train 2.352 | loss on copies 0.986 on filler 3.023 | max prev-token 0.98 max induction 0.05
+step   4000 train 2.196 | loss on copies 0.913 on filler 3.013 | max prev-token 0.98 max induction 0.05
+step   4100 train 2.338 | loss on copies 0.862 on filler 2.998 | max prev-token 0.98 max induction 0.05
+step   4200 train 2.342 | loss on copies 0.853 on filler 2.994 | max prev-token 0.98 max induction 0.05
+step   4300 train 2.306 | loss on copies 0.769 on filler 3.000 | max prev-token 0.98 max induction 0.05
+step   4400 train 2.327 | loss on copies 0.755 on filler 3.002 | max prev-token 0.98 max induction 0.04
+step   4500 train 2.334 | loss on copies 0.754 on filler 2.981 | max prev-token 0.98 max induction 0.04
+step   4600 train 2.225 | loss on copies 0.726 on filler 2.994 | max prev-token 0.98 max induction 0.04
+step   4700 train 2.327 | loss on copies 0.710 on filler 2.971 | max prev-token 0.98 max induction 0.04
+step   4800 train 2.294 | loss on copies 0.711 on filler 2.984 | max prev-token 0.98 max induction 0.04
+step   4900 train 2.297 | loss on copies 0.680 on filler 2.976 | max prev-token 0.98 max induction 0.04
+step   5000 train 2.188 | loss on copies 0.659 on filler 2.983 | max prev-token 0.98 max induction 0.04
+step   5100 train 2.240 | loss on copies 0.648 on filler 2.976 | max prev-token 0.98 max induction 0.04
+step   5200 train 2.133 | loss on copies 0.659 on filler 2.977 | max prev-token 0.98 max induction 0.04
+step   5300 train 2.334 | loss on copies 0.634 on filler 2.983 | max prev-token 0.98 max induction 0.04
+step   5400 train 2.224 | loss on copies 0.640 on filler 2.979 | max prev-token 0.98 max induction 0.04
+step   5500 train 2.300 | loss on copies 0.626 on filler 2.982 | max prev-token 0.98 max induction 0.04
+step   5600 train 2.274 | loss on copies 0.614 on filler 2.983 | max prev-token 0.98 max induction 0.04
+step   5700 train 2.212 | loss on copies 0.631 on filler 2.964 | max prev-token 0.98 max induction 0.04
+step   5800 train 2.222 | loss on copies 0.609 on filler 2.964 | max prev-token 0.98 max induction 0.04
+step   5900 train 2.257 | loss on copies 0.628 on filler 2.969 | max prev-token 0.98 max induction 0.04
+step   6000 train 2.201 | loss on copies 0.615 on filler 2.966 | max prev-token 0.98 max induction 0.04
+step   6100 train 2.246 | loss on copies 0.597 on filler 2.961 | max prev-token 0.98 max induction 0.04
+step   6200 train 2.240 | loss on copies 0.586 on filler 2.959 | max prev-token 0.98 max induction 0.04
+step   6300 train 2.160 | loss on copies 0.596 on filler 2.956 | max prev-token 0.98 max induction 0.04
+step   6400 train 2.079 | loss on copies 0.591 on filler 2.960 | max prev-token 0.98 max induction 0.04
+step   6500 train 2.272 | loss on copies 0.593 on filler 2.950 | max prev-token 0.98 max induction 0.04
+step   6600 train 2.177 | loss on copies 0.593 on filler 2.961 | max prev-token 0.98 max induction 0.04
+step   6700 train 2.254 | loss on copies 0.578 on filler 2.967 | max prev-token 0.98 max induction 0.04
+step   6800 train 2.147 | loss on copies 0.586 on filler 2.964 | max prev-token 0.98 max induction 0.04
+step   6900 train 2.115 | loss on copies 0.579 on filler 2.975 | max prev-token 0.98 max induction 0.04
+step   7000 train 2.179 | loss on copies 0.582 on filler 2.968 | max prev-token 0.98 max induction 0.04
+step   7100 train 2.289 | loss on copies 0.582 on filler 2.963 | max prev-token 0.98 max induction 0.04
+step   7200 train 2.227 | loss on copies 0.564 on filler 2.951 | max prev-token 0.98 max induction 0.04
+step   7300 train 2.187 | loss on copies 0.572 on filler 2.951 | max prev-token 0.98 max induction 0.04
+step   7400 train 2.160 | loss on copies 0.556 on filler 2.947 | max prev-token 0.98 max induction 0.04
+step   7500 train 2.273 | loss on copies 0.576 on filler 2.950 | max prev-token 0.98 max induction 0.04
+step   7600 train 2.138 | loss on copies 0.560 on filler 2.960 | max prev-token 0.98 max induction 0.04
+step   7700 train 2.258 | loss on copies 0.572 on filler 2.949 | max prev-token 0.98 max induction 0.04
+step   7800 train 2.184 | loss on copies 0.563 on filler 2.953 | max prev-token 0.98 max induction 0.04
+step   7900 train 2.202 | loss on copies 0.555 on filler 2.959 | max prev-token 0.98 max induction 0.04
+step   8000 train 2.220 | loss on copies 0.551 on filler 2.953 | max prev-token 0.98 max induction 0.04
+FINAL layer 0: prev-token per head [0.05, 0.01, 0.02, 0.07] | induction per head [0.04, 0.01, 0.0, 0.04] | same-token (offset −s) per head [0.04, 0.49, 0.0, 0.03]
+FINAL layer 1: prev-token per head [0.05, 0.06, 0.05, 0.25] | induction per head [0.02, 0.02, 0.02, 0.03] | same-token (offset −s) per head [0.01, 0.02, 0.01, 0.02]
+FINAL layer 2: prev-token per head [0.98, 0.98, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.97, 0.39, 0.84, 0.97] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s39_bl1d0.25.pt
+-- qkv (L1 masses)
+L1H0: mass on j0+1 (classic target) 0.03 | on j0+2 0.83 | on j0+3 0.03
+L1H1: mass on j0+1 (classic target) 0.03 | on j0+2 0.84 | on j0+3 0.03
+L1H2: mass on j0+1 (classic target) 0.03 | on j0+2 0.85 | on j0+3 0.03
+L1H3: mass on j0+1 (classic target) 0.05 | on j0+2 0.05 | on j0+3 0.05
+copy loss, L1 rebuilt clean (sanity): 0.507
+copy loss, L0H0 removed from layer-1 Q: 0.523
+copy loss, from K: 0.519
+copy loss, from V: 0.577
+copy loss, from Q, K and V: 0.596
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 0.772 | where only i-1 zeroed 3.175 | nothing zeroed: 0.507
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 0.784 | where only i-1 zeroed 3.187 | nothing zeroed: 0.507
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.742 | i-1: 3.182 | i-2: 0.519 | i-3: 0.509 | clean 0.507
+== RANDSTART L=4 seed 45, 8000 steps, BIASL1=0.25 OFF=2 STEPS<2500
+step      0 train 4.595 | loss on copies 4.508 on filler 4.501 | max prev-token 0.07 max induction 0.03
+step    100 train 3.921 | loss on copies 4.011 on filler 4.155 | max prev-token 0.18 max induction 0.03
+step    200 train 3.093 | loss on copies 3.143 on filler 3.119 | max prev-token 0.90 max induction 0.03
+step    300 train 3.004 | loss on copies 2.994 on filler 2.947 | max prev-token 0.97 max induction 0.03
+step    400 train 3.001 | loss on copies 2.952 on filler 2.918 | max prev-token 0.98 max induction 0.03
+step    500 train 2.940 | loss on copies 2.935 on filler 2.905 | max prev-token 0.98 max induction 0.03
+step    600 train 3.011 | loss on copies 2.911 on filler 2.884 | max prev-token 0.98 max induction 0.03
+step    700 train 2.919 | loss on copies 2.902 on filler 2.885 | max prev-token 0.98 max induction 0.03
+step    800 train 2.966 | loss on copies 2.888 on filler 2.889 | max prev-token 0.98 max induction 0.03
+step    900 train 2.944 | loss on copies 2.881 on filler 2.879 | max prev-token 0.98 max induction 0.03
+step   1000 train 2.919 | loss on copies 2.865 on filler 2.886 | max prev-token 0.98 max induction 0.03
+step   1100 train 2.882 | loss on copies 2.844 on filler 2.885 | max prev-token 0.98 max induction 0.03
+step   1200 train 2.864 | loss on copies 2.834 on filler 2.890 | max prev-token 0.98 max induction 0.03
+step   1300 train 2.924 | loss on copies 2.814 on filler 2.885 | max prev-token 0.98 max induction 0.04
+step   1400 train 2.872 | loss on copies 2.794 on filler 2.909 | max prev-token 0.98 max induction 0.04
+step   1500 train 2.884 | loss on copies 2.772 on filler 2.904 | max prev-token 0.98 max induction 0.04
+step   1600 train 2.946 | loss on copies 2.756 on filler 2.906 | max prev-token 0.98 max induction 0.04
+step   1700 train 2.911 | loss on copies 2.737 on filler 2.916 | max prev-token 0.98 max induction 0.04
+step   1800 train 2.964 | loss on copies 2.714 on filler 2.919 | max prev-token 0.98 max induction 0.04
+step   1900 train 2.858 | loss on copies 2.697 on filler 2.931 | max prev-token 0.98 max induction 0.04
+step   2000 train 2.872 | loss on copies 2.670 on filler 2.928 | max prev-token 0.98 max induction 0.04
+step   2100 train 2.843 | loss on copies 2.658 on filler 2.941 | max prev-token 0.98 max induction 0.04
+step   2200 train 2.867 | loss on copies 2.646 on filler 2.933 | max prev-token 0.98 max induction 0.04
+step   2300 train 2.846 | loss on copies 2.629 on filler 2.941 | max prev-token 0.98 max induction 0.04
+step   2400 train 2.853 | loss on copies 2.617 on filler 2.948 | max prev-token 0.98 max induction 0.04
+step   2500 train 2.859 | loss on copies 2.602 on filler 2.950 | max prev-token 0.98 max induction 0.04
+step   2600 train 2.829 | loss on copies 2.595 on filler 2.944 | max prev-token 0.98 max induction 0.04
+step   2700 train 2.891 | loss on copies 2.573 on filler 2.958 | max prev-token 0.98 max induction 0.05
+step   2800 train 2.874 | loss on copies 2.528 on filler 2.952 | max prev-token 0.98 max induction 0.05
+step   2900 train 2.758 | loss on copies 2.300 on filler 3.013 | max prev-token 0.98 max induction 0.04
+step   3000 train 2.614 | loss on copies 1.581 on filler 3.170 | max prev-token 0.98 max induction 0.03
+step   3100 train 2.510 | loss on copies 1.270 on filler 3.200 | max prev-token 0.98 max induction 0.03
+step   3200 train 2.448 | loss on copies 1.161 on filler 3.146 | max prev-token 0.98 max induction 0.03
+step   3300 train 2.409 | loss on copies 1.103 on filler 3.102 | max prev-token 0.98 max induction 0.03
+step   3400 train 2.445 | loss on copies 1.048 on filler 3.066 | max prev-token 0.98 max induction 0.03
+step   3500 train 2.361 | loss on copies 0.965 on filler 3.051 | max prev-token 0.98 max induction 0.03
+step   3600 train 2.324 | loss on copies 0.925 on filler 3.007 | max prev-token 0.98 max induction 0.03
+step   3700 train 2.404 | loss on copies 0.900 on filler 3.008 | max prev-token 0.98 max induction 0.03
+step   3800 train 2.335 | loss on copies 0.912 on filler 2.970 | max prev-token 0.98 max induction 0.03
+step   3900 train 2.384 | loss on copies 0.869 on filler 2.987 | max prev-token 0.98 max induction 0.03
+step   4000 train 2.368 | loss on copies 0.856 on filler 2.967 | max prev-token 0.98 max induction 0.03
+step   4100 train 2.416 | loss on copies 0.864 on filler 2.947 | max prev-token 0.98 max induction 0.03
+step   4200 train 2.203 | loss on copies 0.817 on filler 2.963 | max prev-token 0.98 max induction 0.03
+step   4300 train 2.312 | loss on copies 0.841 on filler 2.924 | max prev-token 0.98 max induction 0.03
+step   4400 train 2.271 | loss on copies 0.808 on filler 2.946 | max prev-token 0.98 max induction 0.03
+step   4500 train 2.367 | loss on copies 0.801 on filler 2.937 | max prev-token 0.98 max induction 0.03
+step   4600 train 2.226 | loss on copies 0.770 on filler 2.941 | max prev-token 0.98 max induction 0.03
+step   4700 train 2.370 | loss on copies 0.747 on filler 2.939 | max prev-token 0.98 max induction 0.03
+step   4800 train 2.344 | loss on copies 0.729 on filler 2.943 | max prev-token 0.98 max induction 0.03
+step   4900 train 2.301 | loss on copies 0.717 on filler 2.919 | max prev-token 0.98 max induction 0.03
+step   5000 train 2.304 | loss on copies 0.700 on filler 2.918 | max prev-token 0.98 max induction 0.03
+step   5100 train 2.271 | loss on copies 0.657 on filler 2.908 | max prev-token 0.98 max induction 0.03
+step   5200 train 2.299 | loss on copies 0.646 on filler 2.903 | max prev-token 0.98 max induction 0.03
+step   5300 train 2.376 | loss on copies 0.640 on filler 2.913 | max prev-token 0.98 max induction 0.03
+step   5400 train 2.143 | loss on copies 0.641 on filler 2.902 | max prev-token 0.98 max induction 0.03
+step   5500 train 2.314 | loss on copies 0.646 on filler 2.890 | max prev-token 0.98 max induction 0.03
+step   5600 train 2.184 | loss on copies 0.618 on filler 2.879 | max prev-token 0.98 max induction 0.03
+step   5700 train 2.343 | loss on copies 0.607 on filler 2.888 | max prev-token 0.98 max induction 0.03
+step   5800 train 2.277 | loss on copies 0.600 on filler 2.893 | max prev-token 0.98 max induction 0.03
+step   5900 train 2.215 | loss on copies 0.591 on filler 2.876 | max prev-token 0.98 max induction 0.03
+step   6000 train 2.312 | loss on copies 0.573 on filler 2.881 | max prev-token 0.98 max induction 0.04
+step   6100 train 2.239 | loss on copies 0.599 on filler 2.872 | max prev-token 0.98 max induction 0.03
+step   6200 train 2.244 | loss on copies 0.604 on filler 2.870 | max prev-token 0.98 max induction 0.03
+step   6300 train 2.154 | loss on copies 0.561 on filler 2.878 | max prev-token 0.98 max induction 0.03
+step   6400 train 2.250 | loss on copies 0.555 on filler 2.884 | max prev-token 0.98 max induction 0.03
+step   6500 train 2.238 | loss on copies 0.573 on filler 2.865 | max prev-token 0.98 max induction 0.03
+step   6600 train 2.181 | loss on copies 0.570 on filler 2.854 | max prev-token 0.98 max induction 0.03
+step   6700 train 2.151 | loss on copies 0.543 on filler 2.864 | max prev-token 0.98 max induction 0.03
+step   6800 train 2.223 | loss on copies 0.553 on filler 2.859 | max prev-token 0.98 max induction 0.03
+step   6900 train 2.196 | loss on copies 0.551 on filler 2.849 | max prev-token 0.98 max induction 0.03
+step   7000 train 2.200 | loss on copies 0.522 on filler 2.861 | max prev-token 0.98 max induction 0.03
+step   7100 train 2.341 | loss on copies 0.534 on filler 2.861 | max prev-token 0.98 max induction 0.03
+step   7200 train 2.244 | loss on copies 0.540 on filler 2.855 | max prev-token 0.98 max induction 0.03
+step   7300 train 2.223 | loss on copies 0.534 on filler 2.849 | max prev-token 0.98 max induction 0.03
+step   7400 train 2.236 | loss on copies 0.541 on filler 2.850 | max prev-token 0.98 max induction 0.03
+step   7500 train 2.182 | loss on copies 0.537 on filler 2.854 | max prev-token 0.98 max induction 0.03
+step   7600 train 2.158 | loss on copies 0.530 on filler 2.866 | max prev-token 0.98 max induction 0.03
+step   7700 train 2.284 | loss on copies 0.519 on filler 2.858 | max prev-token 0.98 max induction 0.03
+step   7800 train 2.241 | loss on copies 0.529 on filler 2.854 | max prev-token 0.98 max induction 0.03
+step   7900 train 2.138 | loss on copies 0.504 on filler 2.867 | max prev-token 0.98 max induction 0.03
+step   8000 train 2.288 | loss on copies 0.525 on filler 2.852 | max prev-token 0.98 max induction 0.03
+FINAL layer 0: prev-token per head [0.01, 0.02, 0.07, 0.07] | induction per head [0.01, 0.0, 0.03, 0.03] | same-token (offset −s) per head [0.52, 0.0, 0.05, 0.03]
+FINAL layer 1: prev-token per head [0.09, 0.05, 0.05, 0.05] | induction per head [0.03, 0.02, 0.01, 0.01] | same-token (offset −s) per head [0.02, 0.01, 0.01, 0.01]
+FINAL layer 2: prev-token per head [0.98, 0.46, 0.98, 0.44] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.98, 0.98, 0.98, 0.98] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s45_bl1d0.25.pt
+-- qkv (L1 masses)
+L1H0: mass on j0+1 (classic target) 0.04 | on j0+2 0.04 | on j0+3 0.05
+L1H1: mass on j0+1 (classic target) 0.03 | on j0+2 0.84 | on j0+3 0.03
+L1H2: mass on j0+1 (classic target) 0.02 | on j0+2 0.92 | on j0+3 0.02
+L1H3: mass on j0+1 (classic target) 0.02 | on j0+2 0.90 | on j0+3 0.02
+copy loss, L1 rebuilt clean (sanity): 0.495
+copy loss, L0H0 removed from layer-1 Q: 0.834
+copy loss, from K: 0.544
+copy loss, from V: 0.526
+copy loss, from Q, K and V: 0.980
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.111 | where only i-1 zeroed 3.214 | nothing zeroed: 0.495
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.112 | where only i-1 zeroed 3.263 | nothing zeroed: 0.495
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.883 | i-1: 3.453 | i-2: 0.865 | i-3: 0.871 | clean 0.495
+== RANDSTART L=4 seed 40, 8000 steps, BIASL1=0.25 OFF=2 STEPS<2500
+step      0 train 4.530 | loss on copies 4.470 on filler 4.474 | max prev-token 0.06 max induction 0.03
+step    100 train 3.929 | loss on copies 4.018 on filler 4.186 | max prev-token 0.17 max induction 0.03
+step    200 train 3.166 | loss on copies 3.111 on filler 3.204 | max prev-token 0.90 max induction 0.03
+step    300 train 3.032 | loss on copies 2.958 on filler 3.021 | max prev-token 0.97 max induction 0.03
+step    400 train 3.011 | loss on copies 2.915 on filler 2.992 | max prev-token 0.97 max induction 0.03
+step    500 train 2.915 | loss on copies 2.893 on filler 2.966 | max prev-token 0.97 max induction 0.03
+step    600 train 2.946 | loss on copies 2.883 on filler 2.950 | max prev-token 0.97 max induction 0.03
+step    700 train 2.876 | loss on copies 2.876 on filler 2.951 | max prev-token 0.97 max induction 0.03
+step    800 train 2.861 | loss on copies 2.854 on filler 2.934 | max prev-token 0.98 max induction 0.03
+step    900 train 2.941 | loss on copies 2.850 on filler 2.935 | max prev-token 0.97 max induction 0.03
+step   1000 train 2.893 | loss on copies 2.830 on filler 2.933 | max prev-token 0.98 max induction 0.03
+step   1100 train 2.932 | loss on copies 2.817 on filler 2.944 | max prev-token 0.98 max induction 0.03
+step   1200 train 2.946 | loss on copies 2.805 on filler 2.942 | max prev-token 0.98 max induction 0.03
+step   1300 train 2.907 | loss on copies 2.785 on filler 2.943 | max prev-token 0.98 max induction 0.03
+step   1400 train 2.857 | loss on copies 2.766 on filler 2.947 | max prev-token 0.98 max induction 0.04
+step   1500 train 2.971 | loss on copies 2.740 on filler 2.962 | max prev-token 0.98 max induction 0.04
+step   1600 train 2.951 | loss on copies 2.725 on filler 2.964 | max prev-token 0.98 max induction 0.04
+step   1700 train 2.927 | loss on copies 2.698 on filler 2.975 | max prev-token 0.98 max induction 0.04
+step   1800 train 2.842 | loss on copies 2.686 on filler 2.974 | max prev-token 0.98 max induction 0.04
+step   1900 train 2.860 | loss on copies 2.672 on filler 2.989 | max prev-token 0.98 max induction 0.04
+step   2000 train 2.867 | loss on copies 2.652 on filler 2.985 | max prev-token 0.98 max induction 0.04
+step   2100 train 2.799 | loss on copies 2.633 on filler 2.994 | max prev-token 0.98 max induction 0.04
+step   2200 train 2.845 | loss on copies 2.616 on filler 3.001 | max prev-token 0.98 max induction 0.04
+step   2300 train 2.808 | loss on copies 2.613 on filler 2.994 | max prev-token 0.98 max induction 0.04
+step   2400 train 2.875 | loss on copies 2.597 on filler 3.001 | max prev-token 0.98 max induction 0.04
+step   2500 train 2.860 | loss on copies 2.583 on filler 3.001 | max prev-token 0.98 max induction 0.04
+step   2600 train 2.816 | loss on copies 2.579 on filler 3.000 | max prev-token 0.98 max induction 0.04
+step   2700 train 2.886 | loss on copies 2.568 on filler 3.004 | max prev-token 0.98 max induction 0.04
+step   2800 train 2.826 | loss on copies 2.558 on filler 3.017 | max prev-token 0.98 max induction 0.04
+step   2900 train 2.807 | loss on copies 2.537 on filler 3.019 | max prev-token 0.98 max induction 0.04
+step   3000 train 2.822 | loss on copies 2.519 on filler 3.015 | max prev-token 0.98 max induction 0.05
+step   3100 train 2.779 | loss on copies 2.494 on filler 3.006 | max prev-token 0.98 max induction 0.05
+step   3200 train 2.806 | loss on copies 2.291 on filler 3.037 | max prev-token 0.98 max induction 0.09
+step   3300 train 2.744 | loss on copies 1.957 on filler 3.061 | max prev-token 0.98 max induction 0.14
+step   3400 train 2.499 | loss on copies 1.621 on filler 3.068 | max prev-token 0.98 max induction 0.18
+step   3500 train 2.584 | loss on copies 1.354 on filler 3.063 | max prev-token 0.98 max induction 0.24
+step   3600 train 2.397 | loss on copies 1.137 on filler 3.060 | max prev-token 0.98 max induction 0.30
+step   3700 train 2.423 | loss on copies 1.028 on filler 3.028 | max prev-token 0.98 max induction 0.34
+step   3800 train 2.409 | loss on copies 0.964 on filler 3.002 | max prev-token 0.98 max induction 0.37
+step   3900 train 2.347 | loss on copies 0.891 on filler 2.987 | max prev-token 0.98 max induction 0.38
+step   4000 train 2.334 | loss on copies 0.806 on filler 2.990 | max prev-token 0.98 max induction 0.41
+step   4100 train 2.232 | loss on copies 0.776 on filler 2.985 | max prev-token 0.98 max induction 0.44
+step   4200 train 2.311 | loss on copies 0.735 on filler 2.972 | max prev-token 0.98 max induction 0.47
+step   4300 train 2.278 | loss on copies 0.701 on filler 2.956 | max prev-token 0.98 max induction 0.50
+step   4400 train 2.438 | loss on copies 0.657 on filler 2.961 | max prev-token 0.98 max induction 0.54
+step   4500 train 2.281 | loss on copies 0.640 on filler 2.942 | max prev-token 0.98 max induction 0.55
+step   4600 train 2.172 | loss on copies 0.574 on filler 2.954 | max prev-token 0.98 max induction 0.57
+step   4700 train 2.165 | loss on copies 0.544 on filler 2.942 | max prev-token 0.98 max induction 0.58
+step   4800 train 2.177 | loss on copies 0.525 on filler 2.938 | max prev-token 0.98 max induction 0.59
+step   4900 train 2.209 | loss on copies 0.497 on filler 2.939 | max prev-token 0.98 max induction 0.60
+step   5000 train 2.213 | loss on copies 0.494 on filler 2.930 | max prev-token 0.98 max induction 0.61
+step   5100 train 2.281 | loss on copies 0.463 on filler 2.934 | max prev-token 0.98 max induction 0.61
+step   5200 train 2.190 | loss on copies 0.476 on filler 2.924 | max prev-token 0.98 max induction 0.61
+step   5300 train 2.149 | loss on copies 0.453 on filler 2.918 | max prev-token 0.98 max induction 0.60
+step   5400 train 2.220 | loss on copies 0.431 on filler 2.925 | max prev-token 0.98 max induction 0.61
+step   5500 train 2.239 | loss on copies 0.422 on filler 2.921 | max prev-token 0.98 max induction 0.62
+step   5600 train 2.229 | loss on copies 0.423 on filler 2.921 | max prev-token 0.98 max induction 0.62
+step   5700 train 2.128 | loss on copies 0.413 on filler 2.920 | max prev-token 0.98 max induction 0.62
+step   5800 train 2.274 | loss on copies 0.402 on filler 2.915 | max prev-token 0.98 max induction 0.63
+step   5900 train 2.173 | loss on copies 0.400 on filler 2.915 | max prev-token 0.98 max induction 0.62
+step   6000 train 2.192 | loss on copies 0.389 on filler 2.920 | max prev-token 0.98 max induction 0.61
+step   6100 train 2.125 | loss on copies 0.393 on filler 2.916 | max prev-token 0.98 max induction 0.61
+step   6200 train 2.144 | loss on copies 0.380 on filler 2.927 | max prev-token 0.98 max induction 0.62
+step   6300 train 2.036 | loss on copies 0.374 on filler 2.916 | max prev-token 0.98 max induction 0.62
+step   6400 train 2.154 | loss on copies 0.365 on filler 2.911 | max prev-token 0.98 max induction 0.62
+step   6500 train 2.161 | loss on copies 0.360 on filler 2.915 | max prev-token 0.98 max induction 0.62
+step   6600 train 2.146 | loss on copies 0.365 on filler 2.908 | max prev-token 0.98 max induction 0.62
+step   6700 train 2.173 | loss on copies 0.366 on filler 2.901 | max prev-token 0.98 max induction 0.63
+step   6800 train 2.229 | loss on copies 0.371 on filler 2.908 | max prev-token 0.98 max induction 0.62
+step   6900 train 2.199 | loss on copies 0.357 on filler 2.904 | max prev-token 0.98 max induction 0.63
+step   7000 train 2.141 | loss on copies 0.353 on filler 2.901 | max prev-token 0.98 max induction 0.63
+step   7100 train 2.183 | loss on copies 0.350 on filler 2.904 | max prev-token 0.98 max induction 0.62
+step   7200 train 2.122 | loss on copies 0.331 on filler 2.902 | max prev-token 0.98 max induction 0.64
+step   7300 train 2.110 | loss on copies 0.341 on filler 2.901 | max prev-token 0.98 max induction 0.63
+step   7400 train 2.166 | loss on copies 0.347 on filler 2.901 | max prev-token 0.98 max induction 0.63
+step   7500 train 2.101 | loss on copies 0.312 on filler 2.902 | max prev-token 0.98 max induction 0.63
+step   7600 train 2.207 | loss on copies 0.325 on filler 2.897 | max prev-token 0.98 max induction 0.62
+step   7700 train 2.086 | loss on copies 0.320 on filler 2.905 | max prev-token 0.98 max induction 0.63
+step   7800 train 2.106 | loss on copies 0.327 on filler 2.889 | max prev-token 0.98 max induction 0.63
+step   7900 train 2.034 | loss on copies 0.302 on filler 2.899 | max prev-token 0.98 max induction 0.63
+step   8000 train 2.153 | loss on copies 0.304 on filler 2.899 | max prev-token 0.98 max induction 0.64
+FINAL layer 0: prev-token per head [0.08, 0.01, 0.07, 0.01] | induction per head [0.03, 0.01, 0.03, 0.01] | same-token (offset −s) per head [0.03, 0.61, 0.02, 0.78]
+FINAL layer 1: prev-token per head [0.06, 0.07, 0.07, 0.07] | induction per head [0.54, 0.64, 0.09, 0.08] | same-token (offset −s) per head [0.07, 0.05, 0.02, 0.02]
+FINAL layer 2: prev-token per head [0.98, 0.52, 0.98, 0.98] | induction per head [0.0, 0.01, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.01, 0.0, 0.0]
+FINAL layer 3: prev-token per head [0.96, 0.95, 0.96, 0.95] | induction per head [0.0, 0.0, 0.0, 0.0] | same-token (offset −s) per head [0.0, 0.0, 0.0, 0.0]
+saved models/R4s40_bl1d0.25.pt
+-- qkv (L1 masses)
+L1H0: mass on j0+1 (classic target) 0.62 | on j0+2 0.11 | on j0+3 0.04
+L1H1: mass on j0+1 (classic target) 0.74 | on j0+2 0.05 | on j0+3 0.03
+L1H2: mass on j0+1 (classic target) 0.13 | on j0+2 0.70 | on j0+3 0.06
+L1H3: mass on j0+1 (classic target) 0.10 | on j0+2 0.50 | on j0+3 0.14
+copy loss, L1 rebuilt clean (sanity): 0.264
+copy loss, L0H0 removed from layer-1 Q: 0.268
+copy loss, from K: 0.279
+copy loss, from V: 0.350
+copy loss, from Q, K and V: 0.354
+layer-1 attn output zeroed at even positions: copy loss where own position zeroed 1.005 | where only i-1 zeroed 0.976 | nothing zeroed: 0.264
+layer-1 attn output zeroed at odd positions: copy loss where own position zeroed 1.015 | where only i-1 zeroed 1.001 | nothing zeroed: 0.264
+layer-1 attn output zeroed at one position in 8; copy loss at i when the zeroed position is i-0: 0.923 | i-1: 0.895 | i-2: 0.312 | i-3: 0.310 | clean 0.264
