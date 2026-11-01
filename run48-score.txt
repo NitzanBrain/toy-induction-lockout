@@ -1,0 +1,1 @@
+B2 bias 0.25 → j0+1: s47 CLASSIC (3 heads 0.98) esc 2600 final 0.186 | s36 CLASSIC (4 heads 0.97–0.98) esc 3000 final 0.192 | s44 CLASSIC (3 heads 0.98–0.99) esc 2400 final 0.168 → 3/3 classic. Prediction ≥2/3 P=0.40 → YES (Brier 0.36)
