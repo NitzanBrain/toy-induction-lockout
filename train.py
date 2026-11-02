@@ -51,6 +51,7 @@ evx = batch(256); evS = batch.S.clone(); evO = batch.O.clone(); BIGRAM = _b; j =
 cmask = torch.zeros(256, T, dtype=torch.bool); fmask = torch.zeros(256, T, dtype=torch.bool)
 for r in range(256):
     s, o = evS[r].item(), evO[r].item(); cmask[r, o + s:o + 2 * s - 1] = True; fmask[r, o + 2 * s:T - 1] = True  # positions predicting copied / filler tokens
+if os.environ.get("DATA_SEED"): torch.manual_seed(int(os.environ["DATA_SEED"]))  # run49: same init + eval set, different training-batch order
 SWITCH = int(os.environ.get("SWITCH", 0)); P2 = float(os.environ.get("P2", 0))
 ANNEAL = os.environ.get("ANNEAL") == "1"; P0 = BIGRAM; P_END = float(os.environ.get("P_END", 0))  # curriculum: change p at step SWITCH
 for step in range(STEPS + 1):

@@ -66,7 +66,7 @@ Caveats that matter:
 - For the layer-1 choice, a small targeted push decides the circuit in both directions, and a mistargeted push of the same size does not.
 
 **Doesn't show:**
-- That the *natural* asymmetries decide it in unpushed runs. The low push thresholds make it plausible.
+- That the *natural* asymmetries decide it in unpushed runs. The low push thresholds make it plausible. A data-order test (run49–50, 2026-11-02) found that clear-cut seeds keep their layer-1 route when only the batch order changes (12/12), so the deciding difference sits in the initial weights there; borderline seeds varied (s46 gave three different routes in three data orders), and the early marker did not predict routes for them.
 - That this is bistable. I didn't test it.
 - Anything about large models. The K/Q split depends on the shortcut.
 - More than 4-layer models, one task, and 3–6 seeds per intervention.

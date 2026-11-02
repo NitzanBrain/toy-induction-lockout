@@ -220,7 +220,7 @@ So single-head ablations in at least one other model (4L s2) also point to a que
 
 Without `BIGRAM`, the analysis scripts evaluate on purely random tokens. My first pass did that by mistake (run22, run23: same conclusion, copy loss 0.131).
 
-## 5. What decides the route (added 2026-10-30, run31–run41; §5.8 added 2026-10-31, run42–run46; run47–48 added 2026-11-01)
+## 5. What decides the route (added 2026-10-30, run31–run41; §5.8 added 2026-10-31, run42–run46; run47–48 added 2026-11-01; run49–50 added 2026-11-02)
 
 **Question.** §4 found two ways into layer 1 in the random-start 4-layer models. The classic route is K-composition from a previous-token head. The pointer route is Q-composition from a same-token head, a toy-model instance of the pointer-arithmetic mechanism Olsson et al. (2022) describe in GPT-2. Separately, layer 1 attends either to the classic target j0+1 or one step early, to j0+2. Which seeds take which route, and why?
 
@@ -389,9 +389,30 @@ Without `BIGRAM`, the analysis scripts evaluate on purely random tokens. My firs
   - So the pushes that tip the route are about the size of the natural seed-to-seed differences.
   - This is an order-of-magnitude comparison, not a matched one: the bias acts on every head and copy position, while the marker is the per-step maximum over heads of (attention on j0+2 − attention on j0+1), averaged over steps 1,000–1,500.
 
+**Same initial weights, different data order (run49, run50, pre-registered, added 2026-11-02).** A new `DATA_SEED` option reseeds only the training batches, after the model, optimiser and eval set are built from `seed`. No push. 3 data orders per init, 8,000 steps. Labels: one step early / classic by the rules above; "mixed" = no layer-1 head meets either rule.
+
+| init (run43 route) | data order 1001 | 1002 | 1003 | marker (range over the 3 orders) |
+|---|---|---|---|---|
+| s47 (early, marker rank 1) | early | early | early | 0.0095–0.0157 |
+| s36 (early, rank 2) | early | early | early | 0.0041–0.0083 |
+| s39 (classic) | classic | classic | other: no layer-1 target, induction in layer 3 | 0.0018–0.0030 |
+| s45 (classic) | classic | classic | classic | 0.0019–0.0035 |
+| s46 (early, mid rank) | mixed | early | classic | 0.0013–0.0069 |
+| s35 (early, mid rank) | early | mixed | early | 0.0022–0.0034 |
+| s32 (mixed in run43) | classic* | classic* | mixed | 0.0047–0.0066 |
+| s33 (mixed in run43) | mixed | mixed | classic* | 0.0075–0.0085 |
+
+\*classic by the rule, but another layer-1 head also sits on j0+2 (0.50–0.60 for s32; 0.49 for s33, whose classic call rests on a rounded 0.10, exactly at the cut-off).
+
+- **Clear-cut inits (run49):** 11/12 kept their run43 route (pre-registered threshold ≥ 10: met); 12/12 on the binary early/not-early rule. None switched between early and classic. For these four inits the route did not depend on batch order, in line with Musat et al. (2026). They were picked from the extremes of the run43 ranking, which favours this result.
+- **Borderline inits (run50):** 9/12 kept on the binary rule, inconclusive by the pre-registered rule. The two early inits kept the clean early route in 3/6 runs; s46 gave early, mixed and classic across three data orders. Two cautions: s46 and s35 were labelled early from one run43 data order, so some loss of the label is expected from regression to the mean alone; and s46 escaped late (6,400 and 7,700), so 8,000 steps may cut off a route still settling. The mixed inits never went early (6/6), but that is the only way they could fail.
+- **Marker:** across run49 it separated the routes perfectly (AUC 1.00; the p = 0.0011 treats 12 runs as independent, but they come from 4 inits). Across run50 it did not (AUC 0.37, p = 0.76, with only 4 early runs). s32 and s33 have high markers and never go early. My untested guess: the marker picks up one head leaning toward j0+2, which in mixed seeds stays in that head without the layer committing.
+- **My forecasts:** run49 2/4 (35% that ≥ 10/12 kept: yes); run50 0/4.
+
 **Still not tested:**
 - A push toward a random far key.
-- Whether the natural marker difference decides the route in unpushed runs. For these three seeds it was 0.0015–0.0028 in attention; across all 16 run43 seeds, 0.0013–0.0091. Pushes of that size tip the route (run46–48), which makes it plausible; it doesn't show it.
+- Whether the natural marker difference decides the route in unpushed runs. Pushes of its size tip the route (run46–48), and for clear-cut inits the route survives a change of data order (run49), so the deciding difference is in the initial weights; but the marker did not predict the route for borderline and mixed inits (run50). That a marker-sized natural lean *causes* the route remains untested.
+- A marker that separates one head leaning from the whole layer committing.
 
 **Reading.** In this toy setting, a slight early preference in layer 1 for j0+2 over j0+1 went with the one-step-early circuit in one prospective test (p = 0.011). A +0.5 logit push flipped 6/6 seeds (run44), +0.25 flipped 3/3 and +0.1 flipped 2/3 (run46), and a matched push to j0+3 flipped none. It's a different kind of choice from the layer-0 lean of 5.4–5.6: layer 0 bears on the source route (K vs Q), layer 1 on the target offset (j0+1 vs j0+2). Whether the small natural asymmetries are amplified into the final circuit, or just correlate with something that is, remains untested.
 
@@ -414,9 +435,9 @@ Without `BIGRAM`, the analysis scripts evaluate on purely random tokens. My firs
 - The 5.4 predictor was tested once more, on 12 new seeds (5.7). Its AUC threshold was met (0.74, p = 0.10, counting 3 seeds classified after outcomes). Its fixed cut-off failed (6/12 vs 7/12 for always-K).
 - Final losses are compared at unmatched step counts.
 - The early-lean and decay picture comes from per-head logs of 4 seeds (run34). The account of why the lean decays is an interpretation, not a measured mechanism.
-- I haven't tested 2–3-layer models or other shortcuts. The layer-1 preference (5.8) was tested only in 4-layer models, at pushes of 0.05–0.5 logit toward j0+2 and 0.1–0.5 toward j0+1 (3 seeds each).
+- I haven't tested 2–3-layer models or other shortcuts. The layer-1 preference (5.8) was tested only in 4-layer models, at pushes of 0.05–0.5 logit toward j0+2 and 0.1–0.5 toward j0+1 (3 seeds each). The data-order test (run49–50) used 8 inits × 3 data orders at 8,000 steps; the same data seed gives the same batch stream across inits.
 
-**Reproduce:** `RANDSTART=1 BIGRAM=0.5 MLP=1 [HEADLOG=1] [MASKPREV_L0=2500 | BIASPREV_L0=<b> BIASPREV_STEPS=2500] [SAVE=m.pt] python -I train.py 4 <steps> <seed>`; routes `RANDSTART=1 BIGRAM=0.5 THRESH=0.3 python -I analyze_route.py m.pt`; prediction `python -I early_predict.py run35-early.txt`; §5.8: `HEADLOG2=1` for the layer-1 logs, `BIASL1=<b> BIASL1_OFF=<1|2|3> BIASL1_STEPS=2500` for the push, `python -I analyze_run42.py run42b-headlog2.txt <lo> <hi>`, and analyze_qkv.py for the layer-1 masses; timing test `python -I timing_test.py run33-timing.txt run32-seeds-escape.txt`.
+**Reproduce:** `RANDSTART=1 BIGRAM=0.5 MLP=1 [HEADLOG=1] [MASKPREV_L0=2500 | BIASPREV_L0=<b> BIASPREV_STEPS=2500] [SAVE=m.pt] python -I train.py 4 <steps> <seed>`; routes `RANDSTART=1 BIGRAM=0.5 THRESH=0.3 python -I analyze_route.py m.pt`; prediction `python -I early_predict.py run35-early.txt`; §5.8: `HEADLOG2=1` for the layer-1 logs, `BIASL1=<b> BIASL1_OFF=<1|2|3> BIASL1_STEPS=2500` for the push, `DATA_SEED=<d>` for a different batch order with the same init (run49–50), scored by `score_run49.py` / `score_run50.py`, `python -I analyze_run42.py run42b-headlog2.txt <lo> <hi>`, and analyze_qkv.py for the layer-1 masses; timing test `python -I timing_test.py run33-timing.txt run32-seeds-escape.txt`.
 
 ## What it suggests
 
@@ -435,7 +456,7 @@ Olsson et al. 2022, "In-context Learning and Induction Heads" (transformer-circu
 
 
 ## Files
-- §5: `train.py` options `HEADLOG`, `MASKPREV_L0`, `BIASPREV_L0` + `BIASPREV_STEPS`; `early_predict.py` (run35), `timing_test.py` (run33), `summarize_run32.py`; run scripts `run31-long.sh`–`run40-p0.sh`; logs run31–run40 (run35c = the permutation p-value). §5.8: `analyze_run42.py`, `run42-headlog2.sh`/`.txt`, `run42b-headlog2.sh`/`.txt`, `run42b-summary.txt`; `PREREG-run43.md`, `PREDICTIONS-run43.txt`, `run43a-early.sh`/`.txt`, `run43b-full.sh`/`.txt`, `run43-score.txt`; `PREREG-run44.md`, `run44-biasl1.sh`/`.txt`, `run44-score.txt`; `PREREG-run45.md` + `PREREG-run45-notes.md`, `run45-control.sh`/`.txt`; `PREREG-run46.md`, `run46-dose.sh`/`.txt`, `run46-score.txt`; the `PREREG-run4x.sha256` files hold the hashes. §5.7: `PREREG-run41.md` + `PREREG-run41.sha256` (pre-registration, and the hashes of it and of the sealed predictions), `PREDICTIONS-run41.txt`, `run41a-early.sh`/`.txt` (1,000-step early scores), `run41b-full.sh`/`.txt` (12,000-step runs + routes), `run41c-unclassified-qkv.txt` (analyze_qkv on s20, s24, s30).
+- §5: `train.py` options `HEADLOG`, `MASKPREV_L0`, `BIASPREV_L0` + `BIASPREV_STEPS`; `early_predict.py` (run35), `timing_test.py` (run33), `summarize_run32.py`; run scripts `run31-long.sh`–`run40-p0.sh`; logs run31–run40 (run35c = the permutation p-value). §5.8: `analyze_run42.py`, `run42-headlog2.sh`/`.txt`, `run42b-headlog2.sh`/`.txt`, `run42b-summary.txt`; `PREREG-run43.md`, `PREDICTIONS-run43.txt`, `run43a-early.sh`/`.txt`, `run43b-full.sh`/`.txt`, `run43-score.txt`; `PREREG-run44.md`, `run44-biasl1.sh`/`.txt`, `run44-score.txt`; `PREREG-run45.md` + `PREREG-run45-notes.md`, `run45-control.sh`/`.txt`; `PREREG-run46.md`, `run46-dose.sh`/`.txt`, `run46-score.txt`; `PREREG-run47.md`/`run48.md`, `run47-dose.sh`/`run48-dose.sh` + `.txt`, `run47-score.txt`/`run48-score.txt`; `PREREG-run49.md`/`run50.md`, `run49-dataorder.sh`/`run50-dataorder.sh` + `.txt`, `score_run49.py`/`score_run50.py`, `run49-score.txt`/`run50-score.txt`; the `PREREG-run4x.sha256` files hold the hashes. §5.7: `PREREG-run41.md` + `PREREG-run41.sha256` (pre-registration, and the hashes of it and of the sealed predictions), `PREDICTIONS-run41.txt`, `run41a-early.sh`/`.txt` (1,000-step early scores), `run41b-full.sh`/`.txt` (12,000-step runs + routes), `run41c-unclassified-qkv.txt` (analyze_qkv on s20, s24, s30).
 - `analyze_qkv.py`, `analyze_late.py`, `analyze_offsets_hist.py`: the one-step-early circuit (run28).
 - `analyze_offset.py`: §4 test with copies starting later than position 0 (run26, run27b). `train.py RANDSTART=1` trains with random copy starts (run27).
 - `train.py`: the training script (env vars BIGRAM, SWITCH, P2, P_EVAL, ANNEAL, P_END, RESET_QK, HEADS, MLP, OFFSETS, SAVE). `analyze_copy*.py`, `analyze_shift.py`: the §3 mechanism analysis; `analyze_qk.py`, `analyze_route.py`, `analyze_pos.py`: the §4 path patching, route survey and position tests (all need a model saved with SAVE=...; models are not included).
