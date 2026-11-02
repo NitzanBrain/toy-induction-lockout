@@ -1,0 +1,27 @@
+s48: other   MEAN 0.0015 MAX 0.0024 (n=6) escape 4600
+s49: classic MEAN 0.0007 MAX 0.0025 (n=6) escape 6400
+s50: other   MEAN 0.0001 MAX 0.0006 (n=6) escape 3000
+s51: other   MEAN 0.0026 MAX 0.0038 (n=6) escape 6100
+s52: other   MEAN 0.0008 MAX 0.0024 (n=6) escape 6700
+s53: early   MEAN 0.0013 MAX 0.0029 (n=6) escape 5600
+s54: early   MEAN 0.0004 MAX 0.0019 (n=6) escape 5200
+s55: early   MEAN 0.0025 MAX 0.0045 (n=6) escape 4800
+s56: other   MEAN 0.0013 MAX 0.0022 (n=6) escape 1100
+s57: classic MEAN 0.0041 MAX 0.0058 (n=6) escape 4000
+s58: other   MEAN -0.0002 MAX 0.0003 (n=6) escape 1700
+s59: classic MEAN 0.0007 MAX 0.0019 (n=6) escape 5000
+s60: other   MEAN 0.0026 MAX 0.0042 (n=6) escape 6100
+s61: early   MEAN 0.0020 MAX 0.0068 (n=6) escape 4000
+s62: other   MEAN -0.0001 MAX 0.0005 (n=6) escape 1500
+s63: other   MEAN 0.0003 MAX 0.0009 (n=6) escape 1600
+excluded (no escape): []
+early 4/16
+AUC(MEAN) 0.604  exact one-sided p 545/1820 = 0.2995
+AUC(MAX) 0.771  exact one-sided p 121/1820 = 0.0665
+Forecasts (PREREG-run51.md):
+- P(>=2 early)=0.75 -> YES (4/16). Brier 0.06
+- P(AUC(MEAN)>=0.70 | >=2 early)=0.55 -> NO (0.604). Brier 0.30
+- P(AUC(MEAN) > AUC(MAX))=0.55 -> NO (0.604 vs 0.771). Brier 0.30
+- P(difference >= 0.10)=0.20 -> NO. Brier 0.04
+Primary criterion NOT met. The exploratory MEAN advantage did not replicate; MAX (run43 marker) again ranked in the right direction (0.771, p=0.067), weaker than run43 (0.85, p=0.011).
+Note: 9/16 seeds are 'other' (no L1 head meets either rule); 5 of them escaped very early (1100-3000), likely induction outside L1. Not analysed further.
